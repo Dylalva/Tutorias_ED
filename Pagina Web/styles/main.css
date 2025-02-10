@@ -1,0 +1,192 @@
+/* Fuente base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #FDECE6; /* Color de fondo suave */
+    color: #333;
+  }
+  
+  /* Cabecera */
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D9A591;  /* Un tono salmón más oscuro */
+    padding: 1rem 2rem;
+  }
+  
+  .logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar li {
+    margin: 0;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #f2f2f2;
+  }
+  
+  /* Sección del paquete */
+  .package-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .package-image img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+  }
+  
+  .package-info {
+    max-width: 500px;
+    margin-left: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .package-info h2 {
+    margin-top: 0;
+    color: #B33D26; /* Rojo ladrillo */
+  }
+  
+  .package-info p {
+    line-height: 1.5;
+    margin: 1rem 0;
+  }
+  
+  .btn-download {
+    background-color: #B33D26;
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-download:hover {
+    background-color: #8D2F1D;
+  }
+  
+  /* Sección Temas */
+  .topics-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .topics-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  
+  .topic-card {
+    background-color: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 6px;
+    text-align: center;
+    padding: 1rem;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .topic-card:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .topic-card img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+  }
+  
+  .topic-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Sección Exámenes */
+  .exams-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .exams-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .exams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+  
+  .exam-card {
+    background-color: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 6px;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    max-width: 180px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .exam-card:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .exam-card img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .exam-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Pie de página */
+  .main-footer {
+    background-color: #D9A591;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+  }
+  
