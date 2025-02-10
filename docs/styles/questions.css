@@ -1,0 +1,55 @@
+/* Estilos básicos de la página */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+  }
+  
+  /* Encabezado */
+  h1 {
+    background: #D9A591;
+    color: #fff;
+    margin: 0;
+    padding: 1rem;
+  }
+  
+  /* Contenedor principal para las preguntas */
+  #questions-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* Estilo para cada "componente" de pregunta */
+  .question-component {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+  
+  /* Texto del enunciado */
+  .question-text {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #B33D26; /* Tonalidad rojo ladrillo */
+    font-weight: bold;
+  }
+  
+  /* Inputs de texto en respuesta corta */
+  .question-component input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+  }
+  
+  /* Radio buttons o checkboxes */
+  .question-component label {
+    display: block;
+    margin: 0.25rem 0;
+    cursor: pointer;
+  }
+  
