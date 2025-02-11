@@ -140,6 +140,12 @@ body {
   color: #333;
 }
 
+.topic-card a{
+  text-decoration: none; /* Quita el subrayado */
+  color: inherit; /* Usa el color del texto del padre (li) */
+  font-weight: bold; /* Opcional: hace que el texto sea más llamativo */
+}
+
 /* Sección Exámenes */
 .exams-section {
   max-width: 1200px;
@@ -156,6 +162,12 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 1rem;
   justify-items: center;
+}
+
+.exam-card a{
+  text-decoration: none; /* Quita el subrayado */
+  color: inherit; /* Usa el color del texto del padre (li) */
+  font-weight: bold; /* Opcional: hace que el texto sea más llamativo */
 }
 
 .exam-card {

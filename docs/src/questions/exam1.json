@@ -19,20 +19,6 @@
       "feedback": "Exacto, con el método de la sustitución asumimos que la relación tiene una forma e intentamos comprobarla por inducción."
     },
     {
-      "type": "multiple-choice",
-      "topic": "Relaciones de Recurrencia",
-      "question": "¿Cuáles de los siguientes métodos sirven para resolver relaciones de recurrencia?",
-      "options": [
-        "Recursión de cola",
-        "Maestro",
-        "Sustitución",
-        "Transposición de matrices",
-        "Árbol de recursión"
-      ],
-      "correctAnswers": [1, 2, 4],
-      "feedback": "Los métodos clásicos son el método maestro, el de la sustitución y el del árbol de recursión."
-    },
-    {
       "type": "short-answer",
       "topic": "Recursividad Aplicada",
       "question": "Considera la función factorial(n) implementada recursivamente. ¿Cuál es factorial(5)?",

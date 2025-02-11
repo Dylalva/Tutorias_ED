@@ -1,0 +1,200 @@
+/* --------------------
+   1) Estilos base
+-------------------- */
+
+/* Quita margen/padding por defecto y usa caja ajustada */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Ajustes generales de la página */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #FDECE6; /* Color de fondo suave */
+    color: #333;
+    min-height: 100vh; /* Para estirar el fondo */
+  }
+  
+  /* --------------------
+     2) Cabecera
+  -------------------- */
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D9A591; /* Salmón oscuro */
+    padding: 1rem 2rem;
+    flex-wrap: wrap; /* Para pantallas pequeñas */
+  }
+  
+  /* Logo/título del header */
+  .logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff; /* Texto en blanco */
+  }
+  
+  /* Menú de navegación (si lo usas) */
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar li {
+    margin: 0;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: #f2f2f2;
+  }
+  
+  /* --------------------
+     3) Contenido principal
+  -------------------- */
+  
+  /* Estructura principal:
+     - .recursividad-main abarca todo
+     - .files-container a la izquierda
+     - .recursion-animation a la derecha */
+  .recursividad-main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;  /* Espacio horizontal entre .files-container y .recursion-animation */
+  }
+  
+  /* Contenedor de archivos */
+  .files-container {
+    flex: 1; /* Ocupará el espacio sobrante */
+  }
+  
+  /* Títulos de secciones */
+  .files-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #2c2c2c;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  .files-container ul {
+    list-style: none; 
+    padding-left: 0; 
+    margin-bottom: 1rem;
+  }
+  
+  .files-container li {
+    margin-bottom: 0.4rem;
+  }
+  
+  /* Enlaces dentro de los archivos */
+  .files-container a {
+    text-decoration: none;
+    color: #ad5f53; /* Un rojo claro */
+    transition: color 0.3s;
+  }
+  
+  .files-container a:hover {
+    color: #742f27; /* Un rojo más oscuro */
+  }
+  
+  /* --------------------
+     4) Animación Recursiva
+  -------------------- */
+  .recursion-animation {
+    width: 250px;   /* Ajusta al tamaño deseado */
+    height: 250px;  /* para que sea más visible */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    /* Bordes o fondo opcional:
+       background-color: rgba(255,255,255,0.2);
+       border-radius: 8px;
+    */
+  }
+  
+  /* Rotación infinita al icono */
+  .recursion-animation img {
+    width: 100%;
+    height: auto;
+    animation: rotateRecursively 6s linear infinite;
+  }
+  
+  /* Definimos el keyframe de la rotación */
+  @keyframes rotateRecursively {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+  
+  /* --------------------
+     5) Pie de página
+  -------------------- */
+  .main-footer {
+    background-color: #D9A591;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+  }
+  
+  /* --------------------
+     6) Media Queries
+  -------------------- */
+  
+  /* Tablets (max-width:900px) */
+  @media (max-width: 900px) {
+    .recursividad-main {
+      flex-direction: column;
+      align-items: center;
+    }
+    .files-container {
+      width: 100%;
+    }
+    .recursion-animation {
+      margin-top: 2rem;
+    }
+  }
+  
+  /* Móviles (max-width:600px) */
+  @media (max-width: 600px) {
+    .navbar ul {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .navbar a {
+      font-size: 1rem;
+    }
+    
+    /* El contenedor principal en columna */
+    .recursividad-main {
+      padding: 0 1rem;
+    }
+  
+    /* Ajustamos la animación un poco más pequeña en móvil */
+    .recursion-animation {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  
