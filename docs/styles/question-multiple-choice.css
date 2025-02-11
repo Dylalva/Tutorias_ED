@@ -1,0 +1,26 @@
+.question-multiple-choice {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #f2fff2;
+  }
+  
+  .question-multiple-choice h3 {
+    margin-top: 0;
+  }
+  
+  .question-multiple-choice .question-text {
+    margin-bottom: 0.8rem;
+  }
+  
+  .question-multiple-choice .feedback {
+    margin-top: 0.8rem;
+    color: #666;
+    font-size: 0.9rem;
+    display: none;
+  }
+  
+  input[type=checkbox]{
+    width: 20px;
+    height: 20px;
+  }

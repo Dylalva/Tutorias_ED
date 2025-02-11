@@ -2,26 +2,27 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Ejemplo Preguntas</title>
-  <!-- Hoja de estilos externa (opcional) -->
-  <link rel="stylesheet" href="../styles/exam1.css" />
+  <title>Examen #1</title>
+  <link rel="icon" type="image/png" href="../assets/icons/wolfram_icon.png">
+  <link rel="stylesheet" href="../styles/examen.css" />
+  <link rel="stylesheet" href="../styles/question-multiple-choice.css" />
+  <link rel="stylesheet" href="../styles/question-short-answer.css" />
+  <link rel="stylesheet" href="../styles/question-single-choice.css" />
+  <link rel="stylesheet" href="../styles/question-true-false.css" />
 </head>
 <body>
-  <header>
-    <h1>Ejemplo de Preguntas</h1>
-  </header>
+  <div class="exam-container">
+    <header class="exam-header">
+      <h1>Examen #1</h1>
+      <h2>Tema Recursividad y Relaciones de Recurrencia</h2>
+    </header>
+    
+    <!-- Contenedor donde se inyectarán las preguntas con fetch -->
+    <div id="questions-container"></div>
 
-  <main>
-    <div id="questions-container">
-      <!-- Aquí se insertarán las preguntas con JS -->
-    </div>
-  </main>
-
-  <footer>
-    <p>© 2025 - Preguntas Dinámicas</p>
-  </footer>
-
-  <!-- Tu archivo JS con las preguntas -->
+    <!-- Botón para terminar el intento -->
+    <button id="finish-button" class="finish-button">Terminar Intento</button>
+  </div>
   <script src="../scripts/exam1.js"></script>
 </body>
 </html>

@@ -2,14 +2,27 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Componentes Externos</title>
-  <link rel="stylesheet" href="../styles/questions.css">
+  <title>Examen #2</title>
+  <link rel="icon" type="image/png" href="../assets/icons/wolfram_icon.png">
+  <link rel="stylesheet" href="../styles/examen.css" />
+  <link rel="stylesheet" href="../styles/question-multiple-choice.css" />
+  <link rel="stylesheet" href="../styles/question-short-answer.css" />
+  <link rel="stylesheet" href="../styles/question-single-choice.css" />
+  <link rel="stylesheet" href="../styles/question-true-false.css" />
 </head>
 <body>
-  <h1>Mi Página con Componentes Externos</h1>
+  <div class="exam-container">
+    <header class="exam-header">
+      <h1>Examen #2</h1>
+      <h2>Tema Analisis de Algoritmos</h2>
+    </header>
+    
+    <!-- Contenedor donde se inyectarán las preguntas con fetch -->
+    <div id="questions-container"></div>
 
-  <div id="components-container"></div>
-
+    <!-- Botón para terminar el intento -->
+    <button id="finish-button" class="finish-button">Terminar Intento</button>
+  </div>
   <script src="../scripts/exam2.js"></script>
 </body>
 </html>

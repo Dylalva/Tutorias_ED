@@ -1,0 +1,35 @@
+.question-short-answer {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #f2fff2;
+  }
+  
+  .question-short-answer h3 {
+    margin-top: 0;
+  }
+  
+  .question-short-answer .question-text {
+    margin-bottom: 0.8rem;
+  }
+  
+  .question-short-answer form input[type="text"] {
+    padding: 0.3rem;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    width: 200px;
+    height: 25px;
+  }
+  
+  .question-short-answer .feedback {
+    margin-top: 0.8rem;
+    color: #666;
+    font-size: 0.9rem;
+    display: none;
+  }
+
+  input[type=text]{
+    width: 250px;
+    height: 35px;
+  }
+  

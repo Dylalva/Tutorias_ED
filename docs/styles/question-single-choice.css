@@ -1,0 +1,26 @@
+.question-single-choice {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #f2fff2;
+  }
+  
+  .question-single-choice h3 {
+    margin-top: 0;
+  }
+  
+  .question-single-choice .question-text {
+    margin-bottom: 1rem;
+  }
+  
+  .question-single-choice .feedback {
+    margin-top: 0.8rem;
+    color: #666;
+    font-size: 0.9rem;
+    display: none;
+  }
+  
+  input[type=radio]{
+    width: 20px;
+    height: 20px;
+  }

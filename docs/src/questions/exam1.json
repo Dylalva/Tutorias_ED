@@ -1,0 +1,50 @@
+[
+    {
+      "type": "single-choice",
+      "topic": "Recursividad Básica",
+      "question": "¿Cuál de las siguientes opciones describe mejor la recursividad?",
+      "options": [
+        "Un proceso que se repite para siempre hasta que la memoria se llena.",
+        "Una función que se llama a sí misma para resolver un subproblema más pequeño.",
+        "Un algoritmo que ordena datos mediante intercambios sucesivos."
+      ],
+      "correctAnswer": 1,
+      "feedback": "La recursividad consiste en que una función se llama a sí misma con datos reducidos, hasta llegar a una condición base."
+    },
+    {
+      "type": "true-false",
+      "topic": "Relaciones de Recurrencia",
+      "question": "El método de la sustitución es una técnica para resolver relaciones de recurrencia.",
+      "correctAnswer": "true",
+      "feedback": "Exacto, con el método de la sustitución asumimos que la relación tiene una forma e intentamos comprobarla por inducción."
+    },
+    {
+      "type": "multiple-choice",
+      "topic": "Relaciones de Recurrencia",
+      "question": "¿Cuáles de los siguientes métodos sirven para resolver relaciones de recurrencia?",
+      "options": [
+        "Recursión de cola",
+        "Maestro",
+        "Sustitución",
+        "Transposición de matrices",
+        "Árbol de recursión"
+      ],
+      "correctAnswers": [1, 2, 4],
+      "feedback": "Los métodos clásicos son el método maestro, el de la sustitución y el del árbol de recursión."
+    },
+    {
+      "type": "short-answer",
+      "topic": "Recursividad Aplicada",
+      "question": "Considera la función factorial(n) implementada recursivamente. ¿Cuál es factorial(5)?",
+      "correctAnswer": "120",
+      "feedback": "5! = 5 * 4 * 3 * 2 * 1 = 120."
+    },
+    {
+      "type": "short-answer",
+      "topic": "Recursividad Aplicada",
+      "question": "Si una función recursiva de Fibonacci(15) se implementa de manera directa, ¿qué valor retorna?",
+      "correctAnswer": "610",
+      "feedback": "fib(15) = 610. La sucesión comienza 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610..."
+    }
+  ]
+  
