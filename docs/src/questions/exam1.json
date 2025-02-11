@@ -1,36 +1,117 @@
 [
-    {
-      "type": "single-choice",
-      "topic": "Recursividad Básica",
-      "question": "¿Cuál de las siguientes opciones describe mejor la recursividad?",
-      "options": [
-        "Un proceso que se repite para siempre hasta que la memoria se llena.",
-        "Una función que se llama a sí misma para resolver un subproblema más pequeño.",
-        "Un algoritmo que ordena datos mediante intercambios sucesivos."
-      ],
-      "correctAnswer": 1,
-      "feedback": "La recursividad consiste en que una función se llama a sí misma con datos reducidos, hasta llegar a una condición base."
-    },
-    {
-      "type": "true-false",
-      "topic": "Relaciones de Recurrencia",
-      "question": "El método de la sustitución es una técnica para resolver relaciones de recurrencia.",
-      "correctAnswer": "true",
-      "feedback": "Exacto, con el método de la sustitución asumimos que la relación tiene una forma e intentamos comprobarla por inducción."
-    },
-    {
-      "type": "short-answer",
-      "topic": "Recursividad Aplicada",
-      "question": "Considera la función factorial(n) implementada recursivamente. ¿Cuál es factorial(5)?",
-      "correctAnswer": "120",
-      "feedback": "5! = 5 * 4 * 3 * 2 * 1 = 120."
-    },
-    {
-      "type": "short-answer",
-      "topic": "Recursividad Aplicada",
-      "question": "Si una función recursiva de Fibonacci(15) se implementa de manera directa, ¿qué valor retorna?",
-      "correctAnswer": "610",
-      "feedback": "fib(15) = 610. La sucesión comienza 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610..."
-    }
-  ]
-  
+  {
+    "type": "single-choice",
+    "topic": "Recursividad",
+    "question": "¿Qué afirma el principio de recursividad en programación?",
+    "options": [
+      "La recursividad nunca necesita caso base.",
+      "Una función puede llamarse a sí misma con argumentos más simples hasta llegar a un caso base.",
+      "La recursividad sólo se usa para problemas matemáticos."
+    ],
+    "correctAnswer": 1,
+    "feedback": "Una definición recursiva debe tener un caso base y llamadas recursivas a sí misma con datos reducidos."
+  },
+  {
+    "type": "single-choice",
+    "topic": "Recursividad",
+    "question": "¿Cuál de estas opciones NO es un beneficio de usar recursividad?",
+    "options": [
+      "El código puede ser más legible en ciertos problemas.",
+      "Se evita por completo el uso de la pila de ejecución.",
+      "Algunos problemas se modelan naturalmente de forma recursiva."
+    ],
+    "correctAnswer": 1,
+    "feedback": "La recursividad sí utiliza la pila de ejecución, por lo que no 'se evita' su uso."
+  },
+  {
+    "type": "true-false",
+    "topic": "Recursividad",
+    "question": "Toda función recursiva puede ser reemplazada por una implementación iterativa.",
+    "correctAnswer": "true",
+    "feedback": "Es cierto: cualquier función recursiva puede transformarse en una versión iterativa, aunque en algunos casos no sea trivial."
+  },
+  {
+    "type": "multiple-choice",
+    "topic": "Recursividad",
+    "question": "¿En qué casos suele ser especialmente conveniente la recursividad?",
+    "options": [
+      "Para recorrer estructuras de datos no lineales (árboles).",
+      "Para resolver ecuaciones cuadráticas.",
+      "Para implementar bucles infinitos sin caso base.",
+      "Para dividir un problema en subproblemas más pequeños."
+    ],
+    "correctAnswers": [0, 3],
+    "feedback": "La recursividad es útil para recorrer árboles y en la estrategia 'divide y vencerás'."
+  },
+  {
+    "type": "short-answer",
+    "topic": "Recursividad",
+    "question": "Calcula factorial(6) usando una función recursiva. ¿Cuál es el valor de factorial(6)?",
+    "correctAnswer": "720",
+    "feedback": "factorial(6) = 720.\nCódigo en Mathematica:\n```mathematica\nfactorial[n_] := If[n == 0, 1, n * factorial[n-1]];\nfactorial[6]\n```"
+  },
+  {
+    "type": "short-answer",
+    "topic": "Recursividad",
+    "question": "Calcula la suma de la secuencia Fibonacci(10) (desde Fib(0) hasta Fib(10)). Es decir, Fib(0)+Fib(1)+...+Fib(10).",
+    "correctAnswer": "143",
+    "feedback": "La secuencia de Fibonacci del 0 al 10 es: 0,1,1,2,3,5,8,13,21,34,55. Al sumar hasta Fib(10)=55, el total es 143.\nCódigo en Mathematica:\n```mathematica\nfib[n_] := If[n < 2, n, fib[n-1] + fib[n-2]];\nTotal[ Table[fib[i], {i, 0, 10}] ]\n```"
+  },
+  {
+    "type": "single-choice",
+    "topic": "Recursividad",
+    "question": "¿Qué podría suceder si no se define un caso base en una función recursiva?",
+    "options": [
+      "La función se ejecuta una sola vez y finaliza.",
+      "Se produce un error de compilación inmediato.",
+      "Se desencadena una recursión infinita o hasta agotar la memoria."
+    ],
+    "correctAnswer": 2,
+    "feedback": "Sin caso base, la función invoca recursivamente sin fin, provocando un stack overflow."
+  },
+  {
+    "type": "short-answer",
+    "topic": "Recursividad",
+    "question": "Dada la función recursiva para calcular la potencia (base^exponente): pow(b, e) = b*pow(b, e-1) si e>0, y 1 si e=0. ¿Cuál es pow(3,4)?",
+    "correctAnswer": "81",
+    "feedback": "3^4 = 81.\nCódigo en Mathematica:\n```mathematica\npow[b_, e_] := If[e == 0, 1, b * pow[b, e-1]];\npow[3,4]\n```"
+  },
+  {
+    "type": "single-choice",
+    "topic": "Relaciones de Recurrencia",
+    "question": "¿Cuál de las siguientes es una relación de recurrencia?",
+    "options": [
+      "T(n) = T(n-1) + 3n",
+      "T(n) = 2n + 5",
+      "T(n) = n^2 + n + 1"
+    ],
+    "correctAnswer": 0,
+    "feedback": "Una relación de recurrencia se expresa en términos de la propia función T en valores anteriores de n."
+  },
+  {
+    "type": "short-answer",
+    "topic": "Relaciones de Recurrencia",
+    "question": "Resuelve la recurrencia T(n) = T(n-1) + 2 con T(1)=1. Indica T(n) en forma cerrada.",
+    "correctAnswer": "T(n) = 2n - 1",
+    "feedback": "Por expansión: T(n)= T(n-1)+2, con T(1)=1, se obtiene T(n)=2n-1.\nCódigo en Mathematica:\n```mathematica\nRSolve[{T[n] == T[n-1] + 2, T[1] == 1}, T[n], n]\n```"
+  },
+  {
+    "type": "single-choice",
+    "topic": "Relaciones de Recurrencia",
+    "question": "¿Qué caracteriza a una recurrencia lineal?",
+    "options": [
+      "Cada término depende únicamente de una cantidad constante de términos anteriores.",
+      "Se define por polinomios de grado elevado.",
+      "Cada término depende de todos los términos anteriores en la secuencia."
+    ],
+    "correctAnswer": 0,
+    "feedback": "Una recurrencia lineal depende de un número fijo de términos previos, por ejemplo T(n)=aT(n-1)+bT(n-2)."
+  },
+  {
+    "type": "true-false",
+    "topic": "Relaciones de Recurrencia",
+    "question": "Usar el método de sustitución implica adivinar la forma de la solución y probarla por inducción.",
+    "correctAnswer": "true",
+    "feedback": "El método de sustitución asume una forma para T(n) y se verifica por inducción si satisface la recurrencia."
+  }
+]
