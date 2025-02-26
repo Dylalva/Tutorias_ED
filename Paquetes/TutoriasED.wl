@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 BeginPackage["TutoriasED`"]
-Print[Style["Se ha cargado el paquete TutoriasED. USO PARA ESTUDIO", Blue]];
+Print[Style["Se ha cargado el paquete TutoriasED. USO PARA ESTUDIO", Green]];
 FactorialPilaED::usage =
 "FactorialPilaED[n, show -> True|False] \
 Devuelve el factorial de n usando recursi\[OAcute]n de pila (head recursion). \
@@ -10,7 +10,7 @@ La opci\[OAcute]n show controla si se muestran (True) o no (False) los pasos int
 FibonacciPilaED::usage =
 "FibonacciPilaED[n, show -> True|False] \
 Devuelve el n-\[EAcute]simo n\[UAcute]mero de la serie de Fibonacci usando recursi\[OAcute]n de pila (head recursion). \
-La opci\[OAcute]n show controla si se muestran (True) o no (False) los pasos intermedios por pantalla.";
+La opci\[OAcute]n show controla si se muestran (True) o no (False) los pasos intermedios por pantalla mediante un grafo.";
 
 PotenciaPilaED::usage =
 "PotenciaPilaED[a, b, show -> True|False] \
@@ -64,6 +64,23 @@ Muestra una tabla de {n, funcion(n)} desde 0 hasta n.";
 GraficaFuncED::usage =
 "GraficaFactorialED[n, func] \
 Hace un ListPlot de los valores de funcion(n) para n=0..n.";
+
+EvaluaFuncion::usage =
+"EvaluaFuncion[fun1, fun2, max] o bien EvaluaFuncion[fun1, fun2, max, inicio->x] \ 
+Esta funcion recibe 2 funciones para ver si dan el mimso resultado, la cantidad de comparaciones sera de inicio
+el cual por default es uno hasta max.
+"
+(*-----------------------------------------REL DE RECURRENCIA----------------------------------------------*)
+
+(*Analisis de algoritmos*)
+GraficoTiempos::usage = 
+  "GraficoTiempos[funciones, pruebas, Options] genera un gr\[AAcute]fico que muestra los tiempos de ejecuci\[OAcute]n \
+de cada funci\[OAcute]n evaluada para valores de n en el rango [inicio, pruebas]. La opci\[OAcute]n 'inicio' es opcional (default 1).";
+
+OrdenFunciones::usage = 
+  "OrdenFunciones[funciones, pruebas, Options] eval\[UAcute]a las funciones para valores de n en [inicio, pruebas], \
+calcula el tiempo promedio de ejecuci\[OAcute]n de cada una y muestra en pantalla el orden de rapidez.";
+
 (*-------------------------------------------------------------------------------------------------------*)
 Begin["`Private`"]
 (*Opciones de cada funci\[OAcute]n*)
@@ -158,35 +175,106 @@ PotenciaColaED[a_, b_, OptionsPattern[]] :=
   funcAux[a, b, 1]
  ]
 
-FibonacciColaED[n_, OptionsPattern[]] := Module[{funcAux, toShow = OptionValue[show]},
-  funcAux[x_, a_, b_] :=
+Options[FibonacciColaED] = {show -> False};
+
+FibonacciColaED[n_, OptionsPattern[]] := Module[
+  {edges = {}, labels = {}, colors = <||>, callCounter = 0, toShow = OptionValue[show], funcAux, fibValue},
+  
+  (* Funci\[OAcute]n auxiliar con acumulador y registro gr\[AAcute]fico *)
+  funcAux[x_, a_, b_, parentID_: None] := Module[{currentID, res},
+    currentID = callCounter;
+    callCounter++;
+    
+    (* Registro de la llamada: se etiqueta con los par\[AAcute]metros actuales *)
+    labels[currentID] = "FibCola(" <> ToString[x] <> ", " <> ToString[a] <> ", " <> ToString[b] <> ")";
+    colors[currentID] = If[x == 0, White, LightBlue];
+    
+    (* Conectar con la llamada anterior, si existe *)
+    If[parentID =!= None, AppendTo[edges, parentID -> currentID]];
+    
+    (* Proceso de la recursi\[OAcute]n *)
     If[x == 0,
       If[toShow, Print["[FibCola] Caso base: fib(0) = ", a]];
-      a, If[toShow, Print["[FibCola] Calculando fib(", x, ") con a = ", a, " y b = ", b]];
-      With[{res = funcAux[x - 1, b, a + b]},
-        If[toShow, Print["[FibCola] fib(", x, ") listo: ", res]];
-        res
-      ]
+      a,
+      If[toShow, Print["[FibCola] Calculando fib(", x, ") con a = ", a, " y b = ", b]];
+      res = funcAux[x - 1, b, a + b, currentID];
+      If[toShow, Print["[FibCola] fib(", x, ") listo: ", res]];
+      res
+    ]
+  ];
+  
+  (* C\[AAcute]lculo del valor de Fibonacci y registro de la cadena de llamadas *)
+  fibValue = funcAux[n, 0, 1];
+  
+  (* Construcci\[OAcute]n del grafo explicativo *)
+  Module[{grafo},
+    grafo = Graph[
+      edges,
+      VertexLabels -> labels,
+      VertexStyle -> Normal[colors],
+      GraphStyle -> "NameLabeled",
+      GraphLayout -> "LayeredDigraphEmbedding"
     ];
-  funcAux[n, 0, 1]
-]
+    If[toShow, Print[grafo]];
+  ];
+  
+  fibValue
+];
 
-FibonacciPilaED[n_, OptionsPattern[]] := Module[{toShow = OptionValue[show], result},
-  If[n < 2,
-    If[toShow, Print["[FibPila] Caso base: fib(", n, ") = ", n]];
-    n,If[toShow, Print["[FibPila] Calculando fib(", n, ")"]];
-    result = FibonacciPilaED[n - 1, show -> toShow] + FibonacciPilaED[n - 2, show -> toShow];
-    If[toShow, Print["[FibPila] fib(", n, ") listo: ", result]];
-    result
-  ]
-]
+
+
+FibonacciPilaED[n_, OptionsPattern[]] := 
+  Module[{edges = {}, labels = {}, colors = <||>, memo = <||>, FibonacciPilaAux, grafo, toShow, fibValue},
+
+   (* Obtener la opci\[OAcute]n show *)
+   toShow = OptionValue[show];
+
+   (* Funci\[OAcute]n auxiliar *)
+   FibonacciPilaAux[k_] := Module[{left, right},
+     If[KeyExistsQ[memo, k], colors[k] = Red; Return[memo[k]]];
+
+     If[k < 2, 
+       labels[k] = "Fibonacci_rec(" <> ToString[k] <> ")";
+       colors[k] = White;
+       memo[k] = k;
+       Return[k]
+     ];
+
+     left = FibonacciPilaAux[k - 1];
+     right = FibonacciPilaAux[k - 2];
+
+     AppendTo[edges, k -> k - 1];
+     AppendTo[edges, k -> k - 2];
+
+     labels[k] = "Fibonacci_rec(" <> ToString[k] <> ")";
+     colors[k] = If[MemberQ[Keys[colors], k], Blue, LightOrange];
+
+     memo[k] = left + right;
+     memo[k]
+   ];
+
+   (* Construcci\[OAcute]n del grafo y c\[AAcute]lculo del valor de Fibonacci *)
+   fibValue = FibonacciPilaAux[n];
+
+   (* Creaci\[OAcute]n del grafo con estilos *)
+   grafo = Graph[
+     DeleteCases[edges, _ -> None],
+     VertexLabels -> (labels /. None -> ""),
+     VertexStyle -> Normal[colors],
+     GraphStyle -> "NameLabeled",
+     GraphLayout -> "LayeredDigraphEmbedding"
+   ];
+
+   If[toShow, Print[grafo]];
+   fibValue
+];
 
 mostrarLlamadasED[func1_, func2_] :=
   Manipulate[
     Grid[{
       {"Valor de n", n},
-      {"Resultado de la primera funci\[OAcute]n", func1[n, show -> True]},
-      {"Resultado de la segunda funci\[OAcute]n", func2[n, show -> True]}
+      {"Resultado de la primera funci\[OAcute]n", func1[n]},
+      {"Resultado de la segunda funci\[OAcute]n", func2[n]}
     }],
     {n, 0, 10, 1},
     SaveDefinitions -> True
@@ -208,7 +296,7 @@ ExplicacionFactorialED[] := Print[
 ];
 
 TablaFuncED[n_, func_] := Module[{lista},
-  lista = Table[{k, func[k, show -> False]}, {k, 0, n}];
+  lista = Table[{k, func[k]}, {k, 0, n}];
   Print["Tabla de 0 hasta ", n, ":"];
   Grid[
     Prepend[lista, {"n", "func(n)"}],
@@ -217,19 +305,93 @@ TablaFuncED[n_, func_] := Module[{lista},
 ]
 
 GraficaFuncED[n_, func_] := Module[{lista},
-  lista = Table[func[k, show -> False], {k, 0, n}];
+  lista = Table[func[k], {k, 0, n}];
   ListPlot[
     lista,
     PlotStyle -> {Red, PointSize[0.015]},
     PlotRange -> All,
-    AxesLabel -> {"n", "fib(n)"},
+    AxesLabel -> {"n", "func(n)"},
     PlotLabel -> "Gr\[AAcute]fica de de 0 a " <> ToString[n]
   ]
 ]
-
+Options[EvaluaFuncion] = {inicio -> 1};
+EvaluaFuncion[fun1_, fun2_, max_,OptionsPattern[]]:=
+	Module[{init = OptionValue[inicio]},
+		Table[fun1[n]==fun2[n],{n, init, max}]
+	]
 (*------------------------------------------Relaci\[OAcute]n Recurrencia------------------------------------------*)
+
+
+(*------------------------------------------Analisis de algoritmos------------------------------------------*)
+Options[GraficoTiempos] = {inicio -> 1};
+
+GraficoTiempos[funciones_List, pruebas_Integer, OptionsPattern[]] := Module[
+  {n, datos, curvas, colores, etiquetas},
+  
+  (* Rango de n, de 'inicio' hasta 'pruebas' *)
+  n = Range[OptionValue[inicio], pruebas];
+  
+  (* Medir el tiempo de cada funci\[OAcute]n para cada valor de n *)
+  datos = Table[
+    Table[
+      First[AbsoluteTiming[func[x]]],
+      {x, n}
+    ],
+    {func, funciones}
+  ];
+  
+  (* Generar una lista de pares {n, tiempo} para cada funci\[OAcute]n *)
+  curvas = Table[Transpose[{n, datos[[i]]}], {i, Length[funciones]}];
+  
+  (* Define una lista de colores para cada l\[IAcute]nea (ajusta si tienes m\[AAcute]s funciones) *)
+  colores = {Blue, Orange, Green, Red, Purple, Brown};
+  
+  (* Genera etiquetas din\[AAcute]micamente: "S1", "S2", "S3", ... *)
+  etiquetas = Table[Style["S" <> ToString[i], colores[[i]]], {i, Length[funciones]}];
+  
+  (* Construye el gr\[AAcute]fico con una l\[IAcute]nea por funci\[OAcute]n *)
+  ListLinePlot[
+    curvas,
+    PlotRange -> All,
+    PlotStyle -> Table[{Thick, colores[[i]]}, {i, Length[funciones]}],
+    PlotLabels -> Placed[etiquetas, "End"],
+    AxesLabel -> {"Cantidad de pruebas", "Tiempo (seg)"},
+    PlotLabel -> "Comparaci\[OAcute]n de Tiempos"
+  ]
+];
+
+Options[OrdenFunciones] = {inicio -> 1};
+OrdenFunciones[funciones_List, pruebas_Integer, OptionsPattern[]] := 
+  Module[
+     {n, tiempos, promedios, orden},
+     n = Range[OptionValue[inicio], pruebas];
+     (* Se recopilan los tiempos para cada funci\[OAcute]n y se calcula el \
+promedio *)
+     tiempos = Table[
+         Table[
+            First[AbsoluteTiming[ func[x] ]],
+            {x, n}
+          ],
+         {func, funciones}
+       ];
+     promedios = Mean /@ tiempos;
+     orden = Ordering[promedios];
+     Print["Orden de rapidez:"];
+     Do[
+        Print[
+           "La funci\[OAcute]n ", orden[[i]], 
+           Switch[i, 
+              1, " es la m\[AAcute]s r\[AAcute]pida.", 
+              2, " es la segunda m\[AAcute]s r\[AAcute]pida.", 
+              3, " es la tercera m\[AAcute]s r\[AAcute]pida.", 
+              _, 
+      " se encuentra en la posici\[OAcute]n " <> ToString[i] <> "."
+            ]
+         ],
+        {i, Length[orden]}
+      ]
+   ];
+
 End[]
 EndPackage[]
-
-
 
