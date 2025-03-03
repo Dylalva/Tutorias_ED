@@ -40,10 +40,22 @@ Devuelve el n-\[EAcute]simo n\[UAcute]mero de la serie de Fibonacci usando recur
 La opci\[OAcute]n show controla si se muestran (True) o no (False) los pasos intermedios por pantalla.";
 
 SumatoriaColaED::usage =
-SumatoriaColaED::usage =
 "SumatoriaColaED[n, show -> True|False] \
 Devuelve la sumatoria 1 + 2 + ... + n usando recursi\[OAcute]n de cola (tail recursion). \
 La opci\[OAcute]n show controla si se muestran (True) o no (False) los pasos intermedios por pantalla.";
+
+RecursiveFactorial::usage = "RecursiveFactorial[n] calcula el factorial usando recursi\[OAcute]n de pila.";
+
+TailRecursiveFactorial::usage = "TailRecursiveFactorial[n] calcula el factorial usando recursi\[OAcute]n de cola.";
+
+TraceRecursiveFactorial::usage = "TraceRecursiveFactorial[n] devuelve la secuencia de llamadas en 
+recursi\[OAcute]n de pila.";
+
+TraceTailRecursiveFactorial::usage = "TraceTailRecursiveFactorial[n] devuelve la secuencia de llamadas en recursi\[OAcute]n 
+de cola.";
+
+PlotRecursionTree::usage = "PlotRecursionTree[n, type] grafica el \[AAcute]rbol de llamadas recursivas para 'stack' (pila) 
+o 'tail' (cola).";
 
 (*Funciones auxiliares*)
 mostrarLlamadasED::usage =
@@ -70,6 +82,11 @@ EvaluaFuncion::usage =
 Esta funcion recibe 2 funciones para ver si dan el mimso resultado, la cantidad de comparaciones sera de inicio
 el cual por default es uno hasta max.
 "
+
+(* Declaraciones de uso p\[UAcute]blico *)
+PlotFactorialRecursionTree::usage = "PlotFactorialRecursionTree[n] muestra el \[AAcute]rbol de llamadas del factorial con recursi\[OAcute]n de pila.";
+PlotTailFactorialRecursionTree::usage = "PlotTailFactorialRecursionTree[n] muestra el \[AAcute]rbol de llamadas del factorial con recursi\[OAcute]n de cola.";
+
 (*-----------------------------------------REL DE RECURRENCIA----------------------------------------------*)
 
 (*Analisis de algoritmos*)
@@ -221,6 +238,46 @@ FibonacciColaED[n_, OptionsPattern[]] := Module[
   fibValue
 ];
 
+(* Recursi\[OAcute]n de Pila (Normal) *)
+RecursiveFactorial[n_] := If[n == 0, 1, n * RecursiveFactorial[n - 1]];
+
+(* Recursi\[OAcute]n de Cola *)
+TailRecursiveFactorial[n_] := Module[{factTail},
+  factTail[k_, acc_] := If[k == 0, acc, factTail[k - 1, k * acc]];
+  factTail[n, 1]
+];
+
+(* Trazado de Recursi\[OAcute]n de Pila *)
+TraceRecursiveFactorial[n_] := Module[{trace = {}},
+  TraceScan[(AppendTo[trace, #1]) &, RecursiveFactorial[n], _RecursiveFactorial];
+  trace
+];
+
+(* Trazado de Recursi\[OAcute]n de Cola *)
+TraceTailRecursiveFactorial[n_] := Module[{trace = {}},
+  TraceScan[(AppendTo[trace, #1]) &, TailRecursiveFactorial[n], _TailRecursiveFactorial];
+  trace
+];
+
+(* Generaci\[OAcute]n de \[CapitalAAcute]rbol de Llamadas *)
+PlotRecursionTree[n_, type_: "stack"] := Module[{edges = {}, recursiveCall},
+
+  (* Definir la funci\[OAcute]n que genera los nodos y aristas *)
+  recursiveCall[k_, parent_] := If[k >= 0,
+    AppendTo[edges, parent -> k]; (* Guardar la relaci\[OAcute]n padre-hijo *)
+    If[type == "stack",
+      recursiveCall[k - 1, k], (* Recursi\[OAcute]n normal *)
+      recursiveCall[k - 1, k * parent] (* Recursi\[OAcute]n de cola con acumulador *)
+    ];
+  ];
+
+  (* Iniciar el \[AAcute]rbol con la llamada inicial *)
+  recursiveCall[n, "Start"];
+
+  (* Graficar el \[AAcute]rbol *)
+  Graph[edges, VertexLabels -> "Name", GraphStyle -> "Tree", ImageSize -> Large]
+];
+
 
 
 FibonacciPilaED[n_, OptionsPattern[]] := 
@@ -319,6 +376,16 @@ EvaluaFuncion[fun1_, fun2_, max_,OptionsPattern[]]:=
 	Module[{init = OptionValue[inicio]},
 		Table[fun1[n]==fun2[n],{n, init, max}]
 	]
+
+(* Definir funciones en Mathematica para llamar a Python *)
+PlotFactorialRecursionTree[n_] := 
+ExternalEvaluate["Python","import sys; sys.path.append('C:/Users/dylal/Documentos/Tutorias 2025/Tutorias_ED/Paquetes');    
+import FactorialGraph; FactorialGraph.draw_factorial_tree("<>ToString[n]<>")"];
+PlotTailFactorialRecursionTree[n_] := ExternalEvaluate[
+"Python","import sys; sys.path.append('C:/Users/dylal/Documentos/Tutorias 2025/Tutorias_ED/Paquetes');    
+import FactorialGraph; 
+FactorialGraph.draw_tail_factorial_tree("<>ToString[n]<>")"];
+
 (*------------------------------------------Relaci\[OAcute]n Recurrencia------------------------------------------*)
 
 

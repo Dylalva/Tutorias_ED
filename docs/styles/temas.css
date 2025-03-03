@@ -59,15 +59,26 @@
   .navbar a:hover {
     color: #f2f2f2;
   }
+  .pdf, .nb {
+    list-style: none; /* Quita la viñeta por defecto */
+    background-repeat: no-repeat;
+    background-position: left center; 
+    background-size: 20px 20px; /* Ajusta el tamaño de la viñeta */
+    padding-left: 30px; /* Espacio para la imagen */
+  }
   
-  /* --------------------
-     3) Contenido principal
-  -------------------- */
+  .pdf {
+    background-image: url("../assets/icons/icon_pdf.png");
+  }
   
-  /* Estructura principal:
-     - .recursividad-main abarca todo
-     - .files-container a la izquierda
-     - .recursion-animation a la derecha */
+  .nb {
+    background-image: url("../assets/icons/icon_nb_mathematica.png");
+  }
+  
+  .src{
+    width: 50%;
+    height: 50%;
+  }
   .recursividad-main {
     max-width: 1200px;
     margin: 2rem auto;

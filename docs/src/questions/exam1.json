@@ -89,13 +89,6 @@
     "feedback": "Una relación de recurrencia se expresa en términos de la propia función T en valores anteriores de n."
   },
   {
-    "type": "short-answer",
-    "topic": "Relaciones de Recurrencia",
-    "question": "Resuelve la recurrencia T(n) = T(n-1) + 2 con T(1)=1. Indica T(n) en forma cerrada.",
-    "correctAnswer": "T(n) = 2n - 1",
-    "feedback": "Por expansión: T(n)= T(n-1)+2, con T(1)=1, se obtiene T(n)=2n-1.\nCódigo en Mathematica:\n```mathematica\nRSolve[{T[n] == T[n-1] + 2, T[1] == 1}, T[n], n]\n```"
-  },
-  {
     "type": "single-choice",
     "topic": "Relaciones de Recurrencia",
     "question": "¿Qué caracteriza a una recurrencia lineal?",
@@ -106,12 +99,5 @@
     ],
     "correctAnswer": 0,
     "feedback": "Una recurrencia lineal depende de un número fijo de términos previos, por ejemplo T(n)=aT(n-1)+bT(n-2)."
-  },
-  {
-    "type": "true-false",
-    "topic": "Relaciones de Recurrencia",
-    "question": "Usar el método de sustitución implica adivinar la forma de la solución y probarla por inducción.",
-    "correctAnswer": "true",
-    "feedback": "El método de sustitución asume una forma para T(n) y se verifica por inducción si satisface la recurrencia."
   }
 ]
