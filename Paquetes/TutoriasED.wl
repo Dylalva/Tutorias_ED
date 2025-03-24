@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 BeginPackage["TutoriasED`"]
-Print[Style["Se ha cargado el paquete TutoriasED. USO PARA ESTUDIO", Green]];
+Print[Style["Se ha cargado el paquete TutoriasED. USO PARA ESTUDIO. Versi\[OAcute]n 23/03/2025", Green]];
 FactorialPilaED::usage =
 "FactorialPilaED[n, show -> True|False] \
 Devuelve el factorial de n usando recursi\[OAcute]n de pila (head recursion). \
@@ -98,6 +98,12 @@ OrdenFunciones::usage =
   "OrdenFunciones[funciones, pruebas, Options] eval\[UAcute]a las funciones para valores de n en [inicio, pruebas], \
 calcula el tiempo promedio de ejecuci\[OAcute]n de cada una y muestra en pantalla el orden de rapidez.";
 
+bigO::usage = 
+"bigO[f, g, n] devuelve el l\[IAcute]mite de f(n)/g(n) conforme n->\[Infinity], para verificar O().";
+bigOmega::usage = 
+"bigOmega[f, g, n] devuelve el l\[IAcute]mite de g(n)/f(n) conforme n->\[Infinity], para verificar \[CapitalOmega]().";
+bigTheta::usage = 
+"bigTheta[f, g, n] verifica si f(n) es \[CapitalTheta](g(n)) al verificar ambos l\[IAcute]mites (O y \[CapitalOmega]).";
 (*-------------------------------------------------------------------------------------------------------*)
 Begin["`Private`"]
 (*Opciones de cada funci\[OAcute]n*)
@@ -458,6 +464,21 @@ promedio *)
         {i, Length[orden]}
       ]
    ];
+bigO[f_, g_, n_Symbol] := Limit[f/g, n -> Infinity];
+
+bigOmega[f_, g_, n_Symbol] := Limit[g/f, n -> Infinity];
+
+bigTheta[f_, g_, n_Symbol] := Module[
+  {
+   limitFoG = bigO[f, g, n],
+   limitGoF = bigOmega[f, g, n]
+  },
+  Which[
+   limitFoG == 0 && limitGoF == 0, "Inconcluso",
+   (limitFoG > 0 && limitFoG < Infinity) , True,
+   True, False
+  ]
+];
 
 End[]
 EndPackage[]

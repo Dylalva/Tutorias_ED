@@ -59,12 +59,13 @@
   .navbar a:hover {
     color: #f2f2f2;
   }
-  .pdf, .nb {
+  .pdf, .nb, .book {
     list-style: none; /* Quita la viñeta por defecto */
     background-repeat: no-repeat;
     background-position: left center; 
     background-size: 20px 20px; /* Ajusta el tamaño de la viñeta */
     padding-left: 30px; /* Espacio para la imagen */
+    margin-left: 30px;
   }
   
   .pdf {
@@ -75,6 +76,10 @@
     background-image: url("../assets/icons/icon_nb_mathematica.png");
   }
   
+.book{
+  background-image: url("../assets/icons/book_icon.png");
+}
+
   .src{
     width: 50%;
     height: 50%;
