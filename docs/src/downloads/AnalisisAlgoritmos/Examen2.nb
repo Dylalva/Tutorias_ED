@@ -1,0 +1,4442 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    193069,       4432]
+NotebookOptionsPosition[    187429,       4326]
+NotebookOutlinePosition[    187870,       4343]
+CellTagsIndexPosition[    187827,       4340]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", " ", "=", " ", 
+   RowBox[{"Product", "[", 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox["2", "i"], 
+      RowBox[{"16", 
+       SuperscriptBox["i", "2"]}]], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "2", ",", 
+       RowBox[{"n", "-", "1"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", " ", "=", " ", 
+   FractionBox[
+    SuperscriptBox["2", 
+     SuperscriptBox["n", "2"]], 
+    RowBox[{"n", "!"}]]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.951938609814951*^9, 3.95193866736331*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"27649406-7bf5-cb45-a481-00e8a420b1d3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   FractionBox["f", "g"], ",", " ", 
+   RowBox[{"n", "->", "Infinity"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.951938672638481*^9, 3.9519386891795406`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"ca77e890-0dda-b04e-bb4d-88d27c4289fe"],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.9519386989210167`*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"e019fff7-13a5-624a-a1b1-83718a328ec9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"fun", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"7", "^", 
+      RowBox[{"(", 
+       RowBox[{"10", "n"}], ")"}]}], ",", 
+     RowBox[{"n", "^", "9"}], ",", 
+     RowBox[{"n", "^", "8"}], ",", " ", 
+     FractionBox[
+      SuperscriptBox["2", 
+       SuperscriptBox["n", "2"]], 
+      RowBox[{"n", "!"}]]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"Limit", "[", 
+    RowBox[{
+     RowBox[{"f", "/", "i"}], ",", " ", 
+     RowBox[{"n", "->", "Infinity"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", " ", "fun"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.951938782027939*^9, 3.9519388575741177`*^9}, 
+   3.951938902597561*^9},
+ CellLabel->"In[8]:=",ExpressionUUID->"e95ac027-885c-634a-8da4-d104c4a520e3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\[Infinity]", ",", "\[Infinity]", ",", "\[Infinity]", ",", "0"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.951938838450514*^9, 3.9519388608679657`*^9}, 
+   3.95193890662039*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"a5afb75b-6b7f-eb47-85f4-5471af66acd9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"fun", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"7", "^", 
+      RowBox[{"(", 
+       RowBox[{"10", "n"}], ")"}]}], ",", 
+     RowBox[{"n", "^", "9"}], ",", 
+     RowBox[{"n", "^", "8"}], ",", " ", 
+     FractionBox[
+      SuperscriptBox["2", 
+       SuperscriptBox["n", "2"]], 
+      RowBox[{"n", "!"}]]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"i", "->", 
+    RowBox[{"Limit", "[", 
+     RowBox[{
+      RowBox[{"f", "/", "i"}], ",", " ", 
+      RowBox[{"n", "->", "Infinity"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", " ", "fun"}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[10]:=",ExpressionUUID->"0b96bfc6-a358-ff45-a990-81db9daa9ac1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["7", 
+     RowBox[{"10", " ", "n"}]], "\[Rule]", "\[Infinity]"}], ",", 
+   RowBox[{
+    SuperscriptBox["n", "9"], "\[Rule]", "\[Infinity]"}], ",", 
+   RowBox[{
+    SuperscriptBox["n", "8"], "\[Rule]", "\[Infinity]"}], ",", 
+   RowBox[{
+    FractionBox[
+     SuperscriptBox["2", 
+      SuperscriptBox["n", "2"]], 
+     RowBox[{"n", "!"}]], "\[Rule]", "0"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.9519389096831017`*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"2b9ef64c-3272-5d46-a010-4c9a0a1340b6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"fun", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox["n", "5"], ",", 
+     SuperscriptBox["n", "3"], ",", 
+     SuperscriptBox["n", "2"], ",", 
+     SuperscriptBox["n", "4"], ",", 
+     SuperscriptBox["n", "6"]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"Limit", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Sum", "[", 
+       RowBox[{
+        RowBox[{"Sum", "[", 
+         RowBox[{"1", ",", 
+          RowBox[{"{", 
+           RowBox[{"j", ",", "1", ",", 
+            RowBox[{"i", "+", "6"}]}], "}"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", 
+          RowBox[{
+           SuperscriptBox["n", "3"], "+", "2"}]}], "}"}]}], "]"}], "/", "i"}],
+      ",", " ", 
+     RowBox[{"n", "->", "Infinity"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", " ", "fun"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.9519392686493263`*^9, 3.9519394103230915`*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"b3f40bbf-b5fe-2c4e-ac49-364c73dbb537"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "\[Infinity]", ",", "\[Infinity]", ",", "\[Infinity]", ",", "\[Infinity]", 
+   ",", 
+   FractionBox["1", "2"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.951939406078699*^9, 3.951939410753866*^9}},
+ CellLabel->"Out[15]=",ExpressionUUID->"8f168ddb-e855-f341-9b51-2962eac4ee11"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "Vilcretas`"}]], "Input",
+ CellChangeTimes->{{3.951939616910038*^9, 3.951939621177782*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"c7fdea33-f237-bd4c-b487-4980784070d4"],
+
+Cell[BoxData[
+ StyleBox["\<\"VilCretas est\[AAcute] disponible.\"\>",
+  StripOnInput->False,
+  LineColor->RGBColor[0, 0, 1],
+  FrontFaceColor->RGBColor[0, 0, 1],
+  BackFaceColor->RGBColor[0, 0, 1],
+  GraphicsColor->RGBColor[0, 0, 1],
+  FontWeight->Bold,
+  FontColor->RGBColor[0, 0, 1]]], "Print",
+ CellChangeTimes->{3.951939622207903*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[16]:=",ExpressionUUID->"0054ad15-9530-f846-a6ec-ed974009671a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "CompLimit"}]], "Input",
+ CellChangeTimes->{{3.9519396232386703`*^9, 3.95193963060717*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"f055fa4e-e3f7-5e4a-b29d-31223bdc5856"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = False, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"Compara en el l\[IAcute]mite dos funciones para \
+determinar si la primera es \[OpenCurlyDoubleQuote]theta\
+\[CloseCurlyDoubleQuote], \[OpenCurlyDoubleQuote]O grande\
+\[CloseCurlyDoubleQuote] u \[OpenCurlyDoubleQuote]Omega\
+\[CloseCurlyDoubleQuote] de la segunda. Sintaxis: CompLimit[L] con \
+\[OpenCurlyDoubleQuote]L\[CloseCurlyDoubleQuote] un vector que contiene las \
+funciones (en t\[EAcute]rminos de \[OpenCurlyDoubleQuote]n\
+\[CloseCurlyDoubleQuote] y \[OpenCurlyDoubleQuote]j\[CloseCurlyDoubleQuote]). \
+Si alguna incluye el par\[AAcute]metro \[OpenCurlyDoubleQuote]j\
+\[CloseCurlyDoubleQuote] el comando genera una animaci\[OAcute]n haciendo \
+variar \[OpenCurlyDoubleQuote]j\[CloseCurlyDoubleQuote] de uno a mil y \
+mostrando el comportamiento asint\[OAcute]tico en cada caso. La \
+opci\[OAcute]n \[OpenCurlyDoubleQuote]jvalor->Valor\[CloseCurlyDoubleQuote] \
+permite cambiar la variaci\[OAcute]n por defecto mil, a cualquier otra, mayor \
+o igual a diez.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[
+           TagBox[GridBox[{
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"Definitions\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{"CompLimit", "[", 
+                    RowBox[{"VilCretas`Private`AlList_List", ",", 
+                    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlCompLimitSP", ",", 
+                    "VilCretas`Private`AlCompLimitCP", ",", 
+                    "VilCretas`Private`FuncionVariable"}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"Clear", "[", 
+                    RowBox[{"n", ",", "j"}], "]"}], ";", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`FuncionVariable", "[", 
+                    "VilCretas`Private`FuncionVariable_List", "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`FuncionVariableAuxiliar", ",", 
+                    "VilCretas`Private`Simbolos", ",", 
+                    "VilCretas`Private`VariableAuxiliarSimbolos", ",", 
+                    
+                    RowBox[{"VilCretas`Private`VariableAuxiliarVariables", 
+                    "=", 
+                    RowBox[{"{", "}"}]}]}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`FuncionVariableAuxiliar", "[", 
+                    "]"}], ":=", 
+                    
+                    RowBox[{"VilCretas`Private`FuncionVariable", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
+                    ";", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`Simbolos", "[", 
+                    "VilCretas`Private`VariableFuncion_", "]"}], ":=", 
+                    RowBox[{"DeleteDuplicates", "[", 
+                    RowBox[{"Cases", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"DownValues", "[", 
+                    "VilCretas`Private`VariableFuncion", "]"}], ",", 
+                    "_Symbol", ",", "\[Infinity]"}], "]"}], "]"}]}], ";", 
+                    RowBox[{"VilCretas`Private`VariableAuxiliarSimbolos", "=", 
+                    RowBox[{"Sort", "[", 
+                    
+                    RowBox[{"VilCretas`Private`Simbolos", "[", 
+                    "VilCretas`Private`FuncionVariableAuxiliar", "]"}], 
+                    "]"}]}], ";", 
+                    RowBox[{"For", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`VariableFuncioni", "=", "1"}], 
+                    ",", 
+                    
+                    RowBox[{"VilCretas`Private`VariableFuncioni", 
+                    "\[LessEqual]", 
+                    
+                    RowBox[{"Length", "[", 
+                    "VilCretas`Private`VariableAuxiliarSimbolos", "]"}]}], 
+                    ",", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"NumericQ", "[", 
+                    
+                    RowBox[{"VilCretas`Private`VariableAuxiliarSimbolos", 
+                    "\[LeftDoubleBracket]", 
+                    "VilCretas`Private`VariableFuncioni", 
+                    "\[RightDoubleBracket]"}], "]"}], "\[Equal]", "False"}], 
+                    ",", 
+                    
+                    RowBox[{"VilCretas`Private`VariableAuxiliarVariables", 
+                    "=", 
+                    RowBox[{"Append", "[", 
+                    
+                    RowBox[{"VilCretas`Private`VariableAuxiliarVariables", 
+                    ",", 
+                    RowBox[{
+                    "VilCretas`Private`VariableAuxiliarSimbolos", 
+                    "\[LeftDoubleBracket]", 
+                    "VilCretas`Private`VariableFuncioni", 
+                    "\[RightDoubleBracket]"}]}], "]"}]}]}], "]"}], ";", 
+                    RowBox[{"VilCretas`Private`VariableFuncioni", "++"}]}]}], 
+                    "]"}], ";", 
+                    "VilCretas`Private`VariableAuxiliarVariables"}]}], 
+                    "]"}]}], ";", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlCompLimitSP", "[", 
+                    "VilCretas`Private`AlLista_List", "]"}], ":=", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VectorQ", "[", "VilCretas`Private`AlLista", 
+                    "]"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"MemberQ", "[", 
+                    RowBox[{"VilCretas`Private`AlLista", ",", "Null"}], "]"}],
+                     "\[Equal]", "False"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Length", "[", "VilCretas`Private`AlLista", "]"}],
+                     "\[Equal]", "2"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"VilCretas`Private`FuncionVariable", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlList", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "}"}], "]"}], "]"}], "\[Equal]", "\"{}\""}], "||", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"VilCretas`Private`FuncionVariable", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlList", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "}"}], "]"}], "]"}], "\[Equal]", "\"{n}\""}]}], ")"}], 
+                    "&&", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"VilCretas`Private`FuncionVariable", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlList", 
+                    "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                    "}"}], "]"}], "]"}], "\[Equal]", "\"{}\""}], "||", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"VilCretas`Private`FuncionVariable", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlList", 
+                    "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                    "}"}], "]"}], "]"}], "\[Equal]", "\"{n}\""}]}], ")"}]}], 
+                    ")"}], "||", 
+                    RowBox[{"NumericQ", "[", 
+                    RowBox[{
+                    UnderscriptBox["\[Limit]", 
+                    RowBox[{"n", "\[Rule]", "\[Infinity]"}]], 
+                    FractionBox[
+                    RowBox[{"Evaluate", "[", 
+                    RowBox[{"First", "[", "VilCretas`Private`AlLista", "]"}], 
+                    "]"}], 
+                    RowBox[{"Evaluate", "[", 
+                    RowBox[{"Last", "[", "VilCretas`Private`AlLista", "]"}], 
+                    "]"}]]}], "]"}], "||", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{
+                    UnderscriptBox["\[Limit]", 
+                    RowBox[{"n", "\[Rule]", "\[Infinity]"}]], 
+                    FractionBox[
+                    RowBox[{"Evaluate", "[", 
+                    RowBox[{"First", "[", "VilCretas`Private`AlLista", "]"}], 
+                    "]"}], 
+                    RowBox[{"Evaluate", "[", 
+                    RowBox[{"Last", "[", "VilCretas`Private`AlLista", "]"}], 
+                    "]"}]]}], "]"}], "\[Equal]", 
+                    RowBox[{"ToString", "[", "\[Infinity]", "]"}]}]}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`Alf5", "[", 
+                    "VilCretas`Private`Aln_", "]"}], ":=", 
+                    RowBox[{
+                    RowBox[{"Together", "[", 
+                    RowBox[{"Expand", "[", 
+                    RowBox[{"First", "[", "VilCretas`Private`AlLista", "]"}], 
+                    "]"}], "]"}], "/.", "\[VeryThinSpace]", 
+                    RowBox[{"n", "\[Rule]", "VilCretas`Private`Aln"}]}]}], 
+                    ";", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`Alf6", "[", 
+                    "VilCretas`Private`Aln_", "]"}], ":=", 
+                    RowBox[{
+                    RowBox[{"Together", "[", 
+                    RowBox[{"Expand", "[", 
+                    RowBox[{"Last", "[", "VilCretas`Private`AlLista", "]"}], 
+                    "]"}], "]"}], "/.", "\[VeryThinSpace]", 
+                    RowBox[{"n", "\[Rule]", "VilCretas`Private`Aln"}]}]}], 
+                    ";", 
+                    RowBox[{"VilCretas`Private`AlVl35", "=", 
+                    RowBox[{
+                    UnderscriptBox["\[Limit]", 
+                    
+                    RowBox[{"VilCretas`Private`n", "\[Rule]", 
+                    "\[Infinity]"}]], 
+                    FractionBox[
+                    
+                    RowBox[{"VilCretas`Private`Alf5", "[", 
+                    "VilCretas`Private`n", "]"}], 
+                    
+                    RowBox[{"VilCretas`Private`Alf6", "[", 
+                    "VilCretas`Private`n", "]"}]]}]}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"NumericQ", "[", "VilCretas`Private`AlVl35", 
+                    "]"}], "||", 
+                    RowBox[{
+                    RowBox[{
+                    "ToString", "[", "VilCretas`Private`AlVl35", "]"}], 
+                    "\[Equal]", 
+                    RowBox[{"ToString", "[", "\[Infinity]", "]"}]}]}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"NumericQ", "[", "VilCretas`Private`AlVl35", 
+                    "]"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AlVl35", "<", "0"}], ",", 
+                    "\"NaD\"", ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AlVl35", ">", "0"}], ",", 
+                    RowBox[{"Print", "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlVl35", ",", 
+                    "\"\[RightArrow] \"", ",", 
+                    RowBox[{"VilCretas`Private`Alf5", "[", "n", "]"}], ",", 
+                    "\"=\[CapitalTheta](\"", ",", 
+                    RowBox[{"VilCretas`Private`Alf6", "[", "n", "]"}], ",", 
+                    "\")\"", ",", "\", Notaci\[OAcute]n theta\""}], "]"}], 
+                    ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AlVl35", "\[Equal]", "0"}], 
+                    ",", 
+                    RowBox[{"Print", "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlVl35", ",", 
+                    "\"\[RightArrow] \"", ",", 
+                    RowBox[{"VilCretas`Private`Alf5", "[", "n", "]"}], ",", 
+                    "\"=\[CapitalOmicron](\"", ",", 
+                    RowBox[{"VilCretas`Private`Alf6", "[", "n", "]"}], ",", 
+                    "\")\"", ",", "\", Notaci\[OAcute]n O grande\""}], 
+                    "]"}]}], "]"}]}], "]"}]}], "]"}], ",", 
+                    RowBox[{"Print", "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlVl35", ",", 
+                    "\"\[RightArrow] \"", ",", 
+                    RowBox[{"VilCretas`Private`Alf5", "[", "n", "]"}], ",", 
+                    "\"=\[CapitalOmega](\"", ",", 
+                    RowBox[{"VilCretas`Private`Alf6", "[", "n", "]"}], ",", 
+                    "\")\"", ",", "\", Notaci\[OAcute]n omega\""}], "]"}]}], 
+                    "]"}], ",", "\"NaD\""}], "]"}]}]}], "]"}]}], "]"}]}], 
+                    "]"}]}], "]"}]}], ";", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlCompLimitCP", "[", 
+                    "VilCretas`Private`AlLista_List", "]"}], ":=", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VectorQ", "[", "VilCretas`Private`AlLista", 
+                    "]"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"MemberQ", "[", 
+                    RowBox[{"VilCretas`Private`AlLista", ",", "Null"}], "]"}],
+                     "\[Equal]", "False"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Length", "[", "VilCretas`Private`AlLista", "]"}],
+                     "\[Equal]", "2"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"VilCretas`Private`FuncionVariable", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlList", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "}"}], "]"}], "]"}], "\[Equal]", "\"{}\""}], "||", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"VilCretas`Private`FuncionVariable", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlList", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "}"}], "]"}], "]"}], "\[Equal]", "\"{j}\""}], "||", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"VilCretas`Private`FuncionVariable", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlList", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "}"}], "]"}], "]"}], "\[Equal]", "\"{n}\""}], "||", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"VilCretas`Private`FuncionVariable", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlList", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "}"}], "]"}], "]"}], "\[Equal]", "\"{j, n}\""}]}], ")"}], 
+                    "&&", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"VilCretas`Private`FuncionVariable", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlList", 
+                    "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                    "}"}], "]"}], "]"}], "\[Equal]", "\"{}\""}], "||", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"VilCretas`Private`FuncionVariable", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlList", 
+                    "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                    "}"}], "]"}], "]"}], "\[Equal]", "\"{j}\""}], "||", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"VilCretas`Private`FuncionVariable", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlList", 
+                    "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                    "}"}], "]"}], "]"}], "\[Equal]", "\"{n}\""}], "||", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"VilCretas`Private`FuncionVariable", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlList", 
+                    "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                    "}"}], "]"}], "]"}], "\[Equal]", "\"{j, n}\""}]}], 
+                    ")"}]}], ")"}], "||", 
+                    RowBox[{"NumericQ", "[", 
+                    RowBox[{
+                    UnderscriptBox["\[Limit]", 
+                    RowBox[{"n", "\[Rule]", "\[Infinity]"}]], 
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox[
+                    RowBox[{"Evaluate", "[", 
+                    RowBox[{"First", "[", "VilCretas`Private`AlLista", "]"}], 
+                    "]"}], 
+                    RowBox[{"Evaluate", "[", 
+                    RowBox[{"Last", "[", "VilCretas`Private`AlLista", "]"}], 
+                    "]"}]], "/.", "\[VeryThinSpace]", 
+                    RowBox[{"j", "\[Rule]", "1"}]}], ")"}]}], "]"}], "||", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    RowBox[{
+                    UnderscriptBox["\[Limit]", 
+                    RowBox[{"n", "\[Rule]", "\[Infinity]"}]], 
+                    RowBox[{"(", 
+                    RowBox[{
+                    FractionBox[
+                    RowBox[{"Evaluate", "[", 
+                    RowBox[{"First", "[", "VilCretas`Private`AlLista", "]"}], 
+                    "]"}], 
+                    RowBox[{"Evaluate", "[", 
+                    RowBox[{"Last", "[", "VilCretas`Private`AlLista", "]"}], 
+                    "]"}]], "/.", "\[VeryThinSpace]", 
+                    RowBox[{"j", "\[Rule]", "1"}]}], ")"}]}], "]"}], 
+                    "\[Equal]", 
+                    RowBox[{"ToString", "[", "\[Infinity]", "]"}]}]}], ",", 
+                    RowBox[{"Print", "[", 
+                    RowBox[{"Manipulate", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AlVl36", "=", 
+                    RowBox[{
+                    UnderscriptBox["\[Limit]", 
+                    RowBox[{"VilCretas`Private`n", "\[Rule]", 
+                    "\[Infinity]"}]], 
+                    FractionBox[
+                    RowBox[{"VilCretas`Private`Alf7", "[", 
+                    
+                    RowBox[{"VilCretas`Private`n", ",", 
+                    "VilCretas`Private`Alj2"}], "]"}], 
+                    RowBox[{"VilCretas`Private`Alf8", "[", 
+                    
+                    RowBox[{"VilCretas`Private`n", ",", 
+                    "VilCretas`Private`Alj2"}], "]"}]]}]}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"NumericQ", "[", "VilCretas`Private`AlVl36", 
+                    "]"}], "||", 
+                    RowBox[{
+                    
+                    RowBox[{"ToString", "[", "VilCretas`Private`AlVl36", 
+                    "]"}], "\[Equal]", 
+                    RowBox[{"ToString", "[", "\[Infinity]", "]"}]}]}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"NumericQ", "[", "VilCretas`Private`AlVl36", 
+                    "]"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AlVl36", "<", "0"}], ",", 
+                    "\"NaD\"", ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AlVl36", ">", "0"}], ",", 
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlVl36", ",", 
+                    "\"\[RightArrow] \"", ",", 
+                    RowBox[{"VilCretas`Private`Alf7", "[", 
+                    RowBox[{"n", ",", "VilCretas`Private`Alj2"}], "]"}], ",", 
+                    "\"=\[CapitalTheta](\"", ",", 
+                    RowBox[{"VilCretas`Private`Alf8", "[", 
+                    RowBox[{"n", ",", "VilCretas`Private`Alj2"}], "]"}], ",", 
+                    "\")\"", ",", "\", Notaci\[OAcute]n theta\""}], "}"}], 
+                    "]"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AlVl36", "\[Equal]", "0"}], 
+                    ",", 
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlVl36", ",", 
+                    "\"\[RightArrow] \"", ",", 
+                    RowBox[{"VilCretas`Private`Alf7", "[", 
+                    RowBox[{"n", ",", "VilCretas`Private`Alj2"}], "]"}], ",", 
+                    "\"=\[CapitalOmicron](\"", ",", 
+                    RowBox[{"VilCretas`Private`Alf8", "[", 
+                    RowBox[{"n", ",", "VilCretas`Private`Alj2"}], "]"}], ",", 
+                    "\")\"", ",", "\", Notaci\[OAcute]n O grande\""}], "}"}], 
+                    "]"}]}], "]"}]}], "]"}]}], "]"}], ",", 
+                    RowBox[{"Row", "[", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`AlVl36", ",", 
+                    "\"\[RightArrow] \"", ",", 
+                    RowBox[{"VilCretas`Private`Alf7", "[", 
+                    RowBox[{"n", ",", "VilCretas`Private`Alj2"}], "]"}], ",", 
+                    "\"=\[CapitalOmega](\"", ",", 
+                    RowBox[{"VilCretas`Private`Alf8", "[", 
+                    RowBox[{"n", ",", "VilCretas`Private`Alj2"}], "]"}], ",", 
+                    "\")\"", ",", "\", Notaci\[OAcute]n omega\""}], "}"}], 
+                    "]"}]}], "]"}], ",", "\"NaD\""}], "]"}]}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`Alj2", ",", "1", ",", 
+                    "\"j\""}], "}"}], ",", "1", ",", 
+                    RowBox[{"OptionValue", "[", "jvalor", "]"}], ",", "1", 
+                    ",", 
+                    RowBox[{"Appearance", "\[Rule]", "\"Open\""}]}], "}"}], 
+                    ",", 
+                    RowBox[{"Alignment", "\[Rule]", "Center"}], ",", 
+                    RowBox[{"Initialization", "\[RuleDelayed]", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`Alf7", "[", 
+                    
+                    RowBox[{"VilCretas`Private`Aln_", ",", 
+                    "VilCretas`Private`Alj_"}], "]"}], ":=", 
+                    RowBox[{
+                    RowBox[{"FullSimplify", "[", 
+                    RowBox[{"Together", "[", 
+                    RowBox[{"Expand", "[", 
+                    RowBox[{"First", "[", "VilCretas`Private`AlLista", "]"}], 
+                    "]"}], "]"}], "]"}], "/.", "\[VeryThinSpace]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"n", "\[Rule]", "VilCretas`Private`Aln"}], ",", 
+                    RowBox[{"j", "\[Rule]", "VilCretas`Private`Alj"}]}], 
+                    "}"}]}]}], ";", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`Alf8", "[", 
+                    
+                    RowBox[{"VilCretas`Private`Aln_", ",", 
+                    "VilCretas`Private`Alj_"}], "]"}], ":=", 
+                    RowBox[{
+                    RowBox[{"FullSimplify", "[", 
+                    RowBox[{"Together", "[", 
+                    RowBox[{"Expand", "[", 
+                    RowBox[{"Last", "[", "VilCretas`Private`AlLista", "]"}], 
+                    "]"}], "]"}], "]"}], "/.", "\[VeryThinSpace]", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"n", "\[Rule]", "VilCretas`Private`Aln"}], ",", 
+                    RowBox[{"j", "\[Rule]", "VilCretas`Private`Alj"}]}], 
+                    "}"}]}]}]}], ")"}]}]}], "]"}], "]"}]}], "]"}]}], "]"}]}], 
+                    "]"}]}], "]"}]}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"IntegerQ", "[", 
+                    RowBox[{"OptionValue", "[", "jvalor", "]"}], "]"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"OptionValue", "[", "jvalor", "]"}], 
+                    "\[GreaterEqual]", "10"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"ToString", "[", "VilCretas`Private`AlList", 
+                    "]"}], "\[NotEqual]", 
+                    RowBox[{"ToString", "[", 
+                    RowBox[{"{", "}"}], "]"}]}], "&&", 
+                    RowBox[{"VectorQ", "[", "VilCretas`Private`AlList", "]"}],
+                     "&&", 
+                    RowBox[{
+                    RowBox[{"MemberQ", "[", 
+                    RowBox[{"VilCretas`Private`AlList", ",", "Null"}], "]"}], 
+                    "\[Equal]", "False"}], "&&", 
+                    RowBox[{
+                    RowBox[{"Length", "[", "VilCretas`Private`AlList", "]"}], 
+                    "\[Equal]", "2"}]}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"StringContainsQ", "[", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlList", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "]"}], ",", "\"j\""}], "]"}], "||", 
+                    RowBox[{"StringContainsQ", "[", 
+                    RowBox[{
+                    RowBox[{"ToString", "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlList", 
+                    "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                    "]"}], ",", "\"j\""}], "]"}]}], ",", 
+                    
+                    RowBox[{"VilCretas`Private`AlCompLimitCP", "[", 
+                    "VilCretas`Private`AlList", "]"}], ",", 
+                    
+                    RowBox[{"VilCretas`Private`AlCompLimitSP", "[", 
+                    "VilCretas`Private`AlList", "]"}]}], "]"}]}], "]"}]}], 
+                    "]"}]}], "]"}]}]}], "]"}]}]}, {" "}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Column"],
+           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Options\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Options\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Options", "Tooltip"]& ], 
+                   RowBox[{"jvalor", "\[Rule]", "1000"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Attributes\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Attributes\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Attributes", "Tooltip"]& ], 
+                   RowBox[{"{", "Protected", "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"VilCretas`CompLimit\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"Compara en el l\[IAcute]mite dos funciones para \
+determinar si la primera es \[OpenCurlyDoubleQuote]theta\
+\[CloseCurlyDoubleQuote], \[OpenCurlyDoubleQuote]O grande\
+\[CloseCurlyDoubleQuote] u \[OpenCurlyDoubleQuote]Omega\
+\[CloseCurlyDoubleQuote] de la segunda. Sintaxis: CompLimit[L] con \
+\[OpenCurlyDoubleQuote]L\[CloseCurlyDoubleQuote] un vector que contiene las \
+funciones (en t\[EAcute]rminos de \[OpenCurlyDoubleQuote]n\
+\[CloseCurlyDoubleQuote] y \[OpenCurlyDoubleQuote]j\[CloseCurlyDoubleQuote]). \
+Si alguna incluye el par\[AAcute]metro \[OpenCurlyDoubleQuote]j\
+\[CloseCurlyDoubleQuote] el comando genera una animaci\[OAcute]n haciendo \
+variar \[OpenCurlyDoubleQuote]j\[CloseCurlyDoubleQuote] de uno a mil y \
+mostrando el comportamiento asint\[OAcute]tico en cada caso. La \
+opci\[OAcute]n \[OpenCurlyDoubleQuote]jvalor->Valor\[CloseCurlyDoubleQuote] \
+permite cambiar la variaci\[OAcute]n por defecto mil, a cualquier otra, mayor \
+o igual a diez.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{12.5, {4., 8.5}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{12.5, {4., 8.5}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "Compara en el l\[IAcute]mite dos funciones para determinar si la primera \
+es \[OpenCurlyDoubleQuote]theta\[CloseCurlyDoubleQuote], \
+\[OpenCurlyDoubleQuote]O grande\[CloseCurlyDoubleQuote] u \
+\[OpenCurlyDoubleQuote]Omega\[CloseCurlyDoubleQuote] de la segunda. Sintaxis: \
+CompLimit[L] con \[OpenCurlyDoubleQuote]L\[CloseCurlyDoubleQuote] un vector \
+que contiene las funciones (en t\[EAcute]rminos de \[OpenCurlyDoubleQuote]n\
+\[CloseCurlyDoubleQuote] y \[OpenCurlyDoubleQuote]j\[CloseCurlyDoubleQuote]). \
+Si alguna incluye el par\[AAcute]metro \[OpenCurlyDoubleQuote]j\
+\[CloseCurlyDoubleQuote] el comando genera una animaci\[OAcute]n haciendo \
+variar \[OpenCurlyDoubleQuote]j\[CloseCurlyDoubleQuote] de uno a mil y \
+mostrando el comportamiento asint\[OAcute]tico en cada caso. La \
+opci\[OAcute]n \[OpenCurlyDoubleQuote]jvalor->Valor\[CloseCurlyDoubleQuote] \
+permite cambiar la variaci\[OAcute]n por defecto mil, a cualquier otra, mayor \
+o igual a diez.", "Documentation" -> None, "OwnValues" -> None, "UpValues" -> 
+    None, "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, VilCretas`CompLimit, {VilCretas`CompLimit[
+         Pattern[VilCretas`Private`AlList, 
+          Blank[List]], 
+         OptionsPattern[]] :> 
+       Module[{VilCretas`Private`AlCompLimitSP, 
+          VilCretas`Private`AlCompLimitCP, VilCretas`Private`FuncionVariable},
+          Clear[$CellContext`n, $CellContext`j]; 
+         VilCretas`Private`FuncionVariable[
+            Pattern[VilCretas`Private`FuncionVariable, 
+             Blank[List]]] := 
+          Module[{VilCretas`Private`FuncionVariableAuxiliar, 
+             VilCretas`Private`Simbolos, 
+             VilCretas`Private`VariableAuxiliarSimbolos, 
+             VilCretas`Private`VariableAuxiliarVariables = {}}, 
+            VilCretas`Private`FuncionVariableAuxiliar[] := 
+             Part[VilCretas`Private`FuncionVariable, 1]; 
+            VilCretas`Private`Simbolos[
+               Pattern[VilCretas`Private`VariableFuncion, 
+                Blank[]]] := DeleteDuplicates[
+               Cases[
+                DownValues[VilCretas`Private`VariableFuncion], 
+                Blank[Symbol], Infinity]]; 
+            VilCretas`Private`VariableAuxiliarSimbolos = Sort[
+               VilCretas`Private`Simbolos[
+               VilCretas`Private`FuncionVariableAuxiliar]]; 
+            For[VilCretas`Private`VariableFuncioni = 1, 
+              VilCretas`Private`VariableFuncioni <= 
+              Length[VilCretas`Private`VariableAuxiliarSimbolos], If[NumericQ[
+                  Part[
+                  VilCretas`Private`VariableAuxiliarSimbolos, 
+                   VilCretas`Private`VariableFuncioni]] == False, 
+                VilCretas`Private`VariableAuxiliarVariables = 
+                Append[VilCretas`Private`VariableAuxiliarVariables, 
+                  Part[
+                  VilCretas`Private`VariableAuxiliarSimbolos, 
+                   VilCretas`Private`VariableFuncioni]]]; 
+              Increment[VilCretas`Private`VariableFuncioni]]; 
+            VilCretas`Private`VariableAuxiliarVariables]; 
+         VilCretas`Private`AlCompLimitSP[
+            Pattern[VilCretas`Private`AlLista, 
+             Blank[List]]] := If[
+            VectorQ[VilCretas`Private`AlLista], 
+            If[MemberQ[VilCretas`Private`AlLista, Null] == False, 
+             If[Length[VilCretas`Private`AlLista] == 2, 
+              If[
+               Or[
+                And[
+                 Or[ToString[
+                    VilCretas`Private`FuncionVariable[{
+                    Part[VilCretas`Private`AlList, 1]}]] == "{}", ToString[
+                    VilCretas`Private`FuncionVariable[{
+                    Part[VilCretas`Private`AlList, 1]}]] == "{n}"], 
+                 Or[ToString[
+                    VilCretas`Private`FuncionVariable[{
+                    Part[VilCretas`Private`AlList, 2]}]] == "{}", ToString[
+                    VilCretas`Private`FuncionVariable[{
+                    Part[VilCretas`Private`AlList, 2]}]] == "{n}"]], 
+                NumericQ[
+                 Limit[Evaluate[
+                    First[VilCretas`Private`AlLista]]/Evaluate[
+                   Last[VilCretas`Private`AlLista]], $CellContext`n -> 
+                  Infinity]], ToString[
+                  Limit[Evaluate[
+                    First[VilCretas`Private`AlLista]]/Evaluate[
+                    Last[VilCretas`Private`AlLista]], $CellContext`n -> 
+                   Infinity]] == ToString[Infinity]], VilCretas`Private`Alf5[
+                  Pattern[VilCretas`Private`Aln, 
+                   Blank[]]] := ReplaceAll[
+                  Together[
+                   Expand[
+                    First[VilCretas`Private`AlLista]]], $CellContext`n -> 
+                  VilCretas`Private`Aln]; VilCretas`Private`Alf6[
+                  Pattern[VilCretas`Private`Aln, 
+                   Blank[]]] := ReplaceAll[
+                  Together[
+                   Expand[
+                    Last[VilCretas`Private`AlLista]]], $CellContext`n -> 
+                  VilCretas`Private`Aln]; 
+               VilCretas`Private`AlVl35 = 
+                Limit[VilCretas`Private`Alf5[VilCretas`Private`n]/
+                  VilCretas`Private`Alf6[VilCretas`Private`n], 
+                  VilCretas`Private`n -> Infinity]; If[
+                 Or[
+                  NumericQ[VilCretas`Private`AlVl35], 
+                  ToString[VilCretas`Private`AlVl35] == ToString[Infinity]], 
+                 If[
+                  NumericQ[VilCretas`Private`AlVl35], 
+                  If[VilCretas`Private`AlVl35 < 0, "NaD", 
+                   If[VilCretas`Private`AlVl35 > 0, 
+                    Print[VilCretas`Private`AlVl35, "\[RightArrow] ", 
+                    VilCretas`Private`Alf5[$CellContext`n], 
+                    "=\[CapitalTheta](", 
+                    VilCretas`Private`Alf6[$CellContext`n], ")", 
+                    ", Notaci\[OAcute]n theta"], 
+                    If[VilCretas`Private`AlVl35 == 0, 
+                    Print[VilCretas`Private`AlVl35, "\[RightArrow] ", 
+                    VilCretas`Private`Alf5[$CellContext`n], 
+                    "=\[CapitalOmicron](", 
+                    VilCretas`Private`Alf6[$CellContext`n], ")", 
+                    ", Notaci\[OAcute]n O grande"]]]], 
+                  Print[VilCretas`Private`AlVl35, "\[RightArrow] ", 
+                   VilCretas`Private`Alf5[$CellContext`n], 
+                   "=\[CapitalOmega](", 
+                   VilCretas`Private`Alf6[$CellContext`n], ")", 
+                   ", Notaci\[OAcute]n omega"]], "NaD"]]]]]; 
+         VilCretas`Private`AlCompLimitCP[
+            Pattern[VilCretas`Private`AlLista, 
+             Blank[List]]] := If[
+            VectorQ[VilCretas`Private`AlLista], 
+            If[MemberQ[VilCretas`Private`AlLista, Null] == False, 
+             If[Length[VilCretas`Private`AlLista] == 2, 
+              If[
+               Or[
+                And[
+                 Or[ToString[
+                    VilCretas`Private`FuncionVariable[{
+                    Part[VilCretas`Private`AlList, 1]}]] == "{}", ToString[
+                    VilCretas`Private`FuncionVariable[{
+                    Part[VilCretas`Private`AlList, 1]}]] == "{j}", ToString[
+                    VilCretas`Private`FuncionVariable[{
+                    Part[VilCretas`Private`AlList, 1]}]] == "{n}", ToString[
+                    VilCretas`Private`FuncionVariable[{
+                    Part[VilCretas`Private`AlList, 1]}]] == "{j, n}"], 
+                 Or[ToString[
+                    VilCretas`Private`FuncionVariable[{
+                    Part[VilCretas`Private`AlList, 2]}]] == "{}", ToString[
+                    VilCretas`Private`FuncionVariable[{
+                    Part[VilCretas`Private`AlList, 2]}]] == "{j}", ToString[
+                    VilCretas`Private`FuncionVariable[{
+                    Part[VilCretas`Private`AlList, 2]}]] == "{n}", ToString[
+                    VilCretas`Private`FuncionVariable[{
+                    Part[VilCretas`Private`AlList, 2]}]] == "{j, n}"]], 
+                NumericQ[
+                 Limit[
+                  ReplaceAll[Evaluate[
+                    First[VilCretas`Private`AlLista]]/Evaluate[
+                    Last[VilCretas`Private`AlLista]], $CellContext`j -> 
+                   1], $CellContext`n -> Infinity]], ToString[
+                  Limit[
+                   ReplaceAll[Evaluate[
+                    First[VilCretas`Private`AlLista]]/Evaluate[
+                    Last[VilCretas`Private`AlLista]], $CellContext`j -> 
+                    1], $CellContext`n -> Infinity]] == ToString[Infinity]], 
+               Print[
+                Manipulate[
+                VilCretas`Private`AlVl36 = 
+                  Limit[VilCretas`Private`Alf7[
+                    VilCretas`Private`n, VilCretas`Private`Alj2]/
+                    VilCretas`Private`Alf8[
+                    VilCretas`Private`n, VilCretas`Private`Alj2], 
+                    VilCretas`Private`n -> Infinity]; If[
+                   Or[
+                    NumericQ[VilCretas`Private`AlVl36], 
+                    ToString[VilCretas`Private`AlVl36] == ToString[Infinity]], 
+                   If[
+                    NumericQ[VilCretas`Private`AlVl36], 
+                    If[VilCretas`Private`AlVl36 < 0, "NaD", 
+                    If[VilCretas`Private`AlVl36 > 0, 
+                    Row[{VilCretas`Private`AlVl36, "\[RightArrow] ", 
+                    
+                    VilCretas`Private`Alf7[$CellContext`n, 
+                    VilCretas`Private`Alj2], "=\[CapitalTheta](", 
+                    
+                    VilCretas`Private`Alf8[$CellContext`n, 
+                    VilCretas`Private`Alj2], ")", 
+                    ", Notaci\[OAcute]n theta"}], 
+                    If[VilCretas`Private`AlVl36 == 0, 
+                    Row[{VilCretas`Private`AlVl36, "\[RightArrow] ", 
+                    
+                    VilCretas`Private`Alf7[$CellContext`n, 
+                    VilCretas`Private`Alj2], "=\[CapitalOmicron](", 
+                    
+                    VilCretas`Private`Alf8[$CellContext`n, 
+                    VilCretas`Private`Alj2], ")", 
+                    ", Notaci\[OAcute]n O grande"}]]]], 
+                    Row[{VilCretas`Private`AlVl36, "\[RightArrow] ", 
+                    
+                    VilCretas`Private`Alf7[$CellContext`n, 
+                    VilCretas`Private`Alj2], "=\[CapitalOmega](", 
+                    
+                    VilCretas`Private`Alf8[$CellContext`n, 
+                    VilCretas`Private`Alj2], ")", 
+                    ", Notaci\[OAcute]n omega"}]], "NaD"], {{
+                  VilCretas`Private`Alj2, 1, "j"}, 1, 
+                  OptionValue[VilCretas`jvalor], 1, Appearance -> "Open"}, 
+                 Alignment -> Center, 
+                 Initialization :> (VilCretas`Private`Alf7[
+                    Pattern[VilCretas`Private`Aln, 
+                    Blank[]], 
+                    Pattern[VilCretas`Private`Alj, 
+                    Blank[]]] := ReplaceAll[
+                    FullSimplify[
+                    Together[
+                    Expand[
+                    First[VilCretas`Private`AlLista]]]], {$CellContext`n -> 
+                    VilCretas`Private`Aln, $CellContext`j -> 
+                    VilCretas`Private`Alj}]; VilCretas`Private`Alf8[
+                    Pattern[VilCretas`Private`Aln, 
+                    Blank[]], 
+                    Pattern[VilCretas`Private`Alj, 
+                    Blank[]]] := ReplaceAll[
+                    FullSimplify[
+                    Together[
+                    Expand[
+                    Last[VilCretas`Private`AlLista]]]], {$CellContext`n -> 
+                    VilCretas`Private`Aln, $CellContext`j -> 
+                    VilCretas`Private`Alj}])]]]]]]; If[
+           IntegerQ[
+            OptionValue[VilCretas`jvalor]], 
+           If[OptionValue[VilCretas`jvalor] >= 10, 
+            If[
+             And[ToString[VilCretas`Private`AlList] != ToString[{}], 
+              VectorQ[VilCretas`Private`AlList], 
+              MemberQ[VilCretas`Private`AlList, Null] == False, 
+              Length[VilCretas`Private`AlList] == 2], 
+             If[
+              Or[
+               StringContainsQ[
+                ToString[
+                 Part[VilCretas`Private`AlList, 1]], "j"], 
+               StringContainsQ[
+                ToString[
+                 Part[VilCretas`Private`AlList, 2]], "j"]], 
+              VilCretas`Private`AlCompLimitCP[VilCretas`Private`AlList], 
+              VilCretas`Private`AlCompLimitSP[
+              VilCretas`Private`AlList]]]]]]}], "SubValues" -> None, 
+    "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
+    "Options" -> {VilCretas`jvalor -> 1000}, "Attributes" -> {Protected}, 
+    "FullName" -> "VilCretas`CompLimit"|>, False]]], "Output",
+ CellChangeTimes->{3.9519396315903263`*^9},
+ CellLabel->"Out[17]=",ExpressionUUID->"5ba138bf-069c-2641-bbd0-1841f9f97942"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CompLimit", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       RowBox[{"15", 
+        SuperscriptBox["n", "4"]}], "+", 
+       RowBox[{"17", 
+        SuperscriptBox["n", "3"]}], "+", 
+       RowBox[{"20", 
+        SuperscriptBox["n", "2"]}], "-", 
+       RowBox[{"4", "n"}], "+", "16"}], 
+      RowBox[{
+       RowBox[{"6", 
+        SuperscriptBox["n", "4"]}], "+", 
+       RowBox[{"13", 
+        SuperscriptBox["n", "3"]}], "+", 
+       RowBox[{"19", 
+        SuperscriptBox["n", "2"]}], "+", 
+       RowBox[{"17", "n"}], "+", "16"}]], ",", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"15", 
+        SuperscriptBox["n", "j"]}], "+", 
+       RowBox[{"10", 
+        SuperscriptBox["n", "2"]}], "+", 
+       RowBox[{"3", "n"}], "+", "19"}], 
+      RowBox[{
+       RowBox[{"8", 
+        SuperscriptBox["n", "4"]}], "-", 
+       RowBox[{"14", 
+        SuperscriptBox["n", "3"]}], "+", 
+       RowBox[{"19", 
+        SuperscriptBox["n", "2"]}], "-", 
+       RowBox[{"9", "n"}], "+", "11"}]]}], "}"}], ",", " ", 
+   RowBox[{"jvalor", "->", "100"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9519396475103474`*^9, 3.951939770931978*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"fdb22576-7361-b941-88d4-b02aeab606ad"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{VilCretas`Private`Alj2$$ = 5, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"sin t\[IAcute]tulo\"", Typeset`specs$$ = {{{
+       Hold[VilCretas`Private`Alj2$$], 1, "j"}, 1, 100, 1, ControlType -> 
+      Manipulator}}, Typeset`size$$ = {
+    422.2287841796875, {63.43396301269531, 20.556630859374998`}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {VilCretas`Private`Alj2$$ = 1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> (
+       VilCretas`Private`AlVl36 = 
+        Limit[VilCretas`Private`Alf7[
+           VilCretas`Private`n, VilCretas`Private`Alj2$$]/
+          VilCretas`Private`Alf8[
+          VilCretas`Private`n, VilCretas`Private`Alj2$$], VilCretas`Private`n -> 
+          Infinity]; If[
+         Or[
+          NumericQ[VilCretas`Private`AlVl36], 
+          ToString[VilCretas`Private`AlVl36] == ToString[Infinity]], 
+         If[
+          NumericQ[VilCretas`Private`AlVl36], 
+          If[VilCretas`Private`AlVl36 < 0, "NaD", 
+           If[VilCretas`Private`AlVl36 > 0, 
+            Row[{VilCretas`Private`AlVl36, "\[RightArrow] ", 
+              
+              VilCretas`Private`Alf7[$CellContext`n, 
+               VilCretas`Private`Alj2$$], "=\[CapitalTheta](", 
+              
+              VilCretas`Private`Alf8[$CellContext`n, 
+               VilCretas`Private`Alj2$$], ")", ", Notaci\[OAcute]n theta"}], 
+            If[VilCretas`Private`AlVl36 == 0, 
+             Row[{VilCretas`Private`AlVl36, "\[RightArrow] ", 
+               
+               VilCretas`Private`Alf7[$CellContext`n, 
+                VilCretas`Private`Alj2$$], "=\[CapitalOmicron](", 
+               
+               VilCretas`Private`Alf8[$CellContext`n, 
+                VilCretas`Private`Alj2$$], ")", 
+               ", Notaci\[OAcute]n O grande"}]]]], 
+          Row[{VilCretas`Private`AlVl36, "\[RightArrow] ", 
+            VilCretas`Private`Alf7[$CellContext`n, VilCretas`Private`Alj2$$], 
+            "=\[CapitalOmega](", 
+            VilCretas`Private`Alf8[$CellContext`n, VilCretas`Private`Alj2$$], 
+            ")", ", Notaci\[OAcute]n omega"}]], "NaD"]), 
+      "Specifications" :> {{{VilCretas`Private`Alj2$$, 1, "j"}, 1, 100, 1, 
+         Appearance -> "Open"}}, "Options" :> {Alignment -> Center}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{1024., {74.193115234375, 80.806884765625}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>((VilCretas`Private`Alf7[
+         Pattern[VilCretas`Private`Aln$, 
+          Blank[]], 
+         Pattern[VilCretas`Private`Alj$, 
+          Blank[]]] := ReplaceAll[
+         FullSimplify[
+          Together[
+           Expand[
+            
+            First[{(16 + 17 $CellContext`n + 19 $CellContext`n^2 + 
+                13 $CellContext`n^3 + 6 $CellContext`n^4)^(-1) (16 - 
+               4 $CellContext`n + 20 $CellContext`n^2 + 17 $CellContext`n^3 + 
+               15 $CellContext`n^4), (11 - 9 $CellContext`n + 
+                19 $CellContext`n^2 - 14 $CellContext`n^3 + 
+                8 $CellContext`n^4)^(-1) (19 + 3 $CellContext`n + 
+               10 $CellContext`n^2 + 
+               15 $CellContext`n^$CellContext`j)}]]]], {$CellContext`n -> 
+          VilCretas`Private`Aln$, $CellContext`j -> VilCretas`Private`Alj$}]; 
+      VilCretas`Private`Alf8[
+         Pattern[VilCretas`Private`Aln$, 
+          Blank[]], 
+         Pattern[VilCretas`Private`Alj$, 
+          Blank[]]] := ReplaceAll[
+         FullSimplify[
+          Together[
+           Expand[
+            
+            Last[{(16 + 17 $CellContext`n + 19 $CellContext`n^2 + 
+                13 $CellContext`n^3 + 6 $CellContext`n^4)^(-1) (16 - 
+               4 $CellContext`n + 20 $CellContext`n^2 + 17 $CellContext`n^3 + 
+               15 $CellContext`n^4), (11 - 9 $CellContext`n + 
+                19 $CellContext`n^2 - 14 $CellContext`n^3 + 
+                8 $CellContext`n^4)^(-1) (19 + 3 $CellContext`n + 
+               10 $CellContext`n^2 + 
+               15 $CellContext`n^$CellContext`j)}]]]], {$CellContext`n -> 
+          VilCretas`Private`Aln$, $CellContext`j -> VilCretas`Private`Alj$}]); 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Print",
+ CellChangeTimes->{3.9519397749799175`*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[18]:=",ExpressionUUID->"f917d061-3fc9-b448-b1c3-6800bb91b02e"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Programa1", "[", 
+    RowBox[{"n_", ",", 
+     RowBox[{"valor_", ":", 
+      RowBox[{
+      "60", "/", "5846006549323611671624303190352640062064535163787"}]}]}], 
+    "]"}], ":=", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"n", "==", "6"}], ",", "valor", ",", 
+     RowBox[{"Programa1", "[", 
+      RowBox[{
+       RowBox[{"n", "-", "1"}], ",", 
+       RowBox[{"valor", "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"3", "+", 
+            RowBox[{"19", "*", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "3"}], "+", "n"}], ")"}]}]}], ")"}], "/", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"8", "^", 
+              RowBox[{"(", 
+               RowBox[{"18", "*", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "3"}], "+", "n"}], ")"}]}], ")"}]}]}], "+", 
+            RowBox[{"13", "^", 
+             RowBox[{"(", 
+              RowBox[{"9", "*", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "3"}], "+", "n"}], ")"}]}], ")"}]}], "-", 
+            RowBox[{"20", "^", 
+             RowBox[{"(", 
+              RowBox[{"7", "*", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "3"}], "+", "n"}], ")"}]}], ")"}]}]}], ")"}]}], 
+         ")"}]}]}], "]"}]}], "]"}]}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Programa2", "[", "n_", "]"}], ":=", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"n", "==", "6"}], ",", 
+     RowBox[{"60", "/", "5846006549323611671624303190352640062064535163787"}],
+      ",", 
+     RowBox[{
+      RowBox[{"Programa2", "[", 
+       RowBox[{"n", "-", "1"}], "]"}], "*", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"3", "+", 
+          RowBox[{"19", "*", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "3"}], "+", "n"}], ")"}]}]}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"8", "^", 
+            RowBox[{"(", 
+             RowBox[{"18", "*", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "3"}], "+", "n"}], ")"}]}], ")"}]}]}], "+", 
+          RowBox[{"13", "^", 
+           RowBox[{"(", 
+            RowBox[{"9", "*", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "3"}], "+", "n"}], ")"}]}], ")"}]}], "-", 
+          RowBox[{"20", "^", 
+           RowBox[{"(", 
+            RowBox[{"7", "*", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "3"}], "+", "n"}], ")"}]}], ")"}]}]}], ")"}]}], 
+       ")"}]}]}], "]"}]}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Programa3", "[", "n_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"i", ",", 
+       RowBox[{"valor", "=", "1"}]}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "3"}], ",", 
+        RowBox[{"i", "<=", 
+         RowBox[{"n", "-", "3"}]}], ",", 
+        RowBox[{
+         RowBox[{"valor", "=", 
+          RowBox[{"valor", "*", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"3", "+", 
+              RowBox[{"19", "*", "i"}]}], ")"}], "/", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"8", "^", 
+               RowBox[{"(", 
+                RowBox[{"18", "*", "i"}], ")"}]}], "-", 
+              RowBox[{"13", "^", 
+               RowBox[{"(", 
+                RowBox[{"9", "*", "i"}], ")"}]}], "+", 
+              RowBox[{"20", "^", 
+               RowBox[{"(", 
+                RowBox[{"7", "*", "i"}], ")"}]}]}], ")"}]}]}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"i", "++"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+      "valor"}]}], "]"}]}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Programa4", "[", "n_", "]"}], ":=", 
+  RowBox[{"Product", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"3", "+", 
+       RowBox[{"19", "*", "i"}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"8", "^", 
+        RowBox[{"(", 
+         RowBox[{"18", "*", "i"}], ")"}]}], "-", 
+       RowBox[{"13", "^", 
+        RowBox[{"(", 
+         RowBox[{"9", "*", "i"}], ")"}]}], "+", 
+       RowBox[{"20", "^", 
+        RowBox[{"(", 
+         RowBox[{"7", "*", "i"}], ")"}]}]}], ")"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "3", ",", 
+      RowBox[{"n", "-", "3"}]}], "}"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.951940183547838*^9, 3.9519401860440807`*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"c99d73c2-14b5-0740-b919-6b8f8cb0b355"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Programa1", "[", "i", "]"}], "==", 
+    RowBox[{"Programa2", "[", "i", "]"}], "==", 
+    RowBox[{"Programa3", "[", "i", "]"}], "==", 
+    RowBox[{"Programa4", "[", "i", "]"}]}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "3", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9519401907373714`*^9, 3.9519402206985435`*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"66244fc3-45cb-4940-a17c-d98f16784492"],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.9519402573166466`*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"59f87049-6411-ad4a-b0da-9b18bedc661f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "PruebaADAGrafica"}]], "Input",
+ CellChangeTimes->{{3.9519402500182514`*^9, 3.9519402545221043`*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"2cc941e8-6ada-d64f-bbf5-f60856e38a01"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = False, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"Analiza gr\[AAcute]ficamente la eficiencia de dos o \
+m\[AAcute]s algoritmos que resuelven el mismo problema, en t\[EAcute]rminos \
+de los tiempos de salida registrados por el software Mathematica. Sintaxis: \
+PruebaADAGrafica[{Metodo1, ..., MetodoN}, k, inicio, incremento], o bien, \
+PruebaADAGrafica[{Metodo1, ..., MetodoN}, k, inicio, incremento, \
+lista->True]. \[OpenCurlyDoubleQuote]lista->True\[CloseCurlyDoubleQuote] \
+indica que los m\[EAcute]todos reciben como par\[AAcute]metros una lista \
+(internamente las listas son generadas de forma pseudoaleatoria).\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[
+           TagBox[GridBox[{
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"Definitions\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{"PruebaADAGrafica", "[", 
+                    
+                    RowBox[{
+                    "VilCretas`Private`AlFunciones_List", ",", 
+                    "VilCretas`Private`AlPruebas_", ",", 
+                    "VilCretas`Private`AlInicio_", ",", 
+                    RowBox[{"VilCretas`Private`AlIncremento_", ":", "1"}], 
+                    ",", 
+                    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`PruebaADA", ",", 
+                    "VilCretas`Private`PruebaADAL"}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`PruebaADA", "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion_List", ",", 
+                    "VilCretas`Private`AlPrueba_", ",", 
+                    "VilCretas`Private`AlIni_", ",", 
+                    "VilCretas`Private`AlIncre_"}], "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`ListaPADA", "=", 
+                    RowBox[{"{", "}"}]}], ",", 
+                    RowBox[{"VilCretas`Private`PADABandera", "=", "True"}], 
+                    ",", "VilCretas`Private`AliPADA", ",", 
+                    "VilCretas`Private`Ali24"}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"NumericQ", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "[", "VilCretas`Private`AlIni", "]"}], "]"}], ",", 
+                    RowBox[{"For", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AliPADA", "=", "1"}], ",", 
+                    RowBox[{"VilCretas`Private`AliPADA", "\[LessEqual]", 
+                    
+                    RowBox[{"Length", "[", "VilCretas`Private`AlFuncion", 
+                    "]"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`ListaPADA", "=", 
+                    RowBox[{"Append", "[", 
+                    RowBox[{"VilCretas`Private`ListaPADA", ",", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "VilCretas`Private`AliPADA", 
+                    "\[RightDoubleBracket]"}], "[", "VilCretas`Private`AlIni",
+                     "]"}]}], "]"}]}], ";", 
+                    RowBox[{"VilCretas`Private`AliPADA", "++"}]}]}], "]"}], 
+                    ",", 
+                    RowBox[{"For", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AliPADA", "=", "1"}], ",", 
+                    RowBox[{"VilCretas`Private`AliPADA", "\[LessEqual]", 
+                    
+                    RowBox[{"Length", "[", "VilCretas`Private`AlFuncion", 
+                    "]"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"!", 
+                    RowBox[{"VectorQ", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "VilCretas`Private`AliPADA", 
+                    "\[RightDoubleBracket]"}], "[", "VilCretas`Private`AlIni",
+                     "]"}], "]"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`PADABandera", "=", "False"}], 
+                    ";", 
+                    RowBox[{"Break", "[", "]"}]}]}], "]"}], ";", 
+                    RowBox[{"VilCretas`Private`AliPADA", "++"}]}]}], "]"}]}], 
+                    "]"}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"VectorQ", "[", 
+                    RowBox[{"VilCretas`Private`ListaPADA", ",", "NumericQ"}], 
+                    "]"}], "||", 
+                    
+                    RowBox[{"VilCretas`Private`PADABandera", "\[Equal]", 
+                    "True"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"ClearSystemCache", "[", "]"}], ";", 
+                    RowBox[{"VilCretas`Private`ListaPADA", "=", 
+                    RowBox[{"{", "}"}]}], ";", 
+                    RowBox[{"For", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AliPADA", "=", "1"}], ",", 
+                    RowBox[{"VilCretas`Private`AliPADA", "\[LessEqual]", 
+                    
+                    RowBox[{"Length", "[", "VilCretas`Private`AlFuncion", 
+                    "]"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`ListaPADA", "=", 
+                    RowBox[{"Append", "[", 
+                    RowBox[{"VilCretas`Private`ListaPADA", ",", 
+                    RowBox[{"Table", "[", 
+                    RowBox[{
+                    RowBox[{"First", "[", 
+                    RowBox[{"RepeatedTiming", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "VilCretas`Private`AliPADA", 
+                    "\[RightDoubleBracket]"}], "[", "VilCretas`Private`Ali24",
+                     "]"}], "]"}], "]"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`Ali24", ",", 
+                    "VilCretas`Private`AlIni", ",", 
+                    "VilCretas`Private`AlPrueba", ",", 
+                    "VilCretas`Private`AlIncre"}], "}"}]}], "]"}]}], "]"}]}], 
+                    ";", 
+                    RowBox[{"VilCretas`Private`AliPADA", "++"}]}]}], "]"}], 
+                    ";", 
+                    RowBox[{"ListLinePlot", "[", 
+                    RowBox[{"VilCretas`Private`ListaPADA", ",", 
+                    RowBox[{"PlotLabels", "\[Rule]", 
+                    
+                    RowBox[{"ToString", "/@", 
+                    "VilCretas`Private`AlFuncion"}]}]}], "]"}]}]}], "]"}]}]}],
+                     "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`PruebaADAL", "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion_List", ",", 
+                    "VilCretas`Private`AlPrueba_", ",", 
+                    "VilCretas`Private`AlIni_", ",", 
+                    "VilCretas`Private`AlIncre_"}], "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"VilCretas`Private`AlRandomEnteros", ",", 
+                    RowBox[{"VilCretas`Private`ListaPADA", "=", 
+                    RowBox[{"{", "}"}]}], ",", 
+                    RowBox[{"VilCretas`Private`PADABandera", "=", "True"}], 
+                    ",", "VilCretas`Private`AliPADA", ",", 
+                    "VilCretas`Private`Ali24"}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlRandomEnteros", "[", 
+                    "VilCretas`Private`Aln_", "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", "VilCretas`Private`AlList14", "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AlList14", "=", 
+                    RowBox[{"RandomInteger", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", "VilCretas`Private`Aln"}], "}"}], ",", 
+                    "VilCretas`Private`Aln"}], "]"}]}], ";", 
+                    "VilCretas`Private`AlList14"}]}], "]"}]}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"NumericQ", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlRandomEnteros", "[", 
+                    "VilCretas`Private`AlIni", "]"}], "]"}], "]"}], ",", 
+                    RowBox[{"For", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AliPADA", "=", "1"}], ",", 
+                    RowBox[{"VilCretas`Private`AliPADA", "\[LessEqual]", 
+                    
+                    RowBox[{"Length", "[", "VilCretas`Private`AlFuncion", 
+                    "]"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`ListaPADA", "=", 
+                    RowBox[{"Append", "[", 
+                    RowBox[{"VilCretas`Private`ListaPADA", ",", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "VilCretas`Private`AliPADA", 
+                    "\[RightDoubleBracket]"}], "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlRandomEnteros", "[", 
+                    "VilCretas`Private`AlIni", "]"}], "]"}]}], "]"}]}], ";", 
+                    RowBox[{"VilCretas`Private`AliPADA", "++"}]}]}], "]"}], 
+                    ",", 
+                    RowBox[{"For", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AliPADA", "=", "1"}], ",", 
+                    RowBox[{"VilCretas`Private`AliPADA", "\[LessEqual]", 
+                    
+                    RowBox[{"Length", "[", "VilCretas`Private`AlFuncion", 
+                    "]"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"!", 
+                    RowBox[{"VectorQ", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "VilCretas`Private`AliPADA", 
+                    "\[RightDoubleBracket]"}], "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlRandomEnteros", "[", 
+                    "VilCretas`Private`AlIni", "]"}], "]"}], "]"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`PADABandera", "=", "False"}], 
+                    ";", 
+                    RowBox[{"Break", "[", "]"}]}]}], "]"}], ";", 
+                    RowBox[{"VilCretas`Private`AliPADA", "++"}]}]}], "]"}]}], 
+                    "]"}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"VectorQ", "[", 
+                    RowBox[{"VilCretas`Private`ListaPADA", ",", "NumericQ"}], 
+                    "]"}], "||", 
+                    
+                    RowBox[{"VilCretas`Private`PADABandera", "\[Equal]", 
+                    "True"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"ClearSystemCache", "[", "]"}], ";", 
+                    RowBox[{"VilCretas`Private`ListaPADA", "=", 
+                    RowBox[{"{", "}"}]}], ";", 
+                    RowBox[{"For", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AliPADA", "=", "1"}], ",", 
+                    RowBox[{"VilCretas`Private`AliPADA", "\[LessEqual]", 
+                    
+                    RowBox[{"Length", "[", "VilCretas`Private`AlFuncion", 
+                    "]"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`ListaPADA", "=", 
+                    RowBox[{"Append", "[", 
+                    RowBox[{"VilCretas`Private`ListaPADA", ",", 
+                    RowBox[{"Table", "[", 
+                    RowBox[{
+                    RowBox[{"First", "[", 
+                    RowBox[{"RepeatedTiming", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "VilCretas`Private`AliPADA", 
+                    "\[RightDoubleBracket]"}], "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlRandomEnteros", "[", 
+                    "VilCretas`Private`Ali24", "]"}], "]"}], "]"}], "]"}], 
+                    ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`Ali24", ",", 
+                    "VilCretas`Private`AlIni", ",", 
+                    "VilCretas`Private`AlPrueba", ",", 
+                    "VilCretas`Private`AlIncre"}], "}"}]}], "]"}]}], "]"}]}], 
+                    ";", 
+                    RowBox[{"VilCretas`Private`AliPADA", "++"}]}]}], "]"}], 
+                    ";", 
+                    RowBox[{"ListLinePlot", "[", 
+                    RowBox[{"VilCretas`Private`ListaPADA", ",", 
+                    RowBox[{"PlotLabels", "\[Rule]", 
+                    
+                    RowBox[{"ToString", "/@", 
+                    "VilCretas`Private`AlFuncion"}]}]}], "]"}]}]}], "]"}]}]}],
+                     "]"}]}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VectorQ", "[", "VilCretas`Private`AlFunciones", 
+                    "]"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"MemberQ", "[", 
+                    RowBox[{"VilCretas`Private`AlFunciones", ",", "Null"}], 
+                    "]"}], "\[Equal]", "False"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"Length", "[", "VilCretas`Private`AlFunciones", 
+                    "]"}], "\[GreaterEqual]", "2"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"IntegerQ", "[", "VilCretas`Private`AlPruebas", 
+                    "]"}], "&&", 
+                    
+                    RowBox[{"VilCretas`Private`AlPruebas", "\[GreaterEqual]", 
+                    "1"}]}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"IntegerQ", "[", "VilCretas`Private`AlInicio", 
+                    "]"}], "&&", 
+                    
+                    RowBox[{"VilCretas`Private`AlInicio", "\[GreaterEqual]", 
+                    "1"}]}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"IntegerQ", "[", "VilCretas`Private`AlIncremento",
+                     "]"}], "&&", 
+                    
+                    RowBox[{"VilCretas`Private`AlIncremento", 
+                    "\[GreaterEqual]", "1"}]}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"BooleanQ", "[", 
+                    RowBox[{"OptionValue", "[", "lista", "]"}], "]"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"OptionValue", "[", "lista", "]"}], ",", 
+                    RowBox[{"VilCretas`Private`PruebaADAL", "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlFunciones", ",", 
+                    "VilCretas`Private`AlPruebas", ",", 
+                    "VilCretas`Private`AlInicio", ",", 
+                    "VilCretas`Private`AlIncremento"}], "]"}], ",", 
+                    RowBox[{"VilCretas`Private`PruebaADA", "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlFunciones", ",", 
+                    "VilCretas`Private`AlPruebas", ",", 
+                    "VilCretas`Private`AlInicio", ",", 
+                    "VilCretas`Private`AlIncremento"}], "]"}]}], "]"}]}], 
+                    "]"}]}], "]"}]}], "]"}]}], "]"}]}], "]"}]}], "]"}]}], 
+                    "]"}]}]}], "]"}]}]}, {" "}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Column"],
+           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Options\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Options\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Options", "Tooltip"]& ], 
+                   RowBox[{"lista", "\[Rule]", "False"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Attributes\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Attributes\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Attributes", "Tooltip"]& ], 
+                   RowBox[{"{", "Protected", "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"VilCretas`PruebaADAGrafica\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"Analiza gr\[AAcute]ficamente la eficiencia de dos o \
+m\[AAcute]s algoritmos que resuelven el mismo problema, en t\[EAcute]rminos \
+de los tiempos de salida registrados por el software Mathematica. Sintaxis: \
+PruebaADAGrafica[{Metodo1, ..., MetodoN}, k, inicio, incremento], o bien, \
+PruebaADAGrafica[{Metodo1, ..., MetodoN}, k, inicio, incremento, \
+lista->True]. \[OpenCurlyDoubleQuote]lista->True\[CloseCurlyDoubleQuote] \
+indica que los m\[EAcute]todos reciben como par\[AAcute]metros una lista \
+(internamente las listas son generadas de forma pseudoaleatoria).\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{12.5, {4., 8.5}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{12.5, {4., 8.5}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "Analiza gr\[AAcute]ficamente la eficiencia de dos o m\[AAcute]s \
+algoritmos que resuelven el mismo problema, en t\[EAcute]rminos de los \
+tiempos de salida registrados por el software Mathematica. Sintaxis: \
+PruebaADAGrafica[{Metodo1, ..., MetodoN}, k, inicio, incremento], o bien, \
+PruebaADAGrafica[{Metodo1, ..., MetodoN}, k, inicio, incremento, \
+lista->True]. \[OpenCurlyDoubleQuote]lista->True\[CloseCurlyDoubleQuote] \
+indica que los m\[EAcute]todos reciben como par\[AAcute]metros una lista \
+(internamente las listas son generadas de forma pseudoaleatoria).", 
+    "Documentation" -> None, "OwnValues" -> None, "UpValues" -> None, 
+    "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, VilCretas`PruebaADAGrafica, {VilCretas`PruebaADAGrafica[
+         Pattern[VilCretas`Private`AlFunciones, 
+          Blank[List]], 
+         Pattern[VilCretas`Private`AlPruebas, 
+          Blank[]], 
+         Pattern[VilCretas`Private`AlInicio, 
+          Blank[]], 
+         Optional[
+          Pattern[VilCretas`Private`AlIncremento, 
+           Blank[]], 1], 
+         OptionsPattern[]] :> 
+       Module[{VilCretas`Private`PruebaADA, VilCretas`Private`PruebaADAL}, 
+         VilCretas`Private`PruebaADA[
+            Pattern[VilCretas`Private`AlFuncion, 
+             Blank[List]], 
+            Pattern[VilCretas`Private`AlPrueba, 
+             Blank[]], 
+            Pattern[VilCretas`Private`AlIni, 
+             Blank[]], 
+            Pattern[VilCretas`Private`AlIncre, 
+             Blank[]]] := 
+          Module[{VilCretas`Private`ListaPADA = {}, 
+             VilCretas`Private`PADABandera = True, VilCretas`Private`AliPADA, 
+             VilCretas`Private`Ali24}, If[
+              NumericQ[
+               Part[VilCretas`Private`AlFuncion, 1][VilCretas`Private`AlIni]], 
+              For[
+              VilCretas`Private`AliPADA = 1, VilCretas`Private`AliPADA <= 
+               Length[VilCretas`Private`AlFuncion], 
+               VilCretas`Private`ListaPADA = 
+                Append[VilCretas`Private`ListaPADA, 
+                  Part[
+                  VilCretas`Private`AlFuncion, VilCretas`Private`AliPADA][
+                  VilCretas`Private`AlIni]]; 
+               Increment[VilCretas`Private`AliPADA]], 
+              For[
+              VilCretas`Private`AliPADA = 1, VilCretas`Private`AliPADA <= 
+               Length[VilCretas`Private`AlFuncion], If[
+                 Not[
+                  VectorQ[
+                   Part[
+                   VilCretas`Private`AlFuncion, VilCretas`Private`AliPADA][
+                   VilCretas`Private`AlIni]]], 
+                 VilCretas`Private`PADABandera = False; Break[]]; 
+               Increment[VilCretas`Private`AliPADA]]]; If[
+              Or[
+               VectorQ[VilCretas`Private`ListaPADA, NumericQ], 
+               VilCretas`Private`PADABandera == True], ClearSystemCache[]; 
+              VilCretas`Private`ListaPADA = {}; 
+              For[VilCretas`Private`AliPADA = 1, VilCretas`Private`AliPADA <= 
+                Length[VilCretas`Private`AlFuncion], 
+                VilCretas`Private`ListaPADA = 
+                 Append[VilCretas`Private`ListaPADA, 
+                   Table[
+                    First[
+                    RepeatedTiming[
+                    Part[
+                    VilCretas`Private`AlFuncion, VilCretas`Private`AliPADA][
+                    VilCretas`Private`Ali24]]], {
+                    VilCretas`Private`Ali24, VilCretas`Private`AlIni, 
+                    VilCretas`Private`AlPrueba, VilCretas`Private`AlIncre}]]; 
+                Increment[VilCretas`Private`AliPADA]]; 
+              ListLinePlot[
+               VilCretas`Private`ListaPADA, PlotLabels -> 
+                Map[ToString, VilCretas`Private`AlFuncion]]]]; 
+         VilCretas`Private`PruebaADAL[
+            Pattern[VilCretas`Private`AlFuncion, 
+             Blank[List]], 
+            Pattern[VilCretas`Private`AlPrueba, 
+             Blank[]], 
+            Pattern[VilCretas`Private`AlIni, 
+             Blank[]], 
+            Pattern[VilCretas`Private`AlIncre, 
+             Blank[]]] := 
+          Module[{VilCretas`Private`AlRandomEnteros, 
+             VilCretas`Private`ListaPADA = {}, VilCretas`Private`PADABandera = 
+             True, VilCretas`Private`AliPADA, VilCretas`Private`Ali24}, 
+            VilCretas`Private`AlRandomEnteros[
+               Pattern[VilCretas`Private`Aln, 
+                Blank[]]] := 
+             Module[{VilCretas`Private`AlList14}, 
+               VilCretas`Private`AlList14 = 
+                RandomInteger[{1, VilCretas`Private`Aln}, 
+                  VilCretas`Private`Aln]; VilCretas`Private`AlList14]; If[
+              NumericQ[
+               Part[VilCretas`Private`AlFuncion, 1][
+                VilCretas`Private`AlRandomEnteros[VilCretas`Private`AlIni]]], 
+              For[
+              VilCretas`Private`AliPADA = 1, VilCretas`Private`AliPADA <= 
+               Length[VilCretas`Private`AlFuncion], 
+               VilCretas`Private`ListaPADA = 
+                Append[VilCretas`Private`ListaPADA, 
+                  Part[VilCretas`Private`AlFuncion, VilCretas`Private`AliPADA][
+                   VilCretas`Private`AlRandomEnteros[
+                   VilCretas`Private`AlIni]]]; 
+               Increment[VilCretas`Private`AliPADA]], 
+              For[
+              VilCretas`Private`AliPADA = 1, VilCretas`Private`AliPADA <= 
+               Length[VilCretas`Private`AlFuncion], If[
+                 Not[
+                  VectorQ[
+                   Part[
+                   VilCretas`Private`AlFuncion, VilCretas`Private`AliPADA][
+                    VilCretas`Private`AlRandomEnteros[
+                    VilCretas`Private`AlIni]]]], 
+                 VilCretas`Private`PADABandera = False; Break[]]; 
+               Increment[VilCretas`Private`AliPADA]]]; If[
+              Or[
+               VectorQ[VilCretas`Private`ListaPADA, NumericQ], 
+               VilCretas`Private`PADABandera == True], ClearSystemCache[]; 
+              VilCretas`Private`ListaPADA = {}; 
+              For[VilCretas`Private`AliPADA = 1, VilCretas`Private`AliPADA <= 
+                Length[VilCretas`Private`AlFuncion], 
+                VilCretas`Private`ListaPADA = 
+                 Append[VilCretas`Private`ListaPADA, 
+                   Table[
+                    First[
+                    RepeatedTiming[
+                    Part[
+                    VilCretas`Private`AlFuncion, VilCretas`Private`AliPADA][
+                    VilCretas`Private`AlRandomEnteros[
+                    VilCretas`Private`Ali24]]]], {
+                    VilCretas`Private`Ali24, VilCretas`Private`AlIni, 
+                    VilCretas`Private`AlPrueba, VilCretas`Private`AlIncre}]]; 
+                Increment[VilCretas`Private`AliPADA]]; 
+              ListLinePlot[
+               VilCretas`Private`ListaPADA, PlotLabels -> 
+                Map[ToString, VilCretas`Private`AlFuncion]]]]; If[
+           VectorQ[VilCretas`Private`AlFunciones], 
+           If[MemberQ[VilCretas`Private`AlFunciones, Null] == False, 
+            If[Length[VilCretas`Private`AlFunciones] >= 2, 
+             If[
+              And[
+               IntegerQ[VilCretas`Private`AlPruebas], 
+               VilCretas`Private`AlPruebas >= 1], 
+              If[
+               And[
+                IntegerQ[VilCretas`Private`AlInicio], 
+                VilCretas`Private`AlInicio >= 1], 
+               If[
+                And[
+                 IntegerQ[VilCretas`Private`AlIncremento], 
+                 VilCretas`Private`AlIncremento >= 1], 
+                If[
+                 BooleanQ[
+                  OptionValue[VilCretas`lista]], 
+                 If[
+                  OptionValue[VilCretas`lista], 
+                  VilCretas`Private`PruebaADAL[
+                  VilCretas`Private`AlFunciones, VilCretas`Private`AlPruebas, 
+                   VilCretas`Private`AlInicio, 
+                   VilCretas`Private`AlIncremento], 
+                  VilCretas`Private`PruebaADA[
+                  VilCretas`Private`AlFunciones, VilCretas`Private`AlPruebas, 
+                   VilCretas`Private`AlInicio, 
+                   VilCretas`Private`AlIncremento]]]]]]]]]]}], "SubValues" -> 
+    None, "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
+    "Options" -> {VilCretas`lista -> False}, "Attributes" -> {Protected}, 
+    "FullName" -> "VilCretas`PruebaADAGrafica"|>, False]]], "Output",
+ CellChangeTimes->{3.951940260239973*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"d6e83507-1025-fb49-a324-0e13c7112d85"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PruebaADAGrafica", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "Programa1", ",", "Programa2", ",", " ", "Programa3", ",", " ", 
+     "Programa4"}], "}"}], ",", " ", "25", ",", "6"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9519402646758327`*^9, 3.9519403054250183`*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"28685e63-2fbf-9d48-a41a-e63ce3447004"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, {}, 
+    TagBox[
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       NCache[
+        Rational[1, 60], 0.016666666666666666`]], AbsoluteThickness[2], 
+      LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7GdcXr/vtNhxO6iAw9eSlNlczxntIVwOB9Gp
+GSpzYwShfAGHfPVt6m8/SUL5Ig5Oz2/tEbupAOVLOFQF7o5n/aEC5cs4XKm/
+9udHtyaUr+CwmId7SdVCXShfySF01j3+zh4jKF/FgVuyTm1jlAWUr+YgUPxO
+mqXJFMrXcFjEbP79z1VzKF/LoemTblKfiDWUr+OwJFnioICzDZSv57BGt22P
+/g47KN/A4ZJUsx/HXEco39Dh3eywVKvzLlC+kcMdwwsCLy/B+MYOsXPXnhWI
+gPFNHKpfLTLiz3KzBwDoP08V
+       "]]},
+     Annotation[#, "Charting`Private`Tag#1"]& ], 
+    TagBox[
+     {RGBColor[0.880722, 0.611041, 0.142051], PointSize[
+       NCache[
+        Rational[1, 60], 0.016666666666666666`]], AbsoluteThickness[2], 
+      LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7GtCKx5KTD5jBxVwCLyn1N2/iskewuVwkFws
+NftQviCUL+Dw7KjeN2ZnWShfxEHwlnhp0BFFKF/CYV8LF5/+CTUoX8bh6JZT
+y5UKtKB8BQd2CZ9NRyr1oXwlB9MvqzRVvhhA+SoOjIc/Pb/tZAzlqzkU/3bw
+7bhiBuVrOCQK/K13NLeE8rUcchPP+MgbWEH5Og7cP8NuzThrA+XrOQgkdwQZ
+tjhA+QYOopKyE1psnaB8Q4crddnqXk6BUL6RQ9u5Y0tb1WB8Y4fTn6QSupmi
+oHwTB5EjXSk3Y0PsATMuS8k=
+       "]]},
+     Annotation[#, "Charting`Private`Tag#2"]& ], 
+    TagBox[
+     {RGBColor[0.560181, 0.691569, 0.194885], PointSize[
+       NCache[
+        Rational[1, 60], 0.016666666666666666`]], AbsoluteThickness[2], 
+      LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7Hed+Hz+kAi7PVTA4Wn9p/L3L4ShfA6HHQrR
+09Z3y0H5Ag4z8m8IPlJVhvJFHIKPzmtXOaIC5Us4ZP2Rfbo7XxvKl3Gwnj1f
+59grAyhfweHjnpCcM6thfCUHAbspGScfm0D5Kg7Scz8Hy7SbQ/lqDtErN55z
+OgPjazg83qz9eOotSyhfyyHhheDi59OsoXwdhwVPr2i+em4P5es5fLo7h6Hy
+KYxv4PCscK/QW39HKN/Qwe0Qh3a8ohOUb+Qw8+mfuBAZFyjf2GFStWjJNScY
+38Sh+7/1IidTV3sA1j5Wgg==
+       "]]},
+     Annotation[#, "Charting`Private`Tag#3"]& ], 
+    TagBox[
+     {RGBColor[0.922526, 0.385626, 0.209179], PointSize[
+       NCache[
+        Rational[1, 60], 0.016666666666666666`]], AbsoluteThickness[2], 
+      LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7CdyGC0v0GS0hwo4rLeNyD5rLQDlczjwlSyu
+O7tCHMoXcCj+uN3WkUkByhdxUDJp6n09XwXKl3DQ2fV1ltwVTShfxoG7dd+q
+zF5dKF/BwfSGvvFxXkMoX8nh5BVhn9epRlC+isPytKNqL1RNoHw1hw27jrhX
+HTeF8jUcfv/KPlx01RzK13KYG8vRXCNlDeXrOMyyX7Y1c40NlK/n4Kn3X/Hv
+N3so38Ch+byC/x1rRyjf0GG6zU//SSdhfCMHn0uvWUMjnaB8YwcJ05WbLCVc
+oHwTh2SuaxazzznbAwB90043
+       "]]},
+     Annotation[#, "Charting`Private`Tag#4"]& ]}, {{{{}, {GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {20., 0.00068402998046875}], 
+            Offset[{1.147403353695582, 2.7719064818150216`}, {
+             20.816666666666666`, 0.00068402998046875}], 
+            Offset[{0, 0}, {22.01666666666667, 0.0010563537367344372`}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {22.01666666666667, 
+             0.0010563537367344372`}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.0010563537367344372`}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.0010563537367344372`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {20., 0.00068402998046875}], 
+            Offset[{1.147403353695582, 2.7719064818150216`}, {
+             20.816666666666666`, 0.00068402998046875}], 
+            Offset[{0, 0}, {22.01666666666667, 0.0010563537367344372`}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {22.01666666666667, 
+             0.0010563537367344372`}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.0010563537367344372`}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.0010563537367344372`}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{65., 7.000000000000014}, {22.01666666666667, 
+             0.0010563537367344372`}], 
+            Offset[{65., -6.999999999999986}, {22.01666666666667, 
+             0.0010563537367344372`}], 
+            Offset[{10., -6.999999999999998}, {22.01666666666667, 
+             0.0010563537367344372`}], 
+            Offset[{10., 7.000000000000002}, {22.01666666666667, 
+             0.0010563537367344372`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Programa1\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontOpacity->1], 
+          Offset[{37.5, 8.326672684688674*^-15}, \
+{22.01666666666667, 0.0010563537367344372}], NCache[
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}], 
+           ImageScaled[{0.5, 0.5}]]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {20., 0.001243078515625}], 
+            Offset[{1.6691973361210946`, 2.4927455251361383`}, {
+             20.816666666666666`, 0.001243078515625}], 
+            Offset[{0, 0}, {22.01666666666667, 0.0014732378276358824`}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {22.01666666666667, 
+             0.0014732378276358824`}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.0014732378276358824`}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.0014732378276358824`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {20., 0.001243078515625}], 
+            Offset[{1.6691973361210946`, 2.4927455251361383`}, {
+             20.816666666666666`, 0.001243078515625}], 
+            Offset[{0, 0}, {22.01666666666667, 0.0014732378276358824`}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {22.01666666666667, 
+             0.0014732378276358824`}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.0014732378276358824`}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.0014732378276358824`}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{65., 7.000000000000014}, {22.01666666666667, 
+             0.0014732378276358824`}], 
+            Offset[{65., -6.999999999999986}, {22.01666666666667, 
+             0.0014732378276358824`}], 
+            Offset[{10., -6.999999999999998}, {22.01666666666667, 
+             0.0014732378276358824`}], 
+            Offset[{10., 7.000000000000002}, {22.01666666666667, 
+             0.0014732378276358824`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Programa2\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontOpacity->1], 
+          Offset[{37.5, 8.326672684688674*^-15}, \
+{22.01666666666667, 0.0014732378276358824}], NCache[
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}], 
+           ImageScaled[{0.5, 0.5}]]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {20., 0.00064721826171875}], 
+            Offset[{2.9951482016817, -0.17054984597729522`}, {
+             20.816666666666666`, 0.00064721826171875}], 
+            Offset[{0, 0}, {22.01666666666667, 0.000638442369041908}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {22.01666666666667, 
+             0.000638442369041908}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.000638442369041908}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.000638442369041908}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {20., 0.00064721826171875}], 
+            Offset[{2.9951482016817, -0.17054984597729522`}, {
+             20.816666666666666`, 0.00064721826171875}], 
+            Offset[{0, 0}, {22.01666666666667, 0.000638442369041908}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {22.01666666666667, 
+             0.000638442369041908}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.000638442369041908}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.000638442369041908}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{65., 7.000000000000014}, {22.01666666666667, 
+             0.000638442369041908}], 
+            Offset[{65., -6.999999999999986}, {22.01666666666667, 
+             0.000638442369041908}], 
+            Offset[{10., -6.999999999999998}, {22.01666666666667, 
+             0.000638442369041908}], 
+            Offset[{10., 7.000000000000002}, {22.01666666666667, 
+             0.000638442369041908}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Programa3\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontOpacity->1], 
+          Offset[{37.5, 8.326672684688674*^-15}, \
+{22.01666666666667, 0.000638442369041908}], NCache[
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}], 
+           ImageScaled[{0.5, 0.5}]]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {20., 0.00060446337890625}], 
+            Offset[{1.1206189943420535`, -2.7828426239224893`}, {
+             20.816666666666666`, 0.00060446337890625}], 
+            Offset[{0, 0}, {22.01666666666667, 0.00022173650721872543`}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {22.01666666666667, 
+             0.00022173650721872543`}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.00022173650721872543`}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.00022173650721872543`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {20., 0.00060446337890625}], 
+            Offset[{1.1206189943420535`, -2.7828426239224893`}, {
+             20.816666666666666`, 0.00060446337890625}], 
+            Offset[{0, 0}, {22.01666666666667, 0.00022173650721872543`}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {22.01666666666667, 
+             0.00022173650721872543`}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.00022173650721872543`}], 
+            Offset[{10., 2.220446049250313*^-15}, {22.01666666666667, 
+             0.00022173650721872543`}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{65., 7.000000000000014}, {22.01666666666667, 
+             0.00022173650721872543`}], 
+            Offset[{65., -6.999999999999986}, {22.01666666666667, 
+             0.00022173650721872543`}], 
+            Offset[{10., -6.999999999999998}, {22.01666666666667, 
+             0.00022173650721872543`}], 
+            Offset[{10., 7.000000000000002}, {22.01666666666667, 
+             0.00022173650721872543`}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"Programa4\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontOpacity->1], 
+          Offset[{37.5, 8.326672684688674*^-15}, \
+{22.01666666666667, 0.00022173650721872543}], NCache[
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}], 
+           ImageScaled[{0.5, 0.5}]]]}]}}, {}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->{{All, 97.8}, {All, All}},
+  Method->{
+   "AxisPadding" -> Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "DefaultPlotStyle" -> {
+      Directive[
+       RGBColor[0.368417, 0.506779, 0.709798], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.880722, 0.611041, 0.142051], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.560181, 0.691569, 0.194885], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.922526, 0.385626, 0.209179], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.528488, 0.470624, 0.701351], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.772079, 0.431554, 0.102387], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.363898, 0.618501, 0.782349], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[1, 0.75, 0], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.647624, 0.37816, 0.614037], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.571589, 0.586483, 0.], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.915, 0.3325, 0.2125], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.40082222609352647`, 0.5220066643438841, 0.85], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.9728288904374106, 0.621644452187053, 0.07336199581899142], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.736782672705901, 0.358, 0.5030266573755369], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.28026441037696703`, 0.715, 0.4292089322474965], 
+       AbsoluteThickness[2]]}, "DomainPadding" -> Scaled[0.02], 
+    "RangePadding" -> Scaled[0.05], "OptimizePlotMarkers" -> True, 
+    "IncludeHighlighting" -> "CurrentSet", "HighlightStyle" -> Automatic, 
+    "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 20.}, {0, 0.001587520703125}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.08090169943749476]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.95194044587393*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"07c9aadc-f6e5-fe41-af75-e8b6abe57a59"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"PruebaADAGrafica", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "Programa1", ",", "Programa2", ",", " ", "Programa3", ",", " ", 
+     "Programa4"}], "}"}], ",", " ", "25", ",", "6"}], "]"}]], "Input",Express\
+ionUUID->"27d5d7e0-113c-9145-bcb6-69272f17b884"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"programa1", "[", 
+    RowBox[{"n_", ",", 
+     RowBox[{"valor_", ":", 
+      RowBox[{"78124999", "/", "175781250"}]}]}], "]"}], ":=", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"n", "==", "1"}], ",", "valor", ",", 
+     RowBox[{"programa1", "[", 
+      RowBox[{
+       RowBox[{"n", "-", "1"}], ",", 
+       RowBox[{"valor", "+", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"5", "^", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "10"}], " ", "n"}], ")"}]}], ")"}], "*", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "1"}], "+", 
+             RowBox[{"2", "*", 
+              RowBox[{"5", "^", 
+               RowBox[{"(", 
+                RowBox[{"10", " ", "n"}], ")"}]}]}], "+", 
+             RowBox[{"6", "*", 
+              RowBox[{"5", "^", 
+               RowBox[{"(", 
+                RowBox[{"10", " ", "n"}], ")"}]}], "*", 
+              RowBox[{"n", "^", "3"}]}]}], ")"}]}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"2", "*", 
+           RowBox[{"(", 
+            RowBox[{"2", "+", 
+             RowBox[{"7", "*", 
+              RowBox[{"n", "^", "2"}]}]}], ")"}]}], ")"}]}]}]}], "]"}]}], 
+    "]"}]}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"programa2", "[", "n_", "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"n", "==", "1"}], ",", 
+    RowBox[{"78124999", "/", "175781250"}], ",", 
+    RowBox[{
+     RowBox[{"programa2", "[", 
+      RowBox[{"n", "-", "1"}], "]"}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"5", "^", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "10"}], " ", "n"}], ")"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          RowBox[{"2", "*", 
+           RowBox[{"5", "^", 
+            RowBox[{"(", 
+             RowBox[{"10", " ", "n"}], ")"}]}]}], "+", 
+          RowBox[{"6", "*", 
+           RowBox[{"5", "^", 
+            RowBox[{"(", 
+             RowBox[{"10", " ", "n"}], ")"}]}], "*", 
+           RowBox[{"n", "^", "3"}]}]}], ")"}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"2", "*", 
+        RowBox[{"(", 
+         RowBox[{"2", "+", 
+          RowBox[{"7", "*", 
+           RowBox[{"n", "^", "2"}]}]}], ")"}]}], ")"}]}]}]}], 
+   "]"}]}], "\n"}], "Input",
+ CellChangeTimes->{{3.951940768489847*^9, 3.9519407803439713`*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"644e93b7-e4de-bb4c-95b6-767cf21d7969"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "PruebaADA2"}]], "Input",
+ CellChangeTimes->{{3.9519408872401943`*^9, 3.951940890326521*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"324dd51a-2744-6646-aefc-da29231baafc"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = False, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"Analiza la eficiencia de dos algoritmos que \
+resuelven el mismo problema, ejecutando un experimento con \
+\[OpenCurlyDoubleQuote]k\[CloseCurlyDoubleQuote] invocaciones y retornando el \
+n\[UAcute]mero de veces en el que cada m\[EAcute]todo se comport\[OAcute] m\
+\[AAcute]s eficiente, en t\[EAcute]rminos de los tiempos de salida \
+registrados por el software Mathematica. Sintaxis: PruebaADA2[{Metodo1, \
+Metodo2}, k, inicio, incremento], o bien, PruebaADA2[{Metodo1, Metodo2}, k, \
+inicio, incremento, lista->True]. \[OpenCurlyDoubleQuote]lista->True\
+\[CloseCurlyDoubleQuote] indica que los m\[EAcute]todos reciben como par\
+\[AAcute]metros una lista (internamente las listas son generadas de forma \
+pseudoaleatoria). \[OpenCurlyDoubleQuote]inicio\[CloseCurlyDoubleQuote] \
+define el valor inicial de evaluaci\[OAcute]n e \
+\[OpenCurlyDoubleQuote]incremento\[CloseCurlyDoubleQuote] estable el \
+incremento de los pasos que por defecto es igual a 1. Se asume el dominio \
+como el conjunto de los n\[UAcute]meros naturales o un subconjunto de \
+\[EAcute]l.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[
+           TagBox[GridBox[{
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"Definitions\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{"PruebaADA2", "[", 
+                    
+                    RowBox[{
+                    "VilCretas`Private`AlFunciones_List", ",", 
+                    "VilCretas`Private`AlPruebas_", ",", 
+                    "VilCretas`Private`AlInicio_", ",", 
+                    RowBox[{"VilCretas`Private`AlIncremento_", ":", "1"}], 
+                    ",", 
+                    RowBox[{"OptionsPattern", "[", "]"}]}], "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`PruebaADA2P", ",", 
+                    "VilCretas`Private`PruebaADA2L"}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`PruebaADA2P", "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion_List", ",", 
+                    "VilCretas`Private`AlPrueba_", ",", 
+                    "VilCretas`Private`AlIni_", ",", 
+                    "VilCretas`Private`AlIncre_"}], "]"}], ":=", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VectorQ", "[", "VilCretas`Private`AlFuncion", 
+                    "]"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"MemberQ", "[", 
+                    RowBox[{"VilCretas`Private`AlFuncion", ",", "Null"}], 
+                    "]"}], "\[Equal]", "False"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"Length", "[", "VilCretas`Private`AlFuncion", 
+                    "]"}], "\[Equal]", "2"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"NumericQ", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "[", "VilCretas`Private`AlIni", "]"}], "]"}], "&&", 
+                    RowBox[{"NumericQ", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                    "[", "VilCretas`Private`AlIni", "]"}], "]"}]}], ")"}], 
+                    "||", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"VectorQ", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "[", "VilCretas`Private`AlIni", "]"}], "]"}], "&&", 
+                    RowBox[{"VectorQ", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                    "[", "VilCretas`Private`AlIni", "]"}], "]"}]}], ")"}]}], 
+                    ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"IntegerQ", "[", "VilCretas`Private`AlPrueba", 
+                    "]"}], "&&", 
+                    
+                    RowBox[{"VilCretas`Private`AlPrueba", "\[GreaterEqual]", 
+                    "1"}]}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"IntegerQ", "[", "VilCretas`Private`AlIni", "]"}],
+                     "&&", 
+                    RowBox[{
+                    "VilCretas`Private`AlIni", "\[GreaterEqual]", "1"}]}], 
+                    ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"IntegerQ", "[", "VilCretas`Private`AlIncre", 
+                    "]"}], "&&", 
+                    RowBox[{
+                    "VilCretas`Private`AlIncre", "\[GreaterEqual]", "1"}]}], 
+                    ",", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AlVl29", "=", "0"}], ",", 
+                    RowBox[{"VilCretas`Private`AlVl30", "=", "0"}]}], "}"}], 
+                    ",", 
+                    RowBox[{
+                    RowBox[{"ClearSystemCache", "[", "]"}], ";", 
+                    RowBox[{"VilCretas`Private`AlVl31", "=", 
+                    RowBox[{"Table", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"First", "[", 
+                    RowBox[{"Timing", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "[", "VilCretas`Private`Ali24", "]"}], "]"}], "]"}], ",", 
+                    RowBox[{"First", "[", 
+                    RowBox[{"Timing", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                    "[", "VilCretas`Private`Ali24", "]"}], "]"}], "]"}]}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"VilCretas`Private`Ali24", ",", 
+                    "VilCretas`Private`AlIni", ",", 
+                    "VilCretas`Private`AlPrueba", ",", 
+                    "VilCretas`Private`AlIncre"}], "}"}]}], "]"}]}], ";", 
+                    RowBox[{"For", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`Ali25", "=", "1"}], ",", 
+                    RowBox[{"VilCretas`Private`Ali25", "\[LessEqual]", 
+                    
+                    RowBox[{"Length", "[", "VilCretas`Private`AlVl31", 
+                    "]"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlVl31", 
+                    "\[LeftDoubleBracket]", 
+                    RowBox[{"VilCretas`Private`Ali25", ",", "1"}], 
+                    "\[RightDoubleBracket]"}], "<", 
+                    RowBox[{
+                    "VilCretas`Private`AlVl31", "\[LeftDoubleBracket]", 
+                    RowBox[{"VilCretas`Private`Ali25", ",", "2"}], 
+                    "\[RightDoubleBracket]"}]}], ",", 
+                    RowBox[{"VilCretas`Private`AlVl29", "++"}]}], "]"}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlVl31", 
+                    "\[LeftDoubleBracket]", 
+                    RowBox[{"VilCretas`Private`Ali25", ",", "1"}], 
+                    "\[RightDoubleBracket]"}], ">", 
+                    RowBox[{
+                    "VilCretas`Private`AlVl31", "\[LeftDoubleBracket]", 
+                    RowBox[{"VilCretas`Private`Ali25", ",", "2"}], 
+                    "\[RightDoubleBracket]"}]}], ",", 
+                    RowBox[{"VilCretas`Private`AlVl30", "++"}]}], "]"}], ";", 
+                    RowBox[{"VilCretas`Private`Ali25", "++"}]}]}], "]"}], ";", 
+                    RowBox[{"Print", "[", 
+                    
+                    RowBox[{"\"El primer algoritmo fue mejor: \"", ",", 
+                    "VilCretas`Private`AlVl29"}], "]"}], ";", 
+                    RowBox[{"Print", "[", 
+                    
+                    RowBox[{"\"El segundo algoritmo fue mejor: \"", ",", 
+                    "VilCretas`Private`AlVl30"}], "]"}], ";", 
+                    RowBox[{"Print", "[", 
+                    RowBox[{"\"Se comportaron igual: \"", ",", 
+                    RowBox[{
+                    RowBox[{"Length", "[", "VilCretas`Private`AlVl31", "]"}], 
+                    "-", 
+                    RowBox[{"(", 
+                    
+                    RowBox[{"VilCretas`Private`AlVl29", "+", 
+                    "VilCretas`Private`AlVl30"}], ")"}]}]}], "]"}]}]}], 
+                    "]"}]}], "]"}]}], "]"}]}], "]"}]}], "]"}]}], "]"}]}], 
+                    "]"}]}], "]"}]}], ";", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`PruebaADA2L", "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion_List", ",", 
+                    "VilCretas`Private`AlPrueba_", ",", 
+                    "VilCretas`Private`AlIni_", ",", 
+                    "VilCretas`Private`AlIncre_"}], "]"}], ":=", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VectorQ", "[", "VilCretas`Private`AlFuncion", 
+                    "]"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"MemberQ", "[", 
+                    RowBox[{"VilCretas`Private`AlFuncion", ",", "Null"}], 
+                    "]"}], "\[Equal]", "False"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"Length", "[", "VilCretas`Private`AlFuncion", 
+                    "]"}], "\[Equal]", "2"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"IntegerQ", "[", "VilCretas`Private`AlPrueba", 
+                    "]"}], "&&", 
+                    
+                    RowBox[{"VilCretas`Private`AlPrueba", "\[GreaterEqual]", 
+                    "1"}]}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"IntegerQ", "[", "VilCretas`Private`AlIni", "]"}],
+                     "&&", 
+                    RowBox[{
+                    "VilCretas`Private`AlIni", "\[GreaterEqual]", "1"}]}], 
+                    ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"IntegerQ", "[", "VilCretas`Private`AlIncre", 
+                    "]"}], "&&", 
+                    RowBox[{
+                    "VilCretas`Private`AlIncre", "\[GreaterEqual]", "1"}]}], 
+                    ",", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AlVl29", "=", "0"}], ",", 
+                    RowBox[{"VilCretas`Private`AlVl30", "=", "0"}], ",", 
+                    "VilCretas`Private`AlRandomEnteros", ",", 
+                    RowBox[{"VilCretas`Private`AlList16", "=", 
+                    RowBox[{"{", "}"}]}]}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlRandomEnteros", "[", 
+                    "VilCretas`Private`Aln_", "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AlList14", "=", 
+                    RowBox[{"RandomInteger", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", "VilCretas`Private`Aln"}], "}"}], ",", 
+                    "VilCretas`Private`Aln"}], "]"}]}], ";", 
+                    "VilCretas`Private`AlList14"}]}], "]"}]}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"NumericQ", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "[", 
+                    RowBox[{"VilCretas`Private`AlRandomEnteros", "[", 
+                    "VilCretas`Private`AlIni", "]"}], "]"}], "]"}], "&&", 
+                    RowBox[{"NumericQ", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                    "[", 
+                    RowBox[{"VilCretas`Private`AlRandomEnteros", "[", 
+                    "VilCretas`Private`AlIni", "]"}], "]"}], "]"}]}], ")"}], 
+                    "||", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"VectorQ", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "[", 
+                    RowBox[{"VilCretas`Private`AlRandomEnteros", "[", 
+                    "VilCretas`Private`AlIni", "]"}], "]"}], "]"}], "&&", 
+                    RowBox[{"VectorQ", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                    "[", 
+                    RowBox[{"VilCretas`Private`AlRandomEnteros", "[", 
+                    "VilCretas`Private`AlIni", "]"}], "]"}], "]"}]}], ")"}]}],
+                     ",", 
+                    RowBox[{
+                    RowBox[{"ClearSystemCache", "[", "]"}], ";", 
+                    RowBox[{"For", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`Ali24", "=", 
+                    "VilCretas`Private`AlIni"}], ",", 
+                    
+                    RowBox[{"VilCretas`Private`Ali24", "\[LessEqual]", 
+                    "VilCretas`Private`AlPrueba"}], ",", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`AlList15", "=", 
+                    
+                    RowBox[{"VilCretas`Private`AlRandomEnteros", "[", 
+                    "VilCretas`Private`Ali24", "]"}]}], ";", 
+                    RowBox[{"VilCretas`Private`AlList16", "=", 
+                    RowBox[{"Append", "[", 
+                    RowBox[{"VilCretas`Private`AlList16", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"First", "[", 
+                    RowBox[{"Timing", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+                    "[", "VilCretas`Private`AlList15", "]"}], "]"}], "]"}], 
+                    ",", 
+                    RowBox[{"First", "[", 
+                    RowBox[{"Timing", "[", 
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlFuncion", 
+                    "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+                    "[", "VilCretas`Private`AlList15", "]"}], "]"}], "]"}]}], 
+                    "}"}]}], "]"}]}], ";", 
+                    RowBox[{"VilCretas`Private`Ali24", "=", 
+                    
+                    RowBox[{"VilCretas`Private`Ali24", "+", 
+                    "VilCretas`Private`AlIncre"}]}]}]}], "]"}], ";", 
+                    RowBox[{"For", "[", 
+                    RowBox[{
+                    RowBox[{"VilCretas`Private`Ali25", "=", "1"}], ",", 
+                    RowBox[{"VilCretas`Private`Ali25", "\[LessEqual]", 
+                    
+                    RowBox[{"Length", "[", "VilCretas`Private`AlList16", 
+                    "]"}]}], ",", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlList16", 
+                    "\[LeftDoubleBracket]", 
+                    RowBox[{"VilCretas`Private`Ali25", ",", "1"}], 
+                    "\[RightDoubleBracket]"}], "<", 
+                    RowBox[{
+                    "VilCretas`Private`AlList16", "\[LeftDoubleBracket]", 
+                    RowBox[{"VilCretas`Private`Ali25", ",", "2"}], 
+                    "\[RightDoubleBracket]"}]}], ",", 
+                    RowBox[{"VilCretas`Private`AlVl29", "++"}]}], "]"}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"VilCretas`Private`AlList16", 
+                    "\[LeftDoubleBracket]", 
+                    RowBox[{"VilCretas`Private`Ali25", ",", "1"}], 
+                    "\[RightDoubleBracket]"}], ">", 
+                    RowBox[{
+                    "VilCretas`Private`AlList16", "\[LeftDoubleBracket]", 
+                    RowBox[{"VilCretas`Private`Ali25", ",", "2"}], 
+                    "\[RightDoubleBracket]"}]}], ",", 
+                    RowBox[{"VilCretas`Private`AlVl30", "++"}]}], "]"}], ";", 
+                    RowBox[{"VilCretas`Private`Ali25", "++"}]}]}], "]"}], ";", 
+                    RowBox[{"Print", "[", 
+                    
+                    RowBox[{"\"El primer algoritmo fue mejor: \"", ",", 
+                    "VilCretas`Private`AlVl29"}], "]"}], ";", 
+                    RowBox[{"Print", "[", 
+                    
+                    RowBox[{"\"El segundo algoritmo fue mejor: \"", ",", 
+                    "VilCretas`Private`AlVl30"}], "]"}], ";", 
+                    RowBox[{"Print", "[", 
+                    RowBox[{"\"Se comportaron igual: \"", ",", 
+                    RowBox[{
+                    
+                    RowBox[{"Length", "[", "VilCretas`Private`AlList16", 
+                    "]"}], "-", 
+                    RowBox[{"(", 
+                    
+                    RowBox[{"VilCretas`Private`AlVl29", "+", 
+                    "VilCretas`Private`AlVl30"}], ")"}]}]}], "]"}]}]}], 
+                    "]"}]}]}], "]"}]}], "]"}]}], "]"}]}], "]"}]}], "]"}]}], 
+                    "]"}]}], "]"}]}], ";", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"BooleanQ", "[", 
+                    RowBox[{"OptionValue", "[", "lista", "]"}], "]"}], ",", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"OptionValue", "[", "lista", "]"}], ",", 
+                    RowBox[{"VilCretas`Private`PruebaADA2L", "[", 
+                    
+                    RowBox[{"VilCretas`Private`AlFunciones", ",", 
+                    "VilCretas`Private`AlPruebas", ",", 
+                    "VilCretas`Private`AlInicio", ",", 
+                    "VilCretas`Private`AlIncremento"}], "]"}], ",", 
+                    RowBox[{"VilCretas`Private`PruebaADA2P", "[", 
+                    RowBox[{"VilCretas`Private`AlFunciones", ",", 
+                    "VilCretas`Private`AlPruebas", ",", 
+                    "VilCretas`Private`AlInicio", ",", 
+                    "VilCretas`Private`AlIncremento"}], "]"}]}], "]"}]}], 
+                    "]"}]}]}], "]"}]}]}, {" "}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Column"],
+           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Options\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Options\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Options", "Tooltip"]& ], 
+                   RowBox[{"lista", "\[Rule]", "False"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Attributes\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Attributes\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Attributes", "Tooltip"]& ], 
+                   RowBox[{"{", "Protected", "}"}]},
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"VilCretas`PruebaADA2\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox[
+             TagBox[
+              TooltipBox[
+               StyleBox["\<\" Symbol\"\>", "InformationRowLabel",
+                StripOnInput->False],
+               "\"Symbol\"",
+               TooltipStyle->"TextStyling"],
+              Annotation[#, "Symbol", "Tooltip"]& ], "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"Analiza la eficiencia de dos algoritmos que \
+resuelven el mismo problema, ejecutando un experimento con \
+\[OpenCurlyDoubleQuote]k\[CloseCurlyDoubleQuote] invocaciones y retornando el \
+n\[UAcute]mero de veces en el que cada m\[EAcute]todo se comport\[OAcute] m\
+\[AAcute]s eficiente, en t\[EAcute]rminos de los tiempos de salida \
+registrados por el software Mathematica. Sintaxis: PruebaADA2[{Metodo1, \
+Metodo2}, k, inicio, incremento], o bien, PruebaADA2[{Metodo1, Metodo2}, k, \
+inicio, incremento, lista->True]. \[OpenCurlyDoubleQuote]lista->True\
+\[CloseCurlyDoubleQuote] indica que los m\[EAcute]todos reciben como par\
+\[AAcute]metros una lista (internamente las listas son generadas de forma \
+pseudoaleatoria). \[OpenCurlyDoubleQuote]inicio\[CloseCurlyDoubleQuote] \
+define el valor inicial de evaluaci\[OAcute]n e \
+\[OpenCurlyDoubleQuote]incremento\[CloseCurlyDoubleQuote] estable el \
+incremento de los pasos que por defecto es igual a 1. Se asume el dominio \
+como el conjunto de los n\[UAcute]meros naturales o un subconjunto de \
+\[EAcute]l.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{12.5, {4., 8.5}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{12.5, {4., 8.5}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "Analiza la eficiencia de dos algoritmos que resuelven el mismo problema, \
+ejecutando un experimento con \
+\[OpenCurlyDoubleQuote]k\[CloseCurlyDoubleQuote] invocaciones y retornando el \
+n\[UAcute]mero de veces en el que cada m\[EAcute]todo se comport\[OAcute] m\
+\[AAcute]s eficiente, en t\[EAcute]rminos de los tiempos de salida \
+registrados por el software Mathematica. Sintaxis: PruebaADA2[{Metodo1, \
+Metodo2}, k, inicio, incremento], o bien, PruebaADA2[{Metodo1, Metodo2}, k, \
+inicio, incremento, lista->True]. \[OpenCurlyDoubleQuote]lista->True\
+\[CloseCurlyDoubleQuote] indica que los m\[EAcute]todos reciben como par\
+\[AAcute]metros una lista (internamente las listas son generadas de forma \
+pseudoaleatoria). \[OpenCurlyDoubleQuote]inicio\[CloseCurlyDoubleQuote] \
+define el valor inicial de evaluaci\[OAcute]n e \
+\[OpenCurlyDoubleQuote]incremento\[CloseCurlyDoubleQuote] estable el \
+incremento de los pasos que por defecto es igual a 1. Se asume el dominio \
+como el conjunto de los n\[UAcute]meros naturales o un subconjunto de \
+\[EAcute]l.", "Documentation" -> None, "OwnValues" -> None, "UpValues" -> 
+    None, "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, VilCretas`PruebaADA2, {VilCretas`PruebaADA2[
+         Pattern[VilCretas`Private`AlFunciones, 
+          Blank[List]], 
+         Pattern[VilCretas`Private`AlPruebas, 
+          Blank[]], 
+         Pattern[VilCretas`Private`AlInicio, 
+          Blank[]], 
+         Optional[
+          Pattern[VilCretas`Private`AlIncremento, 
+           Blank[]], 1], 
+         OptionsPattern[]] :> 
+       Module[{VilCretas`Private`PruebaADA2P, VilCretas`Private`PruebaADA2L}, 
+         VilCretas`Private`PruebaADA2P[
+            Pattern[VilCretas`Private`AlFuncion, 
+             Blank[List]], 
+            Pattern[VilCretas`Private`AlPrueba, 
+             Blank[]], 
+            Pattern[VilCretas`Private`AlIni, 
+             Blank[]], 
+            Pattern[VilCretas`Private`AlIncre, 
+             Blank[]]] := If[
+            VectorQ[VilCretas`Private`AlFuncion], 
+            If[MemberQ[VilCretas`Private`AlFuncion, Null] == False, 
+             If[Length[VilCretas`Private`AlFuncion] == 2, 
+              If[
+               Or[
+                And[
+                 NumericQ[
+                  Part[VilCretas`Private`AlFuncion, 1][
+                  VilCretas`Private`AlIni]], 
+                 NumericQ[
+                  Part[VilCretas`Private`AlFuncion, 2][
+                  VilCretas`Private`AlIni]]], 
+                And[
+                 VectorQ[
+                  Part[VilCretas`Private`AlFuncion, 1][
+                  VilCretas`Private`AlIni]], 
+                 VectorQ[
+                  Part[VilCretas`Private`AlFuncion, 2][
+                  VilCretas`Private`AlIni]]]], 
+               If[
+                And[
+                 IntegerQ[VilCretas`Private`AlPrueba], 
+                 VilCretas`Private`AlPrueba >= 1], 
+                If[
+                 And[
+                  IntegerQ[VilCretas`Private`AlIni], VilCretas`Private`AlIni >= 
+                  1], 
+                 If[
+                  And[
+                   IntegerQ[VilCretas`Private`AlIncre], 
+                   VilCretas`Private`AlIncre >= 1], 
+                  
+                  Module[{
+                   VilCretas`Private`AlVl29 = 0, VilCretas`Private`AlVl30 = 
+                    0}, ClearSystemCache[]; VilCretas`Private`AlVl31 = Table[{
+                    First[
+                    Timing[
+                    Part[VilCretas`Private`AlFuncion, 1][
+                    VilCretas`Private`Ali24]]], 
+                    First[
+                    Timing[
+                    Part[VilCretas`Private`AlFuncion, 2][
+                    VilCretas`Private`Ali24]]]}, {
+                    VilCretas`Private`Ali24, VilCretas`Private`AlIni, 
+                    VilCretas`Private`AlPrueba, VilCretas`Private`AlIncre}]; 
+                   For[VilCretas`Private`Ali25 = 1, VilCretas`Private`Ali25 <= 
+                    Length[VilCretas`Private`AlVl31], 
+                    If[Part[
+                    VilCretas`Private`AlVl31, VilCretas`Private`Ali25, 1] < 
+                    Part[VilCretas`Private`AlVl31, VilCretas`Private`Ali25, 
+                    2], 
+                    Increment[VilCretas`Private`AlVl29]]; 
+                    If[Part[
+                    VilCretas`Private`AlVl31, VilCretas`Private`Ali25, 1] > 
+                    Part[VilCretas`Private`AlVl31, VilCretas`Private`Ali25, 
+                    2], 
+                    Increment[VilCretas`Private`AlVl30]]; 
+                    Increment[VilCretas`Private`Ali25]]; 
+                   Print["El primer algoritmo fue mejor: ", 
+                    VilCretas`Private`AlVl29]; 
+                   Print["El segundo algoritmo fue mejor: ", 
+                    VilCretas`Private`AlVl30]; 
+                   Print["Se comportaron igual: ", 
+                    Length[VilCretas`Private`AlVl31] - (
+                    VilCretas`Private`AlVl29 + 
+                    VilCretas`Private`AlVl30)]]]]]]]]]; 
+         VilCretas`Private`PruebaADA2L[
+            Pattern[VilCretas`Private`AlFuncion, 
+             Blank[List]], 
+            Pattern[VilCretas`Private`AlPrueba, 
+             Blank[]], 
+            Pattern[VilCretas`Private`AlIni, 
+             Blank[]], 
+            Pattern[VilCretas`Private`AlIncre, 
+             Blank[]]] := If[
+            VectorQ[VilCretas`Private`AlFuncion], 
+            If[MemberQ[VilCretas`Private`AlFuncion, Null] == False, 
+             If[Length[VilCretas`Private`AlFuncion] == 2, 
+              If[
+               And[
+                IntegerQ[VilCretas`Private`AlPrueba], 
+                VilCretas`Private`AlPrueba >= 1], 
+               If[
+                And[
+                 IntegerQ[VilCretas`Private`AlIni], VilCretas`Private`AlIni >= 
+                 1], 
+                If[
+                 And[
+                  IntegerQ[VilCretas`Private`AlIncre], 
+                  VilCretas`Private`AlIncre >= 1], 
+                 
+                 Module[{
+                  VilCretas`Private`AlVl29 = 0, VilCretas`Private`AlVl30 = 0, 
+                   VilCretas`Private`AlRandomEnteros, 
+                   VilCretas`Private`AlList16 = {}}, 
+                  VilCretas`Private`AlRandomEnteros[
+                    Pattern[VilCretas`Private`Aln, 
+                    Blank[]]] := 
+                   Module[{}, 
+                    VilCretas`Private`AlList14 = 
+                    RandomInteger[{1, VilCretas`Private`Aln}, 
+                    VilCretas`Private`Aln]; VilCretas`Private`AlList14]; If[
+                    Or[
+                    And[
+                    NumericQ[
+                    Part[VilCretas`Private`AlFuncion, 1][
+                    VilCretas`Private`AlRandomEnteros[
+                    VilCretas`Private`AlIni]]], 
+                    NumericQ[
+                    Part[VilCretas`Private`AlFuncion, 2][
+                    VilCretas`Private`AlRandomEnteros[
+                    VilCretas`Private`AlIni]]]], 
+                    And[
+                    VectorQ[
+                    Part[VilCretas`Private`AlFuncion, 1][
+                    VilCretas`Private`AlRandomEnteros[
+                    VilCretas`Private`AlIni]]], 
+                    VectorQ[
+                    Part[VilCretas`Private`AlFuncion, 2][
+                    VilCretas`Private`AlRandomEnteros[
+                    VilCretas`Private`AlIni]]]]], ClearSystemCache[]; 
+                    For[
+                    VilCretas`Private`Ali24 = VilCretas`Private`AlIni, 
+                    VilCretas`Private`Ali24 <= VilCretas`Private`AlPrueba, 
+                    VilCretas`Private`AlList15 = 
+                    VilCretas`Private`AlRandomEnteros[
+                    VilCretas`Private`Ali24]; 
+                    VilCretas`Private`AlList16 = 
+                    Append[VilCretas`Private`AlList16, {
+                    First[
+                    Timing[
+                    Part[VilCretas`Private`AlFuncion, 1][
+                    VilCretas`Private`AlList15]]], 
+                    First[
+                    Timing[
+                    Part[VilCretas`Private`AlFuncion, 2][
+                    VilCretas`Private`AlList15]]]}]; 
+                    VilCretas`Private`Ali24 = 
+                    VilCretas`Private`Ali24 + VilCretas`Private`AlIncre]; 
+                    For[VilCretas`Private`Ali25 = 1, VilCretas`Private`Ali25 <= 
+                    Length[VilCretas`Private`AlList16], 
+                    If[Part[
+                    VilCretas`Private`AlList16, VilCretas`Private`Ali25, 1] < 
+                    Part[VilCretas`Private`AlList16, VilCretas`Private`Ali25, 
+                    2], 
+                    Increment[VilCretas`Private`AlVl29]]; 
+                    If[Part[
+                    VilCretas`Private`AlList16, VilCretas`Private`Ali25, 1] > 
+                    Part[VilCretas`Private`AlList16, VilCretas`Private`Ali25, 
+                    2], 
+                    Increment[VilCretas`Private`AlVl30]]; 
+                    Increment[VilCretas`Private`Ali25]]; 
+                    Print["El primer algoritmo fue mejor: ", 
+                    VilCretas`Private`AlVl29]; 
+                    Print["El segundo algoritmo fue mejor: ", 
+                    VilCretas`Private`AlVl30]; 
+                    Print["Se comportaron igual: ", 
+                    Length[VilCretas`Private`AlList16] - (
+                    VilCretas`Private`AlVl29 + 
+                    VilCretas`Private`AlVl30)]]]]]]]]]; If[
+           BooleanQ[
+            OptionValue[VilCretas`lista]], 
+           If[
+            OptionValue[VilCretas`lista], 
+            VilCretas`Private`PruebaADA2L[
+            VilCretas`Private`AlFunciones, VilCretas`Private`AlPruebas, 
+             VilCretas`Private`AlInicio, VilCretas`Private`AlIncremento], 
+            VilCretas`Private`PruebaADA2P[
+            VilCretas`Private`AlFunciones, VilCretas`Private`AlPruebas, 
+             VilCretas`Private`AlInicio, VilCretas`Private`AlIncremento]]]]}],
+     "SubValues" -> None, "DefaultValues" -> None, "NValues" -> None, 
+    "FormatValues" -> None, "Options" -> {VilCretas`lista -> False}, 
+    "Attributes" -> {Protected}, "FullName" -> "VilCretas`PruebaADA2"|>, 
+   False]]], "Output",
+ CellChangeTimes->{3.9519408908059464`*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"aed7d06a-6f92-0245-a4d7-1c9eb0de78f7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PruebaADA2", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"programa1", ",", " ", "programa2"}], "}"}], ",", " ", "200", ",",
+    "1", ",", "20"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9519408633322697`*^9, 3.951940942927431*^9}},
+ CellLabel->"In[40]:=",ExpressionUUID->"1ea270b7-ad0b-c24d-a2d3-c90335d40e84"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El primer algoritmo fue mejor: \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["El primer algoritmo fue mejor: ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.951940899848488*^9, 3.951940968523012*^9}},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[40]:=",ExpressionUUID->"96ceb2ff-d600-c847-946a-d6265b9afc10"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El segundo algoritmo fue mejor: \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["El segundo algoritmo fue mejor: ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.951940899848488*^9, 3.951940968529648*^9}},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[40]:=",ExpressionUUID->"60456b78-314d-344f-9f01-974f65e557a6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Se comportaron igual: \"\>", "\[InvisibleSpace]", "4"}],
+  SequenceForm["Se comportaron igual: ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.951940899848488*^9, 3.951940968536251*^9}},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[40]:=",ExpressionUUID->"c4f6ffb6-70d6-e440-ab03-f9690a9f350b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PruebaADA2", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"programa1", ",", " ", "programa2"}], "}"}], ",", " ", "200", ",",
+    "1", ",", "20"}], "]"}]], "Input",
+ CellLabel->"In[42]:=",ExpressionUUID->"7aea3fc2-5d23-1842-bdeb-4b6eb4b6bed4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El primer algoritmo fue mejor: \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["El primer algoritmo fue mejor: ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9519410342365837`*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[42]:=",ExpressionUUID->"746851c1-bdbb-1642-bb92-88dc4099c59b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El segundo algoritmo fue mejor: \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["El segundo algoritmo fue mejor: ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.951941034243147*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[42]:=",ExpressionUUID->"b8007fe7-2e82-7044-8798-6bf5a790ac20"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Se comportaron igual: \"\>", "\[InvisibleSpace]", "7"}],
+  SequenceForm["Se comportaron igual: ", 7],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9519410342537365`*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[42]:=",ExpressionUUID->"11775030-c67f-c141-8604-d267d271a2d6"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PruebaADA2", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"programa1", ",", " ", "programa2"}], "}"}], ",", " ", "200", ",",
+    "1", ",", "20"}], "]"}]], "Input",
+ CellLabel->"In[43]:=",ExpressionUUID->"d94c2abf-3502-9c47-845f-09ac0d434385"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El primer algoritmo fue mejor: \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["El primer algoritmo fue mejor: ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9519410362993946`*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[43]:=",ExpressionUUID->"243bcb0e-da2c-d248-b33f-0788e78193bf"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El segundo algoritmo fue mejor: \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["El segundo algoritmo fue mejor: ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.951941036306673*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[43]:=",ExpressionUUID->"172b388d-b0d6-034b-a14c-81e1848dd245"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Se comportaron igual: \"\>", "\[InvisibleSpace]", "4"}],
+  SequenceForm["Se comportaron igual: ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9519410363186646`*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[43]:=",ExpressionUUID->"037f6785-921e-bc4c-82ef-65dd8ce7017d"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PruebaADA2", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"programa1", ",", " ", "programa2"}], "}"}], ",", " ", "200", ",",
+    "1", ",", "20"}], "]"}]], "Input",
+ CellLabel->"In[44]:=",ExpressionUUID->"b949877a-a839-4c4e-833c-688fafb8cc9d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El primer algoritmo fue mejor: \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["El primer algoritmo fue mejor: ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9519410383306713`*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[44]:=",ExpressionUUID->"b2bc355f-d6bc-1749-8906-b106d252c210"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El segundo algoritmo fue mejor: \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["El segundo algoritmo fue mejor: ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9519410383372345`*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[44]:=",ExpressionUUID->"9d5728db-d3a5-c447-996a-4faa3267a65c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Se comportaron igual: \"\>", "\[InvisibleSpace]", "5"}],
+  SequenceForm["Se comportaron igual: ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9519410383489647`*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[44]:=",ExpressionUUID->"f4209cf6-45c0-6d45-9928-b51afa312c36"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PruebaADA2", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"programa1", ",", " ", "programa2"}], "}"}], ",", " ", "200", ",",
+    "1", ",", "20"}], "]"}]], "Input",
+ CellLabel->"In[45]:=",ExpressionUUID->"21b564b4-c925-6e46-b3fc-d2dbadb0c22e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El primer algoritmo fue mejor: \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["El primer algoritmo fue mejor: ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.951941042113737*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[45]:=",ExpressionUUID->"ccbec978-f14d-bf4d-992b-0b789dbb5918"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"El segundo algoritmo fue mejor: \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["El segundo algoritmo fue mejor: ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.951941042121252*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[45]:=",ExpressionUUID->"88d5d20a-ffac-8047-8268-256a3ae735f4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Se comportaron igual: \"\>", "\[InvisibleSpace]", "4"}],
+  SequenceForm["Se comportaron igual: ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.9519410421333294`*^9},
+ CellLabel->
+  "Durante la evaluaci\[OAcute]n de \
+In[45]:=",ExpressionUUID->"1fed0ba3-2d43-854f-bbd9-bf4c2c64c6df"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PruebaADAGrafica", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"programa1", ",", " ", "programa2"}], "}"}], ",", " ", "200", ",",
+    " ", "1", ",", " ", "20"}], "]"}]], "Input",
+ CellChangeTimes->{{3.951940975814083*^9, 3.9519409918427467`*^9}},
+ CellLabel->"In[41]:=",ExpressionUUID->"728c441e-f70b-1b4c-baca-eccf8e12e2d6"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, {}, 
+    TagBox[
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       NCache[
+        Rational[7, 360], 0.019444444444444445`]], AbsoluteThickness[2], 
+      LineBox[{{1., 2.6381465911865233`*^-6}, {2., 0.00069956630859375}, {3., 
+       0.0015117873046875}, {4., 0.002410796875}, {5., 0.003338116015625}, {
+       6., 0.0042712953125}, {7., 0.00545062578125}, {8., 0.00688015390625}, {
+       9., 0.008053665625}, {10., 0.009237109375}}]},
+     Annotation[#, "Charting`Private`Tag#1"]& ], 
+    TagBox[
+     {RGBColor[0.880722, 0.611041, 0.142051], PointSize[
+       NCache[
+        Rational[7, 360], 0.019444444444444445`]], AbsoluteThickness[2], 
+      LineBox[{{1., 2.9487300872802733`*^-6}, {2., 0.000698070703125}, {3., 
+       0.0015101439453125}, {4., 0.002435219921875}, {5., 0.0034461703125}, {
+       6., 0.00455071328125}, {7., 0.00565869296875}, {8., 0.007060678125}, {
+       9., 0.00849796875}, {10., 0.009940515625}}]},
+     Annotation[#, "Charting`Private`Tag#2"]& ]}, {{{{}, {GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {10., 0.009237109375}], 
+            Offset[{0.4347178020070091, -2.968336307196035}, {
+             10.408333333333333`, 0.009237109375}], 
+            Offset[{0, 0}, {11.008333333333335`, 0.002647593905287489}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {11.008333333333335`, 
+             0.002647593905287489}], 
+            Offset[{10., 2.220446049250313*^-15}, {11.008333333333335`, 
+             0.002647593905287489}], 
+            Offset[{10., 2.220446049250313*^-15}, {11.008333333333335`, 
+             0.002647593905287489}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {10., 0.009237109375}], 
+            Offset[{0.4347178020070091, -2.968336307196035}, {
+             10.408333333333333`, 0.009237109375}], 
+            Offset[{0, 0}, {11.008333333333335`, 0.002647593905287489}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {11.008333333333335`, 
+             0.002647593905287489}], 
+            Offset[{10., 2.220446049250313*^-15}, {11.008333333333335`, 
+             0.002647593905287489}], 
+            Offset[{10., 2.220446049250313*^-15}, {11.008333333333335`, 
+             0.002647593905287489}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{64., 7.000000000000014}, {11.008333333333335`, 
+             0.002647593905287489}], 
+            Offset[{64., -6.999999999999986}, {11.008333333333335`, 
+             0.002647593905287489}], 
+            Offset[{10., -6.999999999999998}, {11.008333333333335`, 
+             0.002647593905287489}], 
+            Offset[{10., 7.000000000000002}, {11.008333333333335`, 
+             0.002647593905287489}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"programa1\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontOpacity->1], 
+          Offset[{37., 8.215650382226158*^-15}, \
+{11.008333333333335, 0.002647593905287489}], NCache[
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}], 
+           ImageScaled[{0.5, 0.5}]]]}], GraphicsGroupBox[{
+         {GrayLevel[1], AbsoluteThickness[4], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]], CapForm["Butt"], JoinForm[
+          "Round"], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {10., 0.009940515625}], 
+            Offset[{1.7199094932526515`, -2.4580299703257094`}, {
+             10.408333333333333`, 0.009940515625}], 
+            Offset[{0, 0}, {11.008333333333335`, 0.00856130884588347}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {11.008333333333335`, 
+             0.00856130884588347}], 
+            Offset[{10., 2.220446049250313*^-15}, {11.008333333333335`, 
+             0.00856130884588347}], 
+            Offset[{10., 2.220446049250313*^-15}, {11.008333333333335`, 
+             0.00856130884588347}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], 
+          BSplineCurveBox[{
+           Offset[{3, 0}, {10., 0.009940515625}], 
+            Offset[{1.7199094932526515`, -2.4580299703257094`}, {
+             10.408333333333333`, 0.009940515625}], 
+            Offset[{0, 0}, {11.008333333333335`, 0.00856130884588347}], 
+            Offset[{5., 1.1102230246251565`*^-15}, {11.008333333333335`, 
+             0.00856130884588347}], 
+            Offset[{10., 2.220446049250313*^-15}, {11.008333333333335`, 
+             0.00856130884588347}], 
+            Offset[{10., 2.220446049250313*^-15}, {11.008333333333335`, 
+             0.00856130884588347}]}]}, 
+         {EdgeForm[None], FaceForm[{GrayLevel[1], Opacity[
+           NCache[
+            Rational[2, 3], 0.6666666666666666]]}], 
+          PolygonBox[{
+           Offset[{64., 7.000000000000014}, {11.008333333333335`, 
+             0.00856130884588347}], 
+            Offset[{64., -6.999999999999986}, {11.008333333333335`, 
+             0.00856130884588347}], 
+            Offset[{10., -6.999999999999998}, {11.008333333333335`, 
+             0.00856130884588347}], 
+            Offset[{10., 7.000000000000002}, {11.008333333333335`, 
+             0.00856130884588347}]}]}, 
+         {RGBColor[
+          0.6666666666666666, 0.6666666666666666, 0.6666666666666666], 
+          AbsoluteThickness[1.25], EdgeForm[None]}, {}, InsetBox[
+          StyleBox[
+           RotationBox["\<\"programa2\"\>",
+            BoxRotation->0.],
+           StripOnInput->False,
+           LineOpacity->1,
+           FrontFaceOpacity->1,
+           BackFaceOpacity->1,
+           Opacity->1,
+           FontOpacity->1], 
+          Offset[{37., 8.215650382226158*^-15}, \
+{11.008333333333335, 0.00856130884588347}], NCache[
+          ImageScaled[{Rational[1, 2], Rational[1, 2]}], 
+           ImageScaled[{0.5, 0.5}]]]}]}}, {}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->{{All, 96.8}, {All, All}},
+  Method->{
+   "AxisPadding" -> Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "DefaultPlotStyle" -> {
+      Directive[
+       RGBColor[0.368417, 0.506779, 0.709798], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.880722, 0.611041, 0.142051], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.560181, 0.691569, 0.194885], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.922526, 0.385626, 0.209179], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.528488, 0.470624, 0.701351], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.772079, 0.431554, 0.102387], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.363898, 0.618501, 0.782349], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[1, 0.75, 0], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.647624, 0.37816, 0.614037], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.571589, 0.586483, 0.], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.915, 0.3325, 0.2125], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.40082222609352647`, 0.5220066643438841, 0.85], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.9728288904374106, 0.621644452187053, 0.07336199581899142], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.736782672705901, 0.358, 0.5030266573755369], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.28026441037696703`, 0.715, 0.4292089322474965], 
+       AbsoluteThickness[2]]}, "DomainPadding" -> Scaled[0.02], 
+    "RangePadding" -> Scaled[0.05], "OptimizePlotMarkers" -> True, 
+    "IncludeHighlighting" -> "CurrentSet", "HighlightStyle" -> Automatic, 
+    "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 10.}, {0, 0.009940515625}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.08090169943749476]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.9519410208583393`*^9},
+ CellLabel->"Out[41]=",ExpressionUUID->"34dd32e9-8f52-de44-9558-25e3dc65464c"]
+}, Open  ]]
+},
+WindowSize->{1152, 579.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+FrontEndVersion->"14.0 para Microsoft Windows (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"aaec372a-aa10-d144-8c0a-1fc8c2bf8ac9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 653, 20, 137, "Input",ExpressionUUID->"27649406-7bf5-cb45-a481-00e8a420b1d3"],
+Cell[CellGroupData[{
+Cell[1236, 44, 286, 6, 77, "Input",ExpressionUUID->"ca77e890-0dda-b04e-bb4d-88d27c4289fe"],
+Cell[1525, 52, 150, 2, 40, "Output",ExpressionUUID->"e019fff7-13a5-624a-a1b1-83718a328ec9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1712, 59, 820, 24, 108, "Input",ExpressionUUID->"e95ac027-885c-634a-8da4-d104c4a520e3"],
+Cell[2535, 85, 297, 6, 40, "Output",ExpressionUUID->"a5afb75b-6b7f-eb47-85f4-5471af66acd9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2869, 96, 756, 23, 108, "Input",ExpressionUUID->"0b96bfc6-a358-ff45-a990-81db9daa9ac1"],
+Cell[3628, 121, 570, 16, 65, "Output",ExpressionUUID->"2b9ef64c-3272-5d46-a010-4c9a0a1340b6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4235, 142, 1078, 31, 83, "Input",ExpressionUUID->"b3f40bbf-b5fe-2c4e-ac49-364c73dbb537"],
+Cell[5316, 175, 317, 7, 57, "Output",ExpressionUUID->"8f168ddb-e855-f341-9b51-2962eac4ee11"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5670, 187, 199, 3, 35, "Input",ExpressionUUID->"c7fdea33-f237-bd4c-b487-4980784070d4"],
+Cell[5872, 192, 455, 12, 27, "Print",ExpressionUUID->"0054ad15-9530-f846-a6ec-ed974009671a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6364, 209, 198, 3, 35, "Input",ExpressionUUID->"f055fa4e-e3f7-5e4a-b29d-31223bdc5856"],
+Cell[6565, 214, 52516, 1112, 210, "Output",ExpressionUUID->"5ba138bf-069c-2641-bbd0-1841f9f97942"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59118, 1331, 1273, 39, 61, "Input",ExpressionUUID->"fdb22576-7361-b941-88d4-b02aeab606ad"],
+Cell[60394, 1372, 5159, 108, 167, "Print",ExpressionUUID->"f917d061-3fc9-b448-b1c3-6800bb91b02e"]
+}, Open  ]],
+Cell[65568, 1483, 4774, 145, 400, "Input",ExpressionUUID->"c99d73c2-14b5-0740-b919-6b8f8cb0b355"],
+Cell[CellGroupData[{
+Cell[70367, 1632, 494, 11, 54, "Input",ExpressionUUID->"66244fc3-45cb-4940-a17c-d98f16784492"],
+Cell[70864, 1645, 158, 2, 40, "Output",ExpressionUUID->"59f87049-6411-ad4a-b0da-9b18bedc661f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71059, 1652, 208, 3, 35, "Input",ExpressionUUID->"2cc941e8-6ada-d64f-bbf5-f60856e38a01"],
+Cell[71270, 1657, 36266, 792, 210, "Output",ExpressionUUID->"d6e83507-1025-fb49-a324-0e13c7112d85"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[107573, 2454, 379, 8, 35, "Input",ExpressionUUID->"28685e63-2fbf-9d48-a41a-e63ce3447004"],
+Cell[107955, 2464, 16641, 369, 216, "Output",ExpressionUUID->"07c9aadc-f6e5-fe41-af75-e8b6abe57a59"]
+}, Open  ]],
+Cell[124611, 2836, 287, 7, 35, "Input",ExpressionUUID->"27d5d7e0-113c-9145-bcb6-69272f17b884"],
+Cell[124901, 2845, 2593, 78, 195, "Input",ExpressionUUID->"644e93b7-e4de-bb4c-95b6-767cf21d7969"],
+Cell[CellGroupData[{
+Cell[127519, 2927, 200, 3, 35, "Input",ExpressionUUID->"324dd51a-2744-6646-aefc-da29231baafc"],
+Cell[127722, 2932, 42355, 925, 272, "Output",ExpressionUUID->"aed7d06a-6f92-0245-a4d7-1c9eb0de78f7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[170114, 3862, 335, 7, 35, "Input",ExpressionUUID->"1ea270b7-ad0b-c24d-a2d3-c90335d40e84"],
+Cell[CellGroupData[{
+Cell[170474, 3873, 385, 9, 27, "Print",ExpressionUUID->"96ceb2ff-d600-c847-946a-d6265b9afc10"],
+Cell[170862, 3884, 387, 9, 27, "Print",ExpressionUUID->"60456b78-314d-344f-9f01-974f65e557a6"],
+Cell[171252, 3895, 363, 8, 27, "Print",ExpressionUUID->"c4f6ffb6-70d6-e440-ab03-f9690a9f350b"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[171664, 3909, 267, 6, 35, "Input",ExpressionUUID->"7aea3fc2-5d23-1842-bdeb-4b6eb4b6bed4"],
+Cell[CellGroupData[{
+Cell[171956, 3919, 363, 9, 27, "Print",ExpressionUUID->"746851c1-bdbb-1642-bb92-88dc4099c59b"],
+Cell[172322, 3930, 363, 9, 27, "Print",ExpressionUUID->"b8007fe7-2e82-7044-8798-6bf5a790ac20"],
+Cell[172688, 3941, 341, 8, 27, "Print",ExpressionUUID->"11775030-c67f-c141-8604-d267d271a2d6"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[173078, 3955, 267, 6, 35, "Input",ExpressionUUID->"d94c2abf-3502-9c47-845f-09ac0d434385"],
+Cell[CellGroupData[{
+Cell[173370, 3965, 363, 9, 27, "Print",ExpressionUUID->"243bcb0e-da2c-d248-b33f-0788e78193bf"],
+Cell[173736, 3976, 363, 9, 27, "Print",ExpressionUUID->"172b388d-b0d6-034b-a14c-81e1848dd245"],
+Cell[174102, 3987, 341, 8, 27, "Print",ExpressionUUID->"037f6785-921e-bc4c-82ef-65dd8ce7017d"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[174492, 4001, 267, 6, 35, "Input",ExpressionUUID->"b949877a-a839-4c4e-833c-688fafb8cc9d"],
+Cell[CellGroupData[{
+Cell[174784, 4011, 363, 9, 27, "Print",ExpressionUUID->"b2bc355f-d6bc-1749-8906-b106d252c210"],
+Cell[175150, 4022, 365, 9, 27, "Print",ExpressionUUID->"9d5728db-d3a5-c447-996a-4faa3267a65c"],
+Cell[175518, 4033, 341, 8, 27, "Print",ExpressionUUID->"f4209cf6-45c0-6d45-9928-b51afa312c36"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[175908, 4047, 267, 6, 35, "Input",ExpressionUUID->"21b564b4-c925-6e46-b3fc-d2dbadb0c22e"],
+Cell[CellGroupData[{
+Cell[176200, 4057, 361, 9, 27, "Print",ExpressionUUID->"ccbec978-f14d-bf4d-992b-0b789dbb5918"],
+Cell[176564, 4068, 363, 9, 27, "Print",ExpressionUUID->"88d5d20a-ffac-8047-8268-256a3ae735f4"],
+Cell[176930, 4079, 341, 8, 27, "Print",ExpressionUUID->"1fed0ba3-2d43-854f-bbd9-bf4c2c64c6df"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[177320, 4093, 351, 7, 35, "Input",ExpressionUUID->"728c441e-f70b-1b4c-baca-eccf8e12e2d6"],
+Cell[177674, 4102, 9739, 221, 221, "Output",ExpressionUUID->"34dd32e9-8f52-de44-9558-25e3dc65464c"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

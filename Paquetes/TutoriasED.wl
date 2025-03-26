@@ -104,6 +104,11 @@ bigOmega::usage =
 "bigOmega[f, g, n] devuelve el l\[IAcute]mite de g(n)/f(n) conforme n->\[Infinity], para verificar \[CapitalOmega]().";
 bigTheta::usage = 
 "bigTheta[f, g, n] verifica si f(n) es \[CapitalTheta](g(n)) al verificar ambos l\[IAcute]mites (O y \[CapitalOmega]).";
+
+PlotAsymptoticFunctions::usage = 
+ "PlotAsymptoticFunctions[{xmin, xmax}] grafica un conjunto de funciones asint\[OAcute]ticas comunes \
+en una escala logar\[IAcute]tmica en ambos ejes. Las funciones graficadas son: \
+1, Log[n], n, Log[Log[n]], n^n, n^2 y n^3.";
 (*-------------------------------------------------------------------------------------------------------*)
 Begin["`Private`"]
 (*Opciones de cada funci\[OAcute]n*)
@@ -477,6 +482,23 @@ bigTheta[f_, g_, n_Symbol] := Module[
    limitFoG == 0 && limitGoF == 0, "Inconcluso",
    (limitFoG > 0 && limitFoG < Infinity) , True,
    True, False
+  ]
+];
+
+PlotAsymptoticFunctions[{xmin_?NumericQ, xmax_?NumericQ}] := Module[{fns, labels},
+  (* Definir las funciones asint\[OAcute]ticas *)
+  fns = {1, Log[n], n, Log[Log[n]], n^n, n^2, n^3};
+  labels = {"1", "Log[n]", "n", "Log[Log[n]]", "n^n", "n^2", "n^3"};
+  
+  (* Generar la gr\[AAcute]fica en escala log-log *)
+  Plot[Evaluate[fns], {n, xmin, xmax},
+    PlotLegends -> Placed[labels, Above],
+    ScalingFunctions -> {"Log", "Log"},
+    PlotRange -> All,
+    Frame -> True,
+    Axes -> False,
+    FrameLabel -> {"n", "f(n)"},
+    PlotLabel -> "Funciones asint\[OAcute]ticas comunes"
   ]
 ];
 
