@@ -109,6 +109,21 @@ PlotAsymptoticFunctions::usage =
  "PlotAsymptoticFunctions[{xmin, xmax}] grafica un conjunto de funciones asint\[OAcute]ticas comunes \
 en una escala logar\[IAcute]tmica en ambos ejes. Las funciones graficadas son: \
 1, Log[n], n, Log[Log[n]], n^n, n^2 y n^3.";
+
+NotacionAsintotica::usage =
+"Calcula el limite para ver cual es la notacion.";
+
+TableLimitN::usage = 
+"TableLimitN[f, gList, Options] genera una tabla de los l\[IAcute]mites \
+de f(n)/g(n) cuando n \[RightArrow] \[Infinity], para cada funci\[OAcute]n g(n) incluida en gList.
+
+Argumentos:
+  - f: expresi\[OAcute]n en funci\[OAcute]n de n.
+  - gList: lista de funciones en n (por ejemplo, {n, n^2, n^3}).
+  - Opciones: 
+      show -> True (por defecto) muestra los pares g(n) -> l\[IAcute]mite.
+               False devuelve solo la lista de l\[IAcute]mites.";
+
 (*-------------------------------------------------------------------------------------------------------*)
 Begin["`Private`"]
 (*Opciones de cada funci\[OAcute]n*)
@@ -502,6 +517,18 @@ PlotAsymptoticFunctions[{xmin_?NumericQ, xmax_?NumericQ}] := Module[{fns, labels
   ]
 ];
 
+NotacionAsintotica[f_, g_] :=Module[{l},l=Limit[f/g,n->Infinity];
+Which[l===0,"O grande: f(n) \[Element] O(g(n))",l===Infinity||l===DirectedInfinity[],
+"Omega: f(n) \[Element] \[CapitalOmega](g(n))",NumericQ[l]&&0<l<Infinity,"Theta: f(n) \[Element] \[CapitalTheta](g(n))",
+True,"No se puede determinar claramente"]]
+
+
+Options[TableLimitN]={show->True};
+TableLimitN[f_, g_, OptionsPattern[]]:=
+Module[{sho}, sho = OptionValue[show];
+If[sho == True,
+	Table[i->Limit[f/i, n->Infinity], {i,g}], Table[Limit[f/i, n->Infinity], {i,g}]]
+];
 End[]
 EndPackage[]
 
