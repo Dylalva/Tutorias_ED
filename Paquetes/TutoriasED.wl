@@ -1,6 +1,7 @@
 (* ::Package:: *)
 
 BeginPackage["TutoriasED`"]
+Needs["Vilcretas`"];
 Print[Style["Se ha cargado el paquete TutoriasED. USO PARA ESTUDIO. Versi\[OAcute]n 23/03/2025", Green]];
 FactorialPilaED::usage =
 "FactorialPilaED[n, show -> True|False] \
@@ -123,7 +124,11 @@ Argumentos:
   - Opciones: 
       show -> True (por defecto) muestra los pares g(n) -> l\[IAcute]mite.
                False devuelve solo la lista de l\[IAcute]mites.";
-
+(*--------------------------------------------------RELBIN------------------------------------------------*)
+RandomRange::usage = "RandomRange[] genera un rango con un n\[UAcute]mero de inicio aleatorio, fin aleatorio e incremento aleatorio."
+existeElementoRelBin::usage = "Genera una tabla con los resultados verdadedor o falso, comprobadondo las opciones si existen en la relacion de recurrencia
+existeElementoRelBin[R, Opciones]. Donde R es la relacion de recurrencia y Opciones las opciones que se tienen que comprobar.
+"
 (*-------------------------------------------------------------------------------------------------------*)
 Begin["`Private`"]
 (*Opciones de cada funci\[OAcute]n*)
@@ -529,6 +534,41 @@ Module[{sho}, sho = OptionValue[show];
 If[sho == True,
 	Table[i->Limit[f/i, n->Infinity], {i,g}], Table[Limit[f/i, n->Infinity], {i,g}]]
 ];
+
+(*================================================RELBIN================================================*)
+Options[RandomRange] = {
+  "StartRange" -> {-100, 100}, (* Rango para el valor de inicio *)
+  "FinishRange" -> {-100, 100}, (* Rango para el valor de fin *)
+  "IncrementRange" -> {-10, 10} (* Rango para el incremento *)
+};
+
+RandomRange[OptionsPattern[]] := Module[{start, finish, increment},
+  
+  (* Obtener los valores de las opciones o usar los valores predeterminados *)
+  start = RandomInteger[OptionValue["StartRange"]];
+  finish = RandomInteger[OptionValue["FinishRange"]];
+  increment = RandomInteger[OptionValue["IncrementRange"]];
+  
+  (* Asegurar que el incremento no sea cero *)
+  While[increment == 0, increment = RandomInteger[OptionValue["IncrementRange"]]];
+  
+  (* Devolver el rango generado *)
+  Range[start, finish, increment]
+]
+
+existeElementoRelBin[R_, opciones_] := Module[{lista},
+  (* Crear la lista de resultados de la tabla con la relaci\[OAcute]n binaria *)
+  lista = Table[{i, ElementRelBinQ[R, i]}, {i, opciones}];
+  
+  (* Imprimir el encabezado y la tabla con los resultados *)
+  Print["Tabla de Elementos y su Relaci\[OAcute]n Binaria:"];
+  Grid[
+    Prepend[lista, {"Elemento", "Relaci\[OAcute]n Binaria"}], 
+    Frame -> All, Alignment -> Center
+  ]
+]
+
 End[]
 EndPackage[]
+
 
