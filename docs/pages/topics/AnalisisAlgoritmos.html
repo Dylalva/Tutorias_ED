@@ -6,16 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Enlazar la hoja de estilos -->
   <link rel="stylesheet" href="../../styles/temas.css" />
+  <!-- Fuentes modernas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="../../assets/icons/wolfram_icon.png">
 </head>
 <body>
+  <div class="main-container">
   <!-- Cabecera con estilo similar al 'main-header' -->
   <header class="main-header">
     <div class="logo">
-      <h1>Tema: Analisis de algoritmos</h1>
+      <h1>Tema: Análisis de Algoritmos</h1>
     </div>
-    <aside class="relRecurrencia-animation">
-        <img width="50px" height="50px" src="../../assets/icons/icon_analisisAlg.png" alt="Animación relaciones de Recurrencia" />
-      </aside>
   </header>
 
   <main class="recursividad-main">
@@ -41,13 +44,19 @@
         <li class="book"> <a href="../../src/downloads/AnalisisAlgoritmos/Data Structures and Algorithms in C Plus Plus.pdf">Libro: Data Structures and Algorithms in C Plus Plus (ing)</a></li>
         <li class="book"> <a href="../../src/downloads/AnalisisAlgoritmos/Estructura de datos en C--.pdf">Libro: Estructura de datos en C++ (esp)</a></li>
         <li class="book"> <a href="../../src/downloads/AnalisisAlgoritmos/Introduction to Algorithms 3rd.pdf">Libro: Introduction to Algorithms 3rd (ing)</a></li>
-        <li><img src="../../assets/images/Algoritmos/AsintotaFunciones.png"></li>
-        <li><img src="../../assets/images/Algoritmos/BigOBigOmegaBigThetha.png"></li>
+        <li><img class="src" src="../../assets/images/Algoritmos/AsintotaFunciones.png"></li>
+        <li><img class="src" src="../../assets/images/Algoritmos/BigOBigOmegaBigThetha.png"></li>
       </ul>
     </section>
+    
+    <aside class="recursion-animation">
+      <img src="../../assets/icons/icon_analisisAlg.png" alt="Animación análisis de algoritmos" />
+    </aside>
   </main>
+  
   <footer class="main-footer">
     <p>Tutorias Estructuras Discretas © 2025</p>
   </footer>
+  </div>
 </body>
 </html>

@@ -1,216 +1,413 @@
 /* --------------------
-   1) Estilos base
+   1) Estilos base modernos
 -------------------- */
 
 /* Quita margen/padding por defecto y usa caja ajustada */
 * {
     box-sizing: border-box;
-  }
-  
-  /* Ajustes generales de la página */
-  body {
+}
+
+/* Ajustes generales de la página */
+body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-    background: #FDECE6; /* Color de fondo suave */
+    font-family: 'Inter', 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #FF6B35 0%, #D32F2F 50%, #FF8F00 100%);
     color: #333;
-    min-height: 100vh; /* Para estirar el fondo */
-  }
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Contenedor principal con glassmorphism */
+.main-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    overflow: hidden;
+    min-height: calc(100vh - 40px);
+}
   
-  /* --------------------
-     2) Cabecera
-  -------------------- */
-  .main-header {
+/* --------------------
+   2) Cabecera moderna
+-------------------- */
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #D9A591; /* Salmón oscuro */
-    padding: 1rem 2rem;
-    flex-wrap: wrap; /* Para pantallas pequeñas */
-  }
-  
-  /* Logo/título del header */
-  .logo h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #fff; /* Texto en blanco */
-  }
-  
-  /* Menú de navegación (si lo usas) */
-  .navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar li {
-    margin: 0;
-  }
-  
-  .navbar a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #fff;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar a:hover {
-    color: #f2f2f2;
-  }
-  .pdf, .nb, .book {
-    list-style: none; /* Quita la viñeta por defecto */
-    background-repeat: no-repeat;
-    background-position: left center; 
-    background-size: 20px 20px; /* Ajusta el tamaño de la viñeta */
-    padding-left: 30px; /* Espacio para la imagen */
-    margin-left: 30px;
-  }
-  
-  .pdf {
-    background-image: url("../assets/icons/icon_pdf.png");
-  }
-  
-  .nb {
-    background-image: url("../assets/icons/icon_nb_mathematica.png");
-  }
-  
-.book{
-  background-image: url("../assets/icons/book_icon.png");
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(15px);
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-  .src{
-    width: 50%;
-    height: 50%;
-  }
-  .recursividad-main {
+/* Logo/título del header */
+.logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Menú de navegación */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.navbar a:hover::before {
+    left: 100%;
+}
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+/* Estilos para tipos de archivos */
+.pdf, .nb, .book {
+    list-style: none;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 24px 24px;
+    padding: 0.8rem 0 0.8rem 40px;
+    margin: 0.5rem 0;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.pdf:hover, .nb:hover, .book:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pdf {
+    background-image: url("../assets/icons/icon_pdf.png");
+}
+
+.nb {
+    background-image: url("../assets/icons/icon_nb_mathematica.png");
+}
+
+.book {
+    background-image: url("../assets/icons/book_icon.png");
+}
+
+.src {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    margin: 1rem 0;
+}
+
+.src:hover {
+    transform: scale(1.05);
+}
+/* Contenido principal moderno */
+.recursividad-main {
     max-width: 1200px;
     margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 2rem;  /* Espacio horizontal entre .files-container y .recursion-animation */
-  }
-  
-  /* Contenedor de archivos */
-  .files-container {
-    flex: 1; /* Ocupará el espacio sobrante */
-  }
-  
-  /* Títulos de secciones */
-  .files-container h2 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #2c2c2c;
-    font-weight: bold;
-    margin-top: 1rem;
-  }
-  
-  .files-container ul {
-    list-style: none; 
-    padding-left: 0; 
-    margin-bottom: 1rem;
-  }
-  
-  .files-container li {
-    margin-bottom: 0.4rem;
-  }
-  
-  /* Enlaces dentro de los archivos */
-  .files-container a {
+    gap: 3rem;
+}
+
+/* Contenedor de archivos */
+.files-container {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Títulos de secciones */
+.files-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 2rem;
+}
+
+.files-container h2:first-child {
+    margin-top: 0;
+}
+
+.files-container ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+}
+
+.files-container li {
+    margin-bottom: 0.8rem;
+}
+
+/* Enlaces dentro de los archivos */
+.files-container a {
     text-decoration: none;
-    color: #ad5f53; /* Un rojo claro */
-    transition: color 0.3s;
-  }
+    color: #fff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.files-container a:hover {
+    color: #FF6B35;
+}
   
-  .files-container a:hover {
-    color: #742f27; /* Un rojo más oscuro */
-  }
-  
-  /* --------------------
-     4) Animación Recursiva
-  -------------------- */
-  .recursion-animation {
-    width: 250px;   /* Ajusta al tamaño deseado */
-    height: 250px;  /* para que sea más visible */
-    display: flex; 
+/* --------------------
+   4) Animación Recursiva moderna
+-------------------- */
+.recursion-animation {
+    width: 300px;
+    height: 300px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    /* Bordes o fondo opcional:
-       background-color: rgba(255,255,255,0.2);
-       border-radius: 8px;
-    */
-  }
-  
-  /* Rotación infinita al icono */
-  .recursion-animation img {
-    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    position: relative;
+    overflow: hidden;
+}
+
+.recursion-animation::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(255, 107, 53, 0.3), transparent);
+    animation: rotateBackground 8s linear infinite;
+}
+
+/* Rotación infinita al icono */
+.recursion-animation img {
+    width: 80%;
     height: auto;
-    animation: rotateRecursively 6s linear infinite;
-  }
-  
-  /* Definimos el keyframe de la rotación */
-  @keyframes rotateRecursively {
+    animation: rotateRecursively 6s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Definimos los keyframes de las animaciones */
+@keyframes rotateRecursively {
     0% {
-      transform: rotate(0deg) scale(1);
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(90deg) scale(1.1);
     }
     50% {
-      transform: rotate(180deg) scale(1.1);
+        transform: rotate(180deg) scale(1.2);
+    }
+    75% {
+        transform: rotate(270deg) scale(1.1);
     }
     100% {
-      transform: rotate(360deg) scale(1);
+        transform: rotate(360deg) scale(1);
     }
-  }
+}
+
+@keyframes rotateBackground {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
   
-  /* --------------------
-     5) Pie de página
-  -------------------- */
-  .main-footer {
-    background-color: #D9A591;
-    padding: 1rem;
+/* --------------------
+   5) Pie de página moderno
+-------------------- */
+.main-footer {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
     text-align: center;
-    color: #fff;
-  }
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    margin-top: 3rem;
+}
   
-  /* --------------------
-     6) Media Queries
-  -------------------- */
-  
-  /* Tablets (max-width:900px) */
-  @media (max-width: 900px) {
-    .recursividad-main {
-      flex-direction: column;
-      align-items: center;
-    }
-    .files-container {
-      width: 100%;
-    }
-    .recursion-animation {
-      margin-top: 2rem;
-    }
-  }
-  
-  /* Móviles (max-width:600px) */
-  @media (max-width: 600px) {
-    .navbar ul {
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .navbar a {
-      font-size: 1rem;
+/* --------------------
+   6) Media Queries responsivas
+-------------------- */
+
+/* Tablets grandes */
+@media (max-width: 1024px) {
+    .main-container {
+        margin: 10px;
     }
     
-    /* El contenedor principal en columna */
     .recursividad-main {
-      padding: 0 1rem;
+        gap: 2rem;
     }
-  
-    /* Ajustamos la animación un poco más pequeña en móvil */
+    
     .recursion-animation {
-      width: 200px;
-      height: 200px;
+        width: 250px;
+        height: 250px;
     }
-  }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .main-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .recursividad-main {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    
+    .files-container {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .recursion-animation {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+    .main-container {
+        margin: 5px;
+        border-radius: 15px;
+    }
+    
+    .main-header {
+        padding: 1rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+    
+    .navbar a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .recursividad-main {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    .files-container {
+        padding: 1.5rem;
+    }
+    
+    .files-container h2 {
+        font-size: 1.5rem;
+    }
+    
+    .recursion-animation {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .pdf, .nb, .book {
+        background-size: 20px 20px;
+        padding-left: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .src {
+        max-width: 100%;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 400px) {
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+    
+    .files-container {
+        padding: 1rem;
+    }
+    
+    .files-container h2 {
+        font-size: 1.3rem;
+    }
+    
+    .recursion-animation {
+        width: 150px;
+        height: 150px;
+    }
+}
   
