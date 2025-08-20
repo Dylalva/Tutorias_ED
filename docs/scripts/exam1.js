@@ -49,10 +49,15 @@ function createQuestionElement(q, questionNumber) {
   wrapper.appendChild(title);
 
   // Texto de la pregunta
-  const text = document.createElement('p');
+  const text = document.createElement('div');
   text.classList.add('question-text');
-  text.textContent = q.question;
+  text.innerHTML = q.question;
   wrapper.appendChild(text);
+
+  // Renderizar MathJax si hay contenido matemático
+  if (window.MathJax) {
+    MathJax.typesetPromise([text]).catch((err) => console.log(err));
+  }
 
   // Dependiendo del tipo de pregunta, creamos la UI
   let inputArea;
@@ -142,7 +147,7 @@ function createShortAnswer(q, questionNumber) {
   const input = document.createElement('input');
   input.type = 'text';
   input.name = `short-answer-${questionNumber}`;
-  input.placeholder = 'Escribe tu respuesta...';
+  input.placeholder = 'Respuestas separadas por comas';
   form.appendChild(input);
   return form;
 }
@@ -228,10 +233,21 @@ function evaluateQuestion(q, questionNumber) {
       return selected.value === q.correctAnswer;
     }
     case 'short-answer': {
-      const input = document.querySelector(`input[name="short-answer-${questionNumber}"]`);
-      if (!input) return false;
-      // Comparamos texto (podrías normalizar mayúsculas/minúsculas)
-      return input.value.trim().toLowerCase() === q.correctAnswer.trim().toLowerCase();
+      const questionElem = document.querySelectorAll('.question')[questionNumber - 1];
+      const codeInputs = questionElem.querySelectorAll('.code-input');
+      
+      if (codeInputs.length > 0) {
+        return Array.from(codeInputs).every(input => 
+          input.value.trim() === input.dataset.answer
+        );
+      } else {
+        const input = document.querySelector(`input[name="short-answer-${questionNumber}"]`);
+        if (!input) return false;
+        const userAnswers = input.value.split(',').map(s => s.trim());
+        const correctAnswers = q.correctAnswer.split(',').map(s => s.trim());
+        return userAnswers.length === correctAnswers.length && 
+               userAnswers.every((ans, i) => ans === correctAnswers[i]);
+      }
     }
     default:
       return false;

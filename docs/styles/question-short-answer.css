@@ -1,35 +1,50 @@
 .question-short-answer {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    margin: 1rem 0;
-    background-color: #f2fff2;
-  }
-  
-  .question-short-answer h3 {
-    margin-top: 0;
-  }
-  
-  .question-short-answer .question-text {
-    margin-bottom: 0.8rem;
-  }
-  
-  .question-short-answer form input[type="text"] {
-    padding: 0.3rem;
-    border: 1px solid #bbb;
-    border-radius: 4px;
-    width: 200px;
-    height: 25px;
-  }
-  
-  .question-short-answer .feedback {
-    margin-top: 0.8rem;
-    color: #666;
-    font-size: 0.9rem;
-    display: none;
-  }
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
 
-  input[type=text]{
-    width: 250px;
-    height: 35px;
-  }
-  
+.question-short-answer h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.question-short-answer .question-text {
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.question-short-answer form input[type="text"] {
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.question-short-answer .feedback {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  display: none;
+  background: rgba(255, 107, 53, 0.2);
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid #FF6B35;
+}
+
+input[type=text]::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input[type=text]:focus {
+  outline: none;
+  border-color: #FF6B35;
+  box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+}
